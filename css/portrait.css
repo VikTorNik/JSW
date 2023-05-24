@@ -39,10 +39,10 @@
 
 .portrait-backgrount {
   background:
-    url(svg/jump_red_p.svg),
-    url(svg/jump_black_p.svg),
-    url(svg/battary_p.svg),
-    url(img/man_cable_p.jpg);
+    url(/svg/jump_red_p.svg),
+    url(/svg/jump_black_p.svg),
+    url(/svg/battary_p.svg),
+    url(/img/man_cable_p.jpg);
   background-repeat:
     no-repeat,
     no-repeat,
