@@ -55,3 +55,9 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener('resize', (e) => resizeWindowApplication());
 
 });
+
+
+// const windowInnerWidth = document.documentElement.clientWidth
+// const windowInnerHeight = document.documentElement.clientHeight
+// const pageWidth = document.documentElement.scrollWidth
+// const pageHeight = document.documentElement.scrollHeight
