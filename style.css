@@ -6,18 +6,18 @@
 
 /* @import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap'); */
 
-@import url("/intro_screen/css/landscape.css") screen and (orientation: landscape);
-@import url("/intro_screen/css/portrait.css") (orientation: portrait);
-@import url("/bigmenu_screen/css/landscape.css") screen and (orientation: landscape);
-@import url("/bigmenu_screen/css/portrait.css") (orientation: portrait);
-@import url("/smallmenu_screen/css/landscape.css") screen and (orientation: landscape);
-@import url("/smallmenu_screen/css/portrait.css") (orientation: portrait);
+@import url("intro_screen/css/landscape.css") screen and (orientation: landscape);
+@import url("intro_screen/css/portrait.css") (orientation: portrait);
+@import url("bigmenu_screen/css/landscape.css") screen and (orientation: landscape);
+@import url("bigmenu_screen/css/portrait.css") (orientation: portrait);
+@import url("smallmenu_screen/css/landscape.css") screen and (orientation: landscape);
+@import url("smallmenu_screen/css/portrait.css") (orientation: portrait);
 
 html,
 body {
   margin: 0;
   padding: 0;
-  background: rgb(157, 152, 123);  
+  background: rgb(157, 152, 123);
 }
 
 *:focus {
