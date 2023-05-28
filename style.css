@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Jura&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Yanone Kaffeesatz&display=swap');
-
-
-/* @import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap'); */
 
 @import url("intro_screen/css/landscape.css") screen and (orientation: landscape);
 @import url("intro_screen/css/portrait.css") (orientation: portrait);

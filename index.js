@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let currentScreen = 1;
   let orientationLandscape;
+  let historyJSW = [];
 
   const showIntroScreenLandscape = () => {
     const parentDiv = document.createElement("main");
@@ -127,16 +128,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const selectedItemMenu = (selectItem) => {
     currentScreen = (selectItem < 1) ? 1 : selectItem;
-    console.log("Вошли в selectedItemMenu - currentScreen - ", currentScreen);
+    window.history.pushState(currentScreen, "", '');
+    historyJSW.push(history.state);
     if (orientationLandscape) {
       switch (currentScreen) {
-        case 1:
+        case 1:          
           showIntroScreenLandscape();
           break;
-        case 2:
+        case 2:          
           showBigmenuScreenLandscape();
           break;
-        case 3:
+        case 3:          
           showSmallmenuScreenLandscape();
           break;
       }
@@ -152,7 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
           showSmallmenuScreenPortrait();
           break;
       }
-    }
+    }    
   }
 
   const resizeWindowApplication = () => {
@@ -183,10 +185,6 @@ document.addEventListener("DOMContentLoaded", () => {
     selectedItemMenu(currentScreen);
   });
 
-  // window.addEventListener('click', () => {
-  //   selectedItemMenu(currentScreen);
-  // });
-
   document.querySelector('body').addEventListener("keyup", (event) => {
     if (event.key === "Escape") {
       console.log("Нажали Escape - currentScreen - ", currentScreen);
@@ -194,4 +192,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  window.addEventListener('popstate', e => {    
+    // console.log("historyJSW - до перехода ", historyJSW);
+    // historyJSW.pop();
+    // selectedItemMenu(historyJSW[historyJSW.length-1]);
+    // historyJSW.pop();    
+    selectedItemMenu(historyJSW[historyJSW.length - 2]);
+    historyJSW.splice(historyJSW.length-2, 2);
+    // console.log("historyJSW - после перехода ", historyJSW);
+  });
+
 });
+
