@@ -29,16 +29,16 @@
 
   --intro-width: 530px;
   --intro-height: 379px;
-  --intro-left: 141px;
-  --intro-top: 226px;
-  --intro-font-size: 21px;
-  --intro-line-height: 25px;
-  --intro-text-indent: 35px;
+  --intro-left: 140px;
+  --intro-top: 210px;
+  --intro-font-size: 23px;
+  --intro-line-height: 26px;
+  --intro-text-indent: 24px;
   --intro-text-shadow: 3px;
   --intro-margin: 12.5px;
 }
 
-.main-landscape {
+.main-intro-landscape {  
   margin: 0;
   position: absolute;
   top: 50%;
@@ -49,14 +49,15 @@
   height: calc(var(--heightStandart) * var(--ratioSizeWin));
   display: grid;
   grid-template-columns: 1fr 1fr;
+  cursor: pointer;  
 }
 
-.left-bg-one {
+.intro-left-landscape {
   background:
-    url(../svg/jump_l.svg),
-    url(../svg/jump_black_l.svg),
-    url(../svg/battary_l.svg),
-    url(../svg/ellipse_l.svg) rgba(217, 217, 217, 0.21);
+    url(../svg/jump.svg),
+    url(../svg/jump_black_land.svg),
+    url(../svg/battary_land.svg),
+    url(../svg/ellipse.svg) rgba(217, 217, 217, 0.21);
   background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
   background-position:
     left calc(var(--left-bg-one-jump) * var(--ratioSizeWin)) top calc(var(--top-bg-one-jump) * var(--ratioSizeWin)),
@@ -70,12 +71,12 @@
     calc(var(--bg-one-ellipse) * var(--ratioSizeWin));
 }
 
-.right-bg-one {
+.intro-right-landscape {
   background:
-    url(../svg/start_l.svg),
-    url(../svg/jump_red_l.svg),
-    url(../svg/battary_l.svg),
-    url(../img/man_cable_l.jpg);
+    url(../svg/start.svg),
+    url(../svg/jump_red_land.svg),
+    url(../svg/battary_land.svg),
+    url(../img/man_cable_land.jpg);
   background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
   background-position:
     left calc(var(--left-bg-two-start) * var(--ratioSizeWin)) top calc(var(--top-bg-two-start) * var(--ratioSizeWin)),

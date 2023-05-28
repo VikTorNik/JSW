@@ -15,17 +15,17 @@
   --bg-battary: 701.8px;
   --bg-photo: 800px;
 
-  --intro-width: 480px;
+  --intro-width: 505px;
   --intro-height: 394px;
   --intro-left: 129px;
-  --intro-top: 121px;
-  --intro-font-size: 22px;
-  --intro-line-height: 26px;
+  --intro-top: 114px;
+  --intro-font-size: 24px;
+  --intro-line-height: 28px;
   --intro-text-shadow: 3px;
   --intro-margin: 8px;
 }
 
-.main-portrait {
+.main-intro-portrait {
   margin: 0;
   position: absolute;
   top: 50%;
@@ -35,14 +35,15 @@
   width: calc(var(--widthStandart) * var(--ratioSizeWin));
   height: calc(var(--heightStandart) * var(--ratioSizeWin));
   display: grid;
+  cursor: pointer;
 }
 
-.portrait-backgrount {
+.intro-portrait {
   background:
-    url(../svg/jump_red_p.svg),
-    url(../svg/jump_black_p.svg),
-    url(../svg/battary_p.svg),
-    url(../img/man_cable_p.jpg);
+    url(../svg/jump_red_port.svg),
+    url(../svg/jump_black_port.svg),
+    url(../svg/battary_port.svg),
+    url(../img/man_cable_port.jpg);
   background-repeat:
     no-repeat,
     no-repeat,

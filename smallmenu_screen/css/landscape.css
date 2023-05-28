@@ -1,0 +1,33 @@
+:root {
+  /* --ratioSizeWin: 1;
+  --widthStandart: 1440px;
+  --heightStandart: 800px; */
+
+  --left-smallmenu-land: 0px;
+  --top-smallmenu-land: 0px;
+  --width-smallmenu-land: 1425px;
+}
+
+.main-small-landscape {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  width: calc(var(--widthStandart) * var(--ratioSizeWin));
+  height: calc(var(--heightStandart) * var(--ratioSizeWin));
+  display: grid;
+  background: rgba(154, 38, 38, 0.21);
+}
+
+.smallmenu-landscape-div {
+  background:
+    url(../svg/background_land.svg);
+  background-repeat: no-repeat;
+  background-position:
+    left calc(var(--left-smallmenu-land) * var(--ratioSizeWin)) top calc(var(--top-smallmenu-land) * var(--ratioSizeWin));
+  background-size:
+    calc(var(--width-smallmenu-land) * var(--ratioSizeWin));
+}
+

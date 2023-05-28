@@ -1,0 +1,32 @@
+:root {
+  /* --ratioSizeWin: 1;
+  --widthStandart: 800px;
+  --heightStandart: 1440px; */
+
+  --left-bigmenu-port: 0px;
+  --top-bigmenu-port: 32px;
+  --width-bigmenu-port: 798px;
+}
+
+.main-small-portrait {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  width: calc(var(--widthStandart) * var(--ratioSizeWin));
+  height: calc(var(--heightStandart) * var(--ratioSizeWin));
+  display: grid;
+  background: rgba(220, 22, 22, 0.21);
+}
+
+.smallmenu-portrait-div {
+  background:
+    url(../svg/background_port.svg);
+  background-repeat: no-repeat;
+  background-position:
+    left calc(var(--left-bigmenu-port) * var(--ratioSizeWin)) top calc(var(--top-bigmenu-port) * var(--ratioSizeWin));
+  background-size:
+    calc(var(--width-bigmenu-port) * var(--ratioSizeWin));
+}
