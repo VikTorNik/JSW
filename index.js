@@ -162,7 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let ratioHeight;
     const clientWidth = document.documentElement.clientWidth;
     const clientHeight = document.documentElement.clientHeight;
-    orientationLandscape = (clientWidth >= clientHeight);
+    orientationLandscape = (clientWidth > clientHeight);
     if (orientationLandscape) {
       ratioWidth = clientWidth / widthWindowApplication;
       ratioHeight = clientHeight / heightWindowApplication;

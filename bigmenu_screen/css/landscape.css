@@ -1,8 +1,4 @@
 :root {
-  /* --ratioSizeWin: 1;
-  --widthStandart: 1440px;
-  --heightStandart: 800px; */
-
   --left-bigmenu-land: 0px;
   --top-bigmenu-land: 0px;
   --width-bigmenu-land: 1425px;
@@ -13,7 +9,7 @@
   --top-bigmenu-land-div: 80px;
 
   --bigmenu-button-margin: 18px;
-  --bigmenu-button-padding: 7px;
+  --bigmenu-button-padding: 10px;
   --bigmenu-button-border-radius: 12px;
   --bigmenu-header-font-size: 40px;
   --bigmenu-description-font-size: 23px;
@@ -58,12 +54,14 @@
   margin: calc(var(--bigmenu-button-margin) * var(--ratioSizeWin));
   padding: calc(var(--bigmenu-button-padding) * var(--ratioSizeWin));
   background: rgba(120, 109, 89, 0.59);
-  box-shadow: 5px 8px 10px rgba(0, 0, 0, 0.33);
+  box-shadow: 5px 8px 10px rgba(0, 0, 0, 0.3);
   border-radius: calc(var(--bigmenu-button-border-radius) * var(--ratioSizeWin));
   border-color: transparent;
+  border-style: none;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr;
+  
 }
 
 .bigmenu-header {
@@ -71,7 +69,7 @@
   padding: 0;
   font-family: 'Yanone Kaffeesatz';
   font-style: normal;
-  letter-spacing: 1px;
+  letter-spacing: normal;
   font-weight: 600;
   font-size: calc(var(--bigmenu-header-font-size) * var(--ratioSizeWin));
   text-align: center;
@@ -103,7 +101,7 @@
 
 .bigmenu-button:focus .bigmenu-header,
 .bigmenu-button:hover .bigmenu-header {
-  color: rgba(255, 0, 0, 0.7);  
+  color: rgba(255, 0, 0, 0.8);
 }
 
 .bigmenu-button:focus .bigmenu-description,

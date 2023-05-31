@@ -27,15 +27,15 @@
   --bg-two-batt: 1122px;
   --bg-two-photo: 720px;
 
-  --intro-width: 530px;
-  --intro-height: 379px;
-  --intro-left: 140px;
-  --intro-top: 210px;
-  --intro-font-size: 23px;
+  --intro-width: 510px;
+  --intro-height: 380px;
+  --intro-left: 160px;
+  --intro-top: 200px;
+  --intro-font-size: 22.5px;
   --intro-line-height: 26px;
-  --intro-text-indent: 24px;
+  --intro-text-indent: 23px;
   --intro-text-shadow: 3px;
-  --intro-margin: 12.5px;
+  --intro-margin: 11px;
 }
 
 .main-intro-landscape {  
