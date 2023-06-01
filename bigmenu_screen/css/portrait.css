@@ -9,10 +9,14 @@
   --top-bigmenu-port-div: 85px;
 
   --bigmenu-button-margin: 18px;
-  --bigmenu-button-padding: 7px;
+  --bigmenu-button-padding: 8px;
   --bigmenu-button-border-radius: 10px;
-  --bigmenu-header-font-size: 39px;
-  --bigmenu-description-font-size: 24px;
+  --bigmenu-button-shadow-right: 5px;
+  --bigmenu-button-shadow-bottom: 8px;
+  --bigmenu-button-shadow-blur: 10px;
+
+  --bigmenu-header-font-size: 40px;
+  --bigmenu-description-font-size: 25px;
 }
 
 .main-bigmenu-portrait {
@@ -54,14 +58,13 @@
   margin: calc(var(--bigmenu-button-margin) * var(--ratioSizeWin));
   padding: calc(var(--bigmenu-button-padding) * var(--ratioSizeWin));
   background: rgba(120, 109, 89, 0.59);
-  box-shadow: 5px 8px 10px rgba(0, 0, 0, 0.33);
+  box-shadow: calc(var(--bigmenu-button-shadow-right) * var(--ratioSizeWin)) calc(var(--bigmenu-button-shadow-bottom) * var(--ratioSizeWin)) calc(var(--bigmenu-button-shadow-blur) * var(--ratioSizeWin)) rgba(0, 0, 0, 0.3);
   border-radius: calc(var(--bigmenu-button-border-radius) * var(--ratioSizeWin));
   border-color: transparent;
   border-style: none;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr;
-  
+  grid-template-rows: 1fr 2fr;
 }
 
 .bigmenu-header {
@@ -100,7 +103,7 @@
 
 .bigmenu-button:focus .bigmenu-header,
 .bigmenu-button:hover .bigmenu-header {
-  color: rgba(255, 0, 0, 0.7);
+  color: rgba(180, 0, 0, 0.9);
 }
 
 .bigmenu-button:focus .bigmenu-description,

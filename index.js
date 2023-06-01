@@ -12,14 +12,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const bigmenuText = [
     ["Пускові дроти", "Пускові (стартові) дроти для «прикурювання»"],
     ["Дроти для ПЗП", "Дроти для пуско-зарядних пристроїв"],
-    ["Дроти для зварювання", "Дроти з мідного кабеля для зварювальних апаратів (інверторів)"],
-    ["Перемички гнучкі", "Перемички на базі кабеля КГ з гумовою ізоляцією для з’єднання інверторів та акумуляторів"],
-    ["Дроти для мережі 220В", "Дроти для підключення інверторів до мережі змінного струму 220В"],
+    ["Зварювальні дроти", "Дроти з мідного кабеля для зварювальних апаратів (інверторів)"],
+    ["Перемички гнучкі", "Перемички з гумовою ізоляцією для під’єднання інверторів до акумуляторів "],
+    ["Дроти для 220В", "Дроти для підключення інверторів до мережі змінного струму 220В"],
     ["Шина мідна плетена", "Гнучкі перемички (шини) на базі мідної плетінки "],
+    ["Провід маси", "Для з'єднання мінуса акумулятора з корпусом в автотранспортних засобах"],
     ["Гнучка шина", "Набірні шини з ізоляцією виготовлені з тонких мідних полос"],
     ["Тверда шина", "Тверді перемички (шини) на базі мідної полоси"],
     ["«Крокодили»", "Зажими типу «Крокодил» для пускових та зварювальних дротів"],
-    ["Силові запобіжники", "Силові запобіжники ANL для постійного струму"],
     ["Як купити?", "інформація щодо оформлення замовлення"],
     ["Контакти", "контактна інформація виробника"],
   ];
@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentScreen = 1;
   let orientationLandscape;
   let historyJSW = [];
+  let selectedSmallMenu;
 
   const showIntroScreenLandscape = () => {
     const parentDiv = document.createElement("main");
@@ -67,16 +68,23 @@ document.addEventListener("DOMContentLoaded", () => {
     parentDiv.className = "main-bigmenu-landscape";
     document.querySelector("main").replaceWith(parentDiv);
     const introTextHTML = ["<div class='bigmenu-land-bg'><div class='bigmenu-land-div'>"];
-    bigmenuText.forEach((buttonMenu) => { introTextHTML.push(`<button class='bigmenu-button'><p class='bigmenu-header'>${buttonMenu[0]}</p><p class='bigmenu-description'>${buttonMenu[1]}</p></button>`); });
+
+    bigmenuText.forEach((buttonMenu, numberButton) => { introTextHTML.push(`<button class='bigmenu-button' id=button-${numberButton}><p class='bigmenu-header'>${buttonMenu[0]}</p><p class='bigmenu-description'>${buttonMenu[1]}</p></button>`); });
     introTextHTML.push("</div></div>");
     parentDiv.innerHTML = introTextHTML.join("");
     document.body.appendChild(parentDiv);
 
     console.log("Находимся на Большом меню - альбом");
-    document.querySelector('.main-bigmenu-landscape').addEventListener('click', () => {
-      console.log("Щелкнули / Присвоили значение / Перешли в Третье меню - альбом");
-      selectedItemMenu(3);
-    }, { once: 1 });
+
+    [...document.querySelectorAll('.bigmenu-button')].forEach(indexSmallMenu => {
+      indexSmallMenu.addEventListener('click', () => {
+        console.log("Щелкнули / Присвоили значение / Перешли в Третье меню - альбом - ", indexSmallMenu.id);
+        selectedSmallMenu = indexSmallMenu.id;
+        selectedItemMenu(3);
+      }), { once: 1 }
+    });
+
+
   };
 
   const showBigmenuScreenPortrait = () => {
@@ -84,46 +92,93 @@ document.addEventListener("DOMContentLoaded", () => {
     parentDiv.className = "main-bigmenu-portrait";
     document.querySelector("main").replaceWith(parentDiv);
     const introTextHTML = ["<div class='bigmenu-port-bg'><div class='bigmenu-port-div'>"];
-    bigmenuText.forEach((buttonMenu) => { introTextHTML.push(`<button class='bigmenu-button'><p class='bigmenu-header'>${buttonMenu[0]}</p><p class='bigmenu-description'>${buttonMenu[1]}</p></button>`); });
+
+    bigmenuText.forEach((buttonMenu, numberButton) => { introTextHTML.push(`<button class='bigmenu-button' id=button-${numberButton}><p class='bigmenu-header'>${buttonMenu[0]}</p><p class='bigmenu-description'>${buttonMenu[1]}</p></button>`); });
+
     introTextHTML.push("</div></div>");
     parentDiv.innerHTML = introTextHTML.join("");
     document.body.appendChild(parentDiv);
 
     console.log("Находимся на Большом меню - портрет");
-    document.querySelector('.main-bigmenu-portrait').addEventListener('click', () => {
-      console.log("Щелкнули / Присвоили значение / Перешли в Третье меню - портрет");
-      selectedItemMenu(3);
-    }, { once: 1 });
+
+    [...document.querySelectorAll('.bigmenu-button')].forEach(indexSmallMenu => {
+      indexSmallMenu.addEventListener('click', () => {
+        console.log("Щелкнули / Присвоили значение / Перешли в Третье меню - портрет - ", indexSmallMenu.id);
+        selectedSmallMenu = indexSmallMenu.id;
+        selectedItemMenu(3);
+      }), { once: 1 }
+    });
   };
 
   const showSmallmenuScreenLandscape = () => {
     const parentDiv = document.createElement("main");
     parentDiv.className = "main-small-landscape";
     document.querySelector("main").replaceWith(parentDiv);
-    const introTextHTML = ["<div class='smallmenu-landscape-div'></div>"];
+
+    const introTextHTML = ["<div class='smallmenu-landscape-bg'>"];
+    introTextHTML.push("<div class='smallmenu-land-div'>");
+
+    introTextHTML.push("<div class='smallmenu-left-bg'>");
+    introTextHTML.push("<div class='smallmenu-left-div'>");
+
+    bigmenuText.forEach((buttonMenu, numberButton) => { introTextHTML.push(`<button class='smallmenu-button' id=button-${numberButton}><p class='smallmenu-header'>${buttonMenu[0]}</p></button>`); });
+
+    introTextHTML.push("</div></div>");
+
+    introTextHTML.push("<div class='smallmenu-right-bg'>");
+    introTextHTML.push("<div class='smallmenu-right-div'>");
+    introTextHTML.push("</div></div>");
+
+    introTextHTML.push("</div></div > ");
     parentDiv.innerHTML = introTextHTML.join("");
     document.body.appendChild(parentDiv);
 
-    document.querySelector('.main-small-landscape').addEventListener('click', () => {
-      console.log("Щелкнули / Присвоили значение / ВЫБОР ЧЕГО-ТО В МАЛОМ МЕНЮ- альбом");
-      console.log("Временно - вернулись во второе меню - альбом");
-      selectedItemMenu(2);
-    }, { once: 1 });
+    document.querySelector(`#${selectedSmallMenu}`).className = 'selected-button';
+
+    [...document.querySelectorAll('.smallmenu-button')].forEach(indexSmallMenu => {
+      indexSmallMenu.addEventListener('click', () => {
+        console.log("Щелкнули / Присвоили значение / ВЫБОР ЧЕГО-ТО В МАЛОМ МЕНЮ- альбом - ", indexSmallMenu.id);
+        document.querySelector(`#${selectedSmallMenu}`).className = 'smallmenu-button';
+        selectedSmallMenu = indexSmallMenu.id;
+        document.querySelector(`#${selectedSmallMenu}`).className = 'selected-button';
+      })
+    });
+
   };
 
   const showSmallmenuScreenPortrait = () => {
     const parentDiv = document.createElement("main");
     parentDiv.className = "main-small-portrait";
     document.querySelector("main").replaceWith(parentDiv);
-    const introTextHTML = ["<div class='smallmenu-portrait-div'></div>"];
+
+    const introTextHTML = ["<div class='smallmenu-portrait-bg'>"];
+    introTextHTML.push("<div class='smallmenu-port-div'>");
+
+    introTextHTML.push("<div class='smallmenu-top-bg'>");
+    introTextHTML.push("<div class='smallmenu-top-div'>");
+
+    bigmenuText.forEach((buttonMenu, numberButton) => { introTextHTML.push(`<button class='smallmenu-button' id=button-${numberButton}><p class='smallmenu-header'>${buttonMenu[0]}</p></button>`); });
+
+    introTextHTML.push("</div></div>");
+
+    introTextHTML.push("<div class='smallmenu-bottom-bg'>");
+    introTextHTML.push("<div class='smallmenu-bottom-div'>");
+    introTextHTML.push("</div></div>");
+
+    introTextHTML.push("</div></div > ");
     parentDiv.innerHTML = introTextHTML.join("");
     document.body.appendChild(parentDiv);
 
-    document.querySelector('.main-small-portrait').addEventListener('click', () => {
-      console.log("Щелкнули / Присвоили значение / ВЫБОР ЧЕГО-ТО В МАЛОМ МЕНЮ- портрет");
-      console.log("Временно - вернулись во второе меню - портрет");
-      selectedItemMenu(2);
-    }, { once: 1 });
+    document.querySelector(`#${selectedSmallMenu}`).className = 'selected-button';
+
+    [...document.querySelectorAll('.smallmenu-button')].forEach(indexSmallMenu => {
+      indexSmallMenu.addEventListener('click', () => {
+        console.log("Щелкнули / Присвоили значение / ВЫБОР ЧЕГО-ТО В МАЛОМ МЕНЮ- портрет- ", indexSmallMenu.id);
+        document.querySelector(`#${selectedSmallMenu}`).className = 'smallmenu-button';
+        selectedSmallMenu = indexSmallMenu.id;
+        document.querySelector(`#${selectedSmallMenu}`).className = 'selected-button';
+      })
+    });
   };
 
   const selectedItemMenu = (selectItem) => {
@@ -132,13 +187,13 @@ document.addEventListener("DOMContentLoaded", () => {
     historyJSW.push(history.state);
     if (orientationLandscape) {
       switch (currentScreen) {
-        case 1:          
+        case 1:
           showIntroScreenLandscape();
           break;
-        case 2:          
+        case 2:
           showBigmenuScreenLandscape();
           break;
-        case 3:          
+        case 3:
           showSmallmenuScreenLandscape();
           break;
       }
@@ -154,7 +209,7 @@ document.addEventListener("DOMContentLoaded", () => {
           showSmallmenuScreenPortrait();
           break;
       }
-    }    
+    }
   }
 
   const resizeWindowApplication = () => {
@@ -192,14 +247,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  window.addEventListener('popstate', e => {    
-    // console.log("historyJSW - до перехода ", historyJSW);
-    // historyJSW.pop();
-    // selectedItemMenu(historyJSW[historyJSW.length-1]);
-    // historyJSW.pop();    
+  window.addEventListener('popstate', e => {
     selectedItemMenu(historyJSW[historyJSW.length - 2]);
-    historyJSW.splice(historyJSW.length-2, 2);
-    // console.log("historyJSW - после перехода ", historyJSW);
+    historyJSW.splice(historyJSW.length - 2, 2);
   });
 
 });

@@ -20,7 +20,7 @@
   --intro-left: 115px;
   --intro-top: 110px;
   --intro-font-size: 23.5px;
-  --intro-line-height: 28px;
+  --intro-line-height: 27px;
   --intro-text-shadow: 3px;
   --intro-margin: 8px;
 }
@@ -72,6 +72,7 @@
   font-family: 'Jura';
   font-style: normal;
   font-weight: 500;
+  letter-spacing: 0;
   font-size: calc(var(--intro-font-size) * var(--ratioSizeWin));
   line-height: calc(var(--intro-line-height) * var(--ratioSizeWin));
   text-align: left;

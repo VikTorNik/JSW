@@ -27,18 +27,17 @@
   --bg-two-batt: 1122px;
   --bg-two-photo: 720px;
 
-  --intro-width: 510px;
+  --intro-width: 490px;
   --intro-height: 380px;
-  --intro-left: 160px;
+  --intro-left: 175px;
   --intro-top: 200px;
-  --intro-font-size: 22.5px;
-  --intro-line-height: 26px;
-  --intro-text-indent: 23px;
+  --intro-font-size: 23px;
+  --intro-line-height: 24px;
   --intro-text-shadow: 3px;
-  --intro-margin: 11px;
+  --intro-margin: 9px;
 }
 
-.main-intro-landscape {  
+.main-intro-landscape {
   margin: 0;
   position: absolute;
   top: 50%;
@@ -49,7 +48,7 @@
   height: calc(var(--heightStandart) * var(--ratioSizeWin));
   display: grid;
   grid-template-columns: 1fr 1fr;
-  cursor: pointer;  
+  cursor: pointer;
 }
 
 .intro-left-landscape {
@@ -101,11 +100,10 @@
   font-family: 'Jura';
   font-style: normal;
   font-weight: 600;
+  letter-spacing: normal;
   font-size: calc(var(--intro-font-size) * var(--ratioSizeWin));
   line-height: calc(var(--intro-line-height) * var(--ratioSizeWin));
   text-align: right;
-  text-indent: calc(var(--intro-text-indent) * var(--ratioSizeWin));
-
   color: #474747;
 
   text-shadow: calc(var(--intro-text-shadow) * var(--ratioSizeWin)) calc(var(--intro-text-shadow) * var(--ratioSizeWin)) calc(var(--intro-text-shadow) * var(--ratioSizeWin)) rgba(0, 0, 0, 0.2);
