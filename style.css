@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Jura:wght@500;600&family=Space+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&family=Jura:wght@500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono&family=Yanone+Kaffeesatz:wght@500;600&display=swap');
 
 @import url("intro_screen/css/landscape.css") screen and (orientation: landscape);
@@ -8,11 +8,37 @@
 @import url("smallmenu_screen/css/landscape.css") screen and (orientation: landscape);
 @import url("smallmenu_screen/css/portrait.css") (orientation: portrait);
 
-html,
-body {
+
+:root {
   margin: 0;
   padding: 0;
-  background: rgb(157, 152, 123);
+
+  /* загальний фон */
+  --COLOR-SCHEME-01: rgb(157, 152, 123);
+  /* загальне освітлення відносно фону */
+  --COLOR-SCHEME-02: rgba(217, 217, 217, 0.21);
+  /* текст на вступній сторінці альбом / текст кнопки */
+  --COLOR-SCHEME-03: rgb(45, 30, 19);
+  /* текст на вступній сторінці портрет */
+  --COLOR-SCHEME-04: rgb(255, 251, 239);
+  /* фон кнопок */
+  --COLOR-SCHEME-05: rgba(120, 109, 89, 0.65);
+  /* фон середнього підменю */
+  --COLOR-SCHEME-06: rgba(138, 117, 99, 0.55); 
+  /* текст кнопок хідер у фокусі */
+  /* --COLOR-SCHEME-07: rgba(174, 1, 1, 0.9); */
+  /* --COLOR-SCHEME-07: rgba(0, 126, 4, 0.873); */
+
+  /* текст дескріпшен у фокусі */
+  --COLOR-SCHEME-08: rgba(49, 49, 47, 0.899);
+  /* текст заголовки підменю */
+  --COLOR-SCHEME-09: rgb(218, 212, 196);
+  /* фон вибраних кнопок (у фокусі) у великому і малому меню */  
+  --COLOR-SCHEME-10: rgba(17, 168, 22, 0.421);
+  /* текст вибраних кнопок (хідер) у великому і малому меню */
+  --COLOR-SCHEME-11: rgba(0, 5, 1, 0.654);
+
+  background: var(--COLOR-SCHEME-01);
 }
 
 *:focus {

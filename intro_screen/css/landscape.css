@@ -56,7 +56,7 @@
     url(../svg/jump.svg),
     url(../svg/jump_black_land.svg),
     url(../svg/battary_land.svg),
-    url(../svg/ellipse.svg) rgba(217, 217, 217, 0.21);
+    url(../svg/ellipse.svg) var(--COLOR-SCHEME-02);
   background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
   background-position:
     left calc(var(--left-bg-one-jump) * var(--ratioSizeWin)) top calc(var(--top-bg-one-jump) * var(--ratioSizeWin)),
@@ -104,7 +104,7 @@
   font-size: calc(var(--intro-font-size) * var(--ratioSizeWin));
   line-height: calc(var(--intro-line-height) * var(--ratioSizeWin));
   text-align: right;
-  color: #474747;
+  color: var(--COLOR-SCHEME-03);
 
   text-shadow: calc(var(--intro-text-shadow) * var(--ratioSizeWin)) calc(var(--intro-text-shadow) * var(--ratioSizeWin)) calc(var(--intro-text-shadow) * var(--ratioSizeWin)) rgba(0, 0, 0, 0.2);
 }

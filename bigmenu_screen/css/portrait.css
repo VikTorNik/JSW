@@ -29,7 +29,7 @@
   width: calc(var(--widthStandart) * var(--ratioSizeWin));
   height: calc(var(--heightStandart) * var(--ratioSizeWin));
   display: grid;
-  background: rgba(217, 217, 217, 0.21);
+  background: var(--COLOR-SCHEME-02);
 }
 
 .bigmenu-port-bg {
@@ -45,8 +45,8 @@
 .bigmenu-port-div {
   display: grid;
   position: relative;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(6, 1fr);
   width: calc(var(--width-bigmenu-port-div) * var(--ratioSizeWin));
   height: calc(var(--height-bigmenu-port-div) * var(--ratioSizeWin));
   left: calc(var(--left-bigmenu-port-div) * var(--ratioSizeWin));
@@ -57,7 +57,7 @@
   cursor: pointer;
   margin: calc(var(--bigmenu-button-margin) * var(--ratioSizeWin));
   padding: calc(var(--bigmenu-button-padding) * var(--ratioSizeWin));
-  background: rgba(120, 109, 89, 0.59);
+  background: var(--COLOR-SCHEME-05);
   box-shadow: calc(var(--bigmenu-button-shadow-right) * var(--ratioSizeWin)) calc(var(--bigmenu-button-shadow-bottom) * var(--ratioSizeWin)) calc(var(--bigmenu-button-shadow-blur) * var(--ratioSizeWin)) rgba(0, 0, 0, 0.3);
   border-radius: calc(var(--bigmenu-button-border-radius) * var(--ratioSizeWin));
   border-color: transparent;
@@ -76,7 +76,7 @@
   font-size: calc(var(--bigmenu-header-font-size) * var(--ratioSizeWin));
   text-align: center;
   align-self: center;
-  color: #31312F;
+  color: var(--COLOR-SCHEME-03);
 }
 
 .bigmenu-description {
@@ -90,23 +90,22 @@
   font-size: calc(var(--bigmenu-description-font-size) * var(--ratioSizeWin));
   text-align: center;
   align-self: center;
-  color: #31312F;
+  color: var(--COLOR-SCHEME-03);
 }
 
 .bigmenu-button:focus,
 .bigmenu-button:hover {
-  background-color: rgba(150, 140, 130, 0.5);
+  background-color: var(--COLOR-SCHEME-10);
   opacity: 0.9;
-  transform: scale(1.03);
-  border: 1.4px solid #655f55;
+  transform: scale(1.02);  
 }
 
 .bigmenu-button:focus .bigmenu-header,
 .bigmenu-button:hover .bigmenu-header {
-  color: rgba(180, 0, 0, 0.9);
+  color: var(--COLOR-SCHEME-11);
 }
 
 .bigmenu-button:focus .bigmenu-description,
 .bigmenu-button:hover .bigmenu-description {
-  color: rgba(49, 49, 47, 0.8);
+  color: var(--COLOR-SCHEME-08);
 }

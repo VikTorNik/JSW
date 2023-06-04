@@ -77,9 +77,9 @@
   line-height: calc(var(--intro-line-height) * var(--ratioSizeWin));
   text-align: left;
 
-  color: #FFFFFF;
+  color: var(--COLOR-SCHEME-04);
 
-  text-shadow: calc(var(--intro-text-shadow) * var(--ratioSizeWin)) calc(var(--intro-text-shadow) * var(--ratioSizeWin)) calc(var(--intro-text-shadow) * var(--ratioSizeWin)) rgba(0, 0, 0, 0.4);
+  text-shadow: calc(var(--intro-text-shadow) * var(--ratioSizeWin)) calc(var(--intro-text-shadow) * var(--ratioSizeWin)) calc(var(--intro-text-shadow) * var(--ratioSizeWin)) rgba(0, 0, 0, 0.5);
 }
 
 .intro-text-portrait p {

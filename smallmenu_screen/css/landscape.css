@@ -1,3 +1,8 @@
+@import url("land-01-menu-grid.css") screen and (orientation: landscape);
+@import url("land-left.css") screen and (orientation: landscape);
+@import url("land-middle.css") screen and (orientation: landscape);
+@import url("land-right.css") screen and (orientation: landscape);
+
 :root {
   --left-smallmenu-land: 0px;
   --top-smallmenu-land: 0px;
@@ -6,18 +11,7 @@
   --width-smallmenu-land-div: 1326px;
   --height-smallmenu-land-div: 625px;
   --left-smallmenu-land-div: 57px;
-  --top-smallmenu-land-div: 80px;
-
-  --margin-top-button: 4px;
-  --margin-left-button: 10px;
-  --smallmenu-button-border-radius: 5px;
-  --smallmenu-shadow-right: 3px;
-  --smallmenu-shadow-bottom: 3px;
-  --smallmenu-shadow-blur: 7px;
-
-  --smallmenu-header-margin: 10px;
-  --smallmenu-header-padding: 3px;
-  --smallmenu-header-font-size: 34px;
+  --top-smallmenu-land-div: 80px;  
 }
 
 .main-small-landscape {
@@ -30,7 +24,7 @@
   width: calc(var(--widthStandart) * var(--ratioSizeWin));
   height: calc(var(--heightStandart) * var(--ratioSizeWin));
   display: grid;
-  background: rgba(217, 217, 217, 0.21);
+  background: var(--COLOR-SCHEME-02);
 }
 
 .smallmenu-landscape-bg {
@@ -46,88 +40,11 @@
 .smallmenu-land-div {
   display: grid;
   position: relative;
-  grid-template-columns: 2fr 8fr;
+  grid-template-columns: 4fr 3fr 13fr;
+  grid-template-columns: 4fr 4fr 12fr;
   grid-template-rows: 1fr;
   width: calc(var(--width-smallmenu-land-div) * var(--ratioSizeWin));
   height: calc(var(--height-smallmenu-land-div) * var(--ratioSizeWin));
   left: calc(var(--left-smallmenu-land-div) * var(--ratioSizeWin));
   top: calc(var(--top-smallmenu-land-div) * var(--ratioSizeWin));
-}
-
-.smallmenu-left-bg {
-  background: rgba(151, 136, 126, 0.2);
-  display: inline-flex;
-}
-
-.smallmenu-left-div {
-  background-color: rgba(138, 117, 99, 0.2);
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
-
-.smallmenu-button {
-  cursor: pointer;
-  margin: calc(var(--margin-top-button) * var(--ratioSizeWin)) calc(var(--margin-left-button) * var(--ratioSizeWin));
-  padding: 0;
-  background: rgba(120, 109, 89, 0.7);
-  box-shadow: calc(var(--smallmenu-shadow-right) * var(--ratioSizeWin)) calc(var(--smallmenu-shadow-bottom) * var(--ratioSizeWin)) calc(var(--smallmenu-shadow-blur) * var(--ratioSizeWin)) rgba(0, 0, 0, 0.5);
-  border-radius: calc(var(--smallmenu-button-border-radius) * var(--ratioSizeWin));
-  border-color: transparent;
-  border-style: none;
-}
-
-.smallmenu-header {
-  margin: 0 calc(var(--smallmenu-header-margin) * var(--ratioSizeWin));
-  padding: calc(var(--smallmenu-header-padding) * var(--ratioSizeWin));
-  font-family: 'Yanone Kaffeesatz';
-  font-style: normal;
-  letter-spacing: normal;
-  font-weight: 600;
-  font-size: calc(var(--smallmenu-header-font-size) * var(--ratioSizeWin));
-  text-align: left;
-  color: #31312F;
-}
-
-.selected-button {
-  background: rgba(120, 109, 89, 0.35);
-  cursor: pointer;
-  margin: calc(var(--margin-top-button) * var(--ratioSizeWin)) calc(var(--margin-left-button) * var(--ratioSizeWin));
-  padding: 0;
-  box-shadow: calc(var(--smallmenu-shadow-right) * var(--ratioSizeWin)) calc(var(--smallmenu-shadow-bottom) * var(--ratioSizeWin)) calc(var(--smallmenu-shadow-blur) * var(--ratioSizeWin)) rgba(0, 0, 0, 0.5);
-  border-radius: calc(var(--smallmenu-button-border-radius) * var(--ratioSizeWin));
-  border-color: transparent;
-  border-style: none;
-}
-
-.selected-button .smallmenu-header {
-  color: rgba(180, 0, 0, 0.9);
-  margin: 0 calc(var(--smallmenu-header-margin) * var(--ratioSizeWin));
-  padding: calc(var(--smallmenu-header-padding) * var(--ratioSizeWin));
-  font-family: 'Yanone Kaffeesatz';
-  font-style: normal;
-  letter-spacing: normal;
-  font-weight: 600;
-  font-size: calc(var(--smallmenu-header-font-size) * var(--ratioSizeWin));
-  text-align: left;
-}
-
-.smallmenu-button:focus,
-.smallmenu-button:hover {
-  background: rgba(120, 109, 89, 0.35);
-}
-
-.smallmenu-button:focus .smallmenu-header,
-.smallmenu-button:hover .smallmenu-header {
-  color: rgba(180, 0, 0, 0.9);
-}
-
-.smallmenu-right-bg {
-  background: rgba(59, 54, 50, 0.3);
-  /* display: inline-flex; */
-}
-
-.smallmenu-right-div {
-  background: rgba(59, 54, 50, 0.1);
 }

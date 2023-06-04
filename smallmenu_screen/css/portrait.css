@@ -31,7 +31,7 @@
   width: calc(var(--widthStandart) * var(--ratioSizeWin));
   height: calc(var(--heightStandart) * var(--ratioSizeWin));
   display: grid;
-  background: rgba(217, 217, 217, 0.21);
+  background: var(--COLOR-SCHEME-02);
 }
 
 .smallmenu-portrait-bg {
@@ -61,7 +61,7 @@
 }
 
 .smallmenu-top-div {
-  background-color: rgba(138, 117, 99, 0.2);
+  background: rgba(138, 117, 99, 0.2);
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -74,7 +74,7 @@
   width: calc(var(--width-button) * var(--ratioSizeWin));
   margin: calc(var(--margin-top-button) * var(--ratioSizeWin)) calc(var(--margin-left-button) * var(--ratioSizeWin));
   padding: 0;
-  background: rgba(120, 109, 89, 0.7);
+  background: var(--COLOR-SCHEME-05);
   box-shadow: calc(var(--smallmenu-shadow-right) * var(--ratioSizeWin)) calc(var(--smallmenu-shadow-bottom) * var(--ratioSizeWin)) calc(var(--smallmenu-shadow-blur) * var(--ratioSizeWin)) rgba(0, 0, 0, 0.5);
   border-radius: calc(var(--smallmenu-button-border-radius) * var(--ratioSizeWin));
   border-color: transparent;
@@ -90,11 +90,11 @@
   font-weight: 600;
   font-size: calc(var(--smallmenu-header-font-size) * var(--ratioSizeWin));
   text-align: center;
-  color: #31312F;
+  color: var(--COLOR-SCHEME-03);
 }
 
 .selected-button {
-  background: rgba(120, 109, 89, 0.35);
+  background: var(--COLOR-SCHEME-06);
   cursor: pointer;
   width: calc(var(--width-button) * var(--ratioSizeWin));
   margin: calc(var(--margin-top-button) * var(--ratioSizeWin)) calc(var(--margin-left-button) * var(--ratioSizeWin));
@@ -106,7 +106,7 @@
 }
 
 .selected-button .smallmenu-header {
-  color: rgba(180, 0, 0, 0.9);
+  color: var(--COLOR-SCHEME-07);
   margin: 0 calc(var(--smallmenu-header-margin) * var(--ratioSizeWin));
   padding: calc(var(--smallmenu-header-padding) * var(--ratioSizeWin));
   font-family: 'Yanone Kaffeesatz';
@@ -119,17 +119,16 @@
 
 .smallmenu-button:focus,
 .smallmenu-button:hover {
-  background: rgba(120, 109, 89, 0.35);
+  background: var(--COLOR-SCHEME-06);
 }
 
 .smallmenu-button:focus .smallmenu-header,
 .smallmenu-button:hover .smallmenu-header {
-  color: rgba(180, 0, 0, 0.9);
+  color: var(--COLOR-SCHEME-07);
 }
 
 .smallmenu-bottom-bg {
-  background: rgba(59, 54, 50, 0.3);
-  /* display: inline-flex; */
+  background: rgba(59, 54, 50, 0.3);  
 }
 
 .smallmenu-bottom-div {

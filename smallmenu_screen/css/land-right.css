@@ -1,0 +1,10 @@
+.smallmenu-right-bg {
+  background: rgba(59, 54, 50, 0.1);
+}
+
+.smallmenu-right-div {
+  background: rgba(59, 54, 50, 0.3);
+  width: 100%;
+  height: calc(var(--height-smallmenu-land-div) * var(--ratioSizeWin));
+  display: grid;
+}

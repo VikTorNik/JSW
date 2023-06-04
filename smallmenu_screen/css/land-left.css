@@ -1,0 +1,102 @@
+:root {
+  --margin-top-button: 4px;
+  --margin-left-button: 10px;
+  --smallmenu-button-border-radius: 5px;
+  --smallmenu-shadow-right: 2px;
+  --smallmenu-shadow-bottom: 2px;
+  --smallmenu-shadow-blur: 7px;
+
+  --smallmenu-header-margin: 10px;
+  --smallmenu-header-padding: 3px;
+  --smallmenu-header-font-size: 34px;
+}
+
+.smallmenu-left-bg {
+  display: inline-flex;
+}
+
+.smallmenu-left-div {
+  background: rgba(138, 117, 99, 0.3);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.smallmenu-button {
+  cursor: pointer;
+  margin: calc(var(--margin-top-button) * var(--ratioSizeWin)) calc(var(--margin-left-button) * var(--ratioSizeWin));
+  padding: 0;
+  background: var(--COLOR-SCHEME-05);
+  box-shadow: calc(var(--smallmenu-shadow-right) * var(--ratioSizeWin)) calc(var(--smallmenu-shadow-bottom) * var(--ratioSizeWin)) calc(var(--smallmenu-shadow-blur) * var(--ratioSizeWin)) rgba(0, 0, 0, 0.5);
+  border-radius: calc(var(--smallmenu-button-border-radius) * var(--ratioSizeWin));
+  border-color: transparent;
+  border-style: none;
+}
+
+.smallmenu-button-select {
+  cursor: pointer;
+  margin: calc(var(--margin-top-button) * var(--ratioSizeWin)) calc(var(--margin-left-button) * var(--ratioSizeWin));
+  padding: 0;
+  background: var(--COLOR-SCHEME-05);
+  box-shadow: calc(var(--smallmenu-shadow-right) * var(--ratioSizeWin)) calc(var(--smallmenu-shadow-bottom) * var(--ratioSizeWin)) calc(var(--smallmenu-shadow-blur) * var(--ratioSizeWin)) rgba(0, 0, 0, 0.5);
+  border-radius: calc(var(--smallmenu-button-border-radius) * var(--ratioSizeWin));
+  border-color: transparent;
+  border-style: none;
+}
+
+.smallmenu-header {
+  margin: 0 calc(var(--smallmenu-header-margin) * var(--ratioSizeWin));
+  padding: calc(var(--smallmenu-header-padding) * var(--ratioSizeWin));
+  font-family: 'Yanone Kaffeesatz';
+  font-style: normal;
+  letter-spacing: normal;
+  font-weight: 600;
+  font-size: calc(var(--smallmenu-header-font-size) * var(--ratioSizeWin));
+  text-align: left;
+  color: var(--COLOR-SCHEME-03);
+}
+
+.smallmenu-header-select {
+  margin: 0 calc(var(--smallmenu-header-margin) * var(--ratioSizeWin));
+  padding: calc(var(--smallmenu-header-padding) * var(--ratioSizeWin));
+  font-family: 'Yanone Kaffeesatz';
+  font-style: normal;
+  letter-spacing: normal;
+  font-weight: 600;
+  font-size: calc(var(--smallmenu-header-font-size) * var(--ratioSizeWin) * 0.7);
+  text-align: left;
+  color: var(--COLOR-SCHEME-03);
+}
+
+.selected-button {
+  background: var(--COLOR-SCHEME-10);
+  margin: calc(var(--margin-top-button) * var(--ratioSizeWin)) calc(var(--margin-left-button) * var(--ratioSizeWin));
+  padding: 0;
+  box-shadow: calc(var(--smallmenu-shadow-right) * var(--ratioSizeWin)) calc(var(--smallmenu-shadow-bottom) * var(--ratioSizeWin)) calc(var(--smallmenu-shadow-blur) * var(--ratioSizeWin)) rgba(0, 0, 0, 0.5);
+  border-radius: calc(var(--smallmenu-button-border-radius) * var(--ratioSizeWin));
+  border-color: transparent;
+  border-style: none;
+}
+
+.selected-button .smallmenu-header {
+  color: var(--COLOR-SCHEME-11);
+  margin: 0 calc(var(--smallmenu-header-margin) * var(--ratioSizeWin));
+  padding: calc(var(--smallmenu-header-padding) * var(--ratioSizeWin));
+  font-family: 'Yanone Kaffeesatz';
+  font-style: normal;
+  letter-spacing: normal;
+  font-weight: 600;
+  font-size: calc(var(--smallmenu-header-font-size) * var(--ratioSizeWin));
+  text-align: left;
+}
+
+.smallmenu-button:focus,
+.smallmenu-button:hover {
+  background: var(--COLOR-SCHEME-10);
+}
+
+.smallmenu-button:focus .smallmenu-header,
+.smallmenu-button:hover .smallmenu-header {
+  color: var(--COLOR-SCHEME-11);
+}
