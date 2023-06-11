@@ -1,13 +1,13 @@
 import { ROOT } from "/index.js";
 // import { bigMenuText } from "/bigmenu_screen/js/bigmenu.js";
-import { buttonSubMenu } from "./object_buttonsubmenu.js";
-import { creationLeftCollumn } from "./land_left_collumn.js";
-import { creationMiddleCollumn, clickButtonMiddleCollumn } from "./land_middle_collumn.js";
-import { creationRightCollumn } from "./land_right_collumn.js";
+import { buttonSubMenu } from "/smallmenu_screen/js/object_buttonsubmenu.js";
+import { creationLeftCollumn } from "/smallmenu_screen/js/land_left_collumn.js";
+import { creationMiddleCollumn, clickButtonMiddleCollumn } from "/smallmenu_screen/js/land_middle_collumn.js";
+import { creationRightCollumn } from "/smallmenu_screen/js/land_right_collumn.js";
 
-import { creationTopRow } from "./port_top_row.js"; 
-import { creationMiddleRow, clickButtonMiddleRow } from "./port_middle_row.js";
-import { creationBottomRow } from "./port_bottom_row.js";
+import { creationTopRow } from "/smallmenu_screen/js/port_top_row.js"; 
+import { creationMiddleRow, clickButtonMiddleRow } from "/smallmenu_screen/js/port_middle_row.js";
+import { creationBottomRow } from "/smallmenu_screen/js/port_bottom_row.js";
 
 export const showSmallmenuScreen = (orientationScreenLandscape) => {
   ROOT.style.setProperty("--currentScreen", "3"); // поточна сторінка
