@@ -1,3 +1,8 @@
+@import url("port-00-menu-grid.css") (orientation: portrait);
+@import url("port-top.css") (orientation: portrait);
+@import url("port-middle.css") (orientation: portrait);
+@import url("port-bottom.css") (orientation: portrait);
+
 :root {
   --left-smallmenu-port: 0px;
   --top-smallmenu-port: 32px;
@@ -6,19 +11,7 @@
   --width-smallmenu-port-div: 690px;
   --height-smallmenu-port-div: 1250px;
   --left-smallmenu-port-div: 56px;
-  --top-smallmenu-port-div: 85px;
-
-  --width-button: 216px;
-  --margin-top-button: 8px;
-  --margin-left-button: 4px;
-  --smallmenu-button-border-radius: 5px;
-  --smallmenu-shadow-right: 3px;
-  --smallmenu-shadow-bottom: 3px;
-  --smallmenu-shadow-blur: 7px;
-
-  --smallmenu-header-margin: 4px;
-  --smallmenu-header-padding: 3px;
-  --smallmenu-header-font-size: 32px;
+  --top-smallmenu-port-div: 85px;  
 }
 
 .main-small-portrait {
@@ -48,89 +41,10 @@
   display: grid;
   position: relative;
   grid-template-columns: 1fr;
-  grid-template-rows: 2fr 8fr;
+  /* grid-template-rows: 4fr 5fr 14fr;   */
+  grid-template-rows: 12fr 3fr 4fr;
   width: calc(var(--width-smallmenu-port-div) * var(--ratioSizeWin));
   height: calc(var(--height-smallmenu-port-div) * var(--ratioSizeWin));
   left: calc(var(--left-smallmenu-port-div) * var(--ratioSizeWin));
   top: calc(var(--top-smallmenu-port-div) * var(--ratioSizeWin));
-}
-
-.smallmenu-top-bg {
-  background: rgba(151, 136, 126, 0.2);
-  display: inline-flex;
-}
-
-.smallmenu-top-div {
-  background: rgba(138, 117, 99, 0.2);
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-flow: row wrap;
-  justify-content: space-around;
-}
-
-.smallmenu-button {
-  cursor: pointer;
-  width: calc(var(--width-button) * var(--ratioSizeWin));
-  margin: calc(var(--margin-top-button) * var(--ratioSizeWin)) calc(var(--margin-left-button) * var(--ratioSizeWin));
-  padding: 0;
-  background: var(--COLOR-SCHEME-05);
-  box-shadow: calc(var(--smallmenu-shadow-right) * var(--ratioSizeWin)) calc(var(--smallmenu-shadow-bottom) * var(--ratioSizeWin)) calc(var(--smallmenu-shadow-blur) * var(--ratioSizeWin)) rgba(0, 0, 0, 0.5);
-  border-radius: calc(var(--smallmenu-button-border-radius) * var(--ratioSizeWin));
-  border-color: transparent;
-  border-style: none;
-}
-
-.smallmenu-header {
-  margin: 0 calc(var(--smallmenu-header-margin) * var(--ratioSizeWin));
-  padding: calc(var(--smallmenu-header-padding) * var(--ratioSizeWin));
-  font-family: 'Yanone Kaffeesatz';
-  font-style: normal;
-  letter-spacing: normal;
-  font-weight: 600;
-  font-size: calc(var(--smallmenu-header-font-size) * var(--ratioSizeWin));
-  text-align: center;
-  color: var(--COLOR-SCHEME-03);
-}
-
-.selected-button {
-  background: var(--COLOR-SCHEME-06);
-  cursor: pointer;
-  width: calc(var(--width-button) * var(--ratioSizeWin));
-  margin: calc(var(--margin-top-button) * var(--ratioSizeWin)) calc(var(--margin-left-button) * var(--ratioSizeWin));
-  padding: 0;
-  box-shadow: calc(var(--smallmenu-shadow-right) * var(--ratioSizeWin)) calc(var(--smallmenu-shadow-bottom) * var(--ratioSizeWin)) calc(var(--smallmenu-shadow-blur) * var(--ratioSizeWin)) rgba(0, 0, 0, 0.5);
-  border-radius: calc(var(--smallmenu-button-border-radius) * var(--ratioSizeWin));
-  border-color: transparent;
-  border-style: none;
-}
-
-.selected-button .smallmenu-header {
-  color: var(--COLOR-SCHEME-07);
-  margin: 0 calc(var(--smallmenu-header-margin) * var(--ratioSizeWin));
-  padding: calc(var(--smallmenu-header-padding) * var(--ratioSizeWin));
-  font-family: 'Yanone Kaffeesatz';
-  font-style: normal;
-  letter-spacing: normal;
-  font-weight: 600;
-  font-size: calc(var(--smallmenu-header-font-size) * var(--ratioSizeWin));
-  text-align: center;
-}
-
-.smallmenu-button:focus,
-.smallmenu-button:hover {
-  background: var(--COLOR-SCHEME-06);
-}
-
-.smallmenu-button:focus .smallmenu-header,
-.smallmenu-button:hover .smallmenu-header {
-  color: var(--COLOR-SCHEME-07);
-}
-
-.smallmenu-bottom-bg {
-  background: rgba(59, 54, 50, 0.3);  
-}
-
-.smallmenu-bottom-div {
-  background: rgba(59, 54, 50, 0.1);
 }

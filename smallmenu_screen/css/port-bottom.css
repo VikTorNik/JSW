@@ -1,0 +1,10 @@
+.smallmenu-bottom-bg {
+  background: rgba(59, 54, 50, 0.1);
+}
+
+.smallmenu-bottom-div {
+  background: rgba(59, 54, 50, 0.3);
+  height: 100%;
+  /* width: calc(var(--height-smallmenu-port-div) * var(--ratioSizeWin));   */
+  display: grid;
+}

@@ -1,3 +1,4 @@
+@import url("land-00-menu-grid.css") screen and (orientation: landscape);
 @import url("land-01-menu-grid.css") screen and (orientation: landscape);
 @import url("land-left.css") screen and (orientation: landscape);
 @import url("land-middle.css") screen and (orientation: landscape);
@@ -39,8 +40,7 @@
 
 .smallmenu-land-div {
   display: grid;
-  position: relative;
-  grid-template-columns: 4fr 3fr 13fr;
+  position: relative;  
   grid-template-columns: 4fr 4fr 12fr;
   grid-template-rows: 1fr;
   width: calc(var(--width-smallmenu-land-div) * var(--ratioSizeWin));
