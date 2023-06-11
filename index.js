@@ -1,5 +1,5 @@
-import { showIntroScreen } from "../intro_screen/js/intro.js";
-import { showBigmenuScreen } from "./bigmenu_screen/js/bigmenu.js";
+import { showIntroScreen } from "/intro_screen/js/intro.js";
+import { showBigmenuScreen } from "/bigmenu_screen/js/bigmenu.js";
 import { showSmallmenuScreen } from "/smallmenu_screen/js/smallmenu.js";
 export const ROOT = document.documentElement;
 
