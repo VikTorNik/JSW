@@ -90,4 +90,22 @@ window.addEventListener('popstate', () => {
   }
 });
 
+window.onload = function () {
+  hideAddressBar();
+  console.log("Скрыли бар - 1")  
+  window.addEventListener("orientationchange", function () {
+    hideAddressBar();
+  }, false);
+}
+
+function hideAddressBar() {
+  setTimeout(function () {
+    console.log("Скрыли бар - 2")  
+    document.body.style.height = window.outerHeight + 'px';
+    setTimeout(function () {
+      window.scrollTo(0, 1);
+    }, 1100);
+  }, 1000);
+  return false;
+}
 
