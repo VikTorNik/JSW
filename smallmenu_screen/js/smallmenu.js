@@ -1,6 +1,6 @@
 import { ROOT } from "/index.js";
-// import { bigMenuText } from "/bigmenu_screen/js/bigmenu.js";
-import { buttonSubMenu } from "/smallmenu_screen/js/object_buttonsubmenu.js";
+import { bigMenuText } from "/bigmenu_screen/js/bigmenu.js";
+import { buttonSubMenu } from "/smallmenu_screen/js/object_buttonSubMenu.js";
 import { creationLeftCollumn } from "/smallmenu_screen/js/land_left_collumn.js";
 import { creationMiddleCollumn, clickButtonMiddleCollumn } from "/smallmenu_screen/js/land_middle_collumn.js";
 import { creationRightCollumn } from "/smallmenu_screen/js/land_right_collumn.js";
