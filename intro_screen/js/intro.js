@@ -1,4 +1,4 @@
-import { ROOT, screenDispatcher } from "/index.js";
+import { ROOT, screenDispatcher } from "../../index.js";
 
 const introText = [
   "Професійні пускові дроти<br>українського виробництва.",

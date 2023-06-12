@@ -1,4 +1,4 @@
-import { bigMenuText } from "/bigmenu_screen/js/bigmenu.js";
+import { bigMenuText } from "../../bigmenu_screen/js/bigmenu.js";
 
 // формуємо ліву колонку з пунктами меню
 export const creationLeftCollumn = () => {

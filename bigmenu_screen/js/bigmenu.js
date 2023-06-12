@@ -1,4 +1,4 @@
-import { ROOT, screenDispatcher } from "/index.js";
+import { ROOT, screenDispatcher } from "../../index.js";
 
 export const bigMenuText = [
   ["Пускові дроти", "Пускові (стартові) дроти для «прикурювання»"],

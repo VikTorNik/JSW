@@ -1,5 +1,5 @@
-import { ROOT } from "/index.js";
-import { buttonSubMenu } from "/smallmenu_screen/js/object_buttonSubMenu.js";
+import { ROOT } from "../../index.js";
+import { buttonSubMenu } from "../../smallmenu_screen/js/object_buttonSubMenu.js";
 
 // формуємо середій рядок з фільтрами і сортуванням
 export const creationMiddleRow = (objectButtonMiddleMenu) => {
