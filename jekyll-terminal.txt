@@ -1,0 +1,149 @@
+E:\Project_Booster>jekyll new jsw --force
+Running bundle install in E:/Project_Booster/JSW...
+  Bundler: Fetching gem metadata from https://rubygems.org/............
+  Bundler: Resolving dependencies...
+  Bundler: Using bundler 2.4.14
+  Bundler: Using public_suffix 5.0.1
+  Bundler: Using colorator 1.1.0
+  Bundler: Using concurrent-ruby 1.2.2
+  Bundler: Using eventmachine 1.2.7
+  Bundler: Using http_parser.rb 0.8.0
+  Bundler: Using ffi 1.15.5
+  Bundler: Using forwardable-extended 2.6.0
+  Bundler: Using google-protobuf 3.23.2 (x64-mingw-ucrt)
+  Bundler: Using rb-fsevent 0.11.2
+  Bundler: Using rexml 3.2.5
+  Bundler: Using liquid 4.0.4
+  Bundler: Using mercenary 0.4.0
+  Bundler: Using rouge 4.1.2
+  Bundler: Using safe_yaml 1.0.5
+  Bundler: Using unicode-display_width 2.4.2
+  Bundler: Using webrick 1.8.1
+  Bundler: Using wdm 0.1.1
+  Bundler: Using em-websocket 0.5.3
+  Bundler: Using rb-inotify 0.10.1
+  Bundler: Using pathutil 0.16.2
+  Bundler: Using sass-embedded 1.63.3 (x64-mingw-ucrt)
+  Bundler: Using kramdown 2.4.0
+  Bundler: Using terminal-table 3.0.2
+  Bundler: Using listen 3.8.0
+  Bundler: Using jekyll-sass-converter 3.0.0
+  Bundler: Using kramdown-parser-gfm 1.1.0
+  Bundler: Using jekyll-watch 2.2.1
+  Bundler: Using i18n 1.14.1
+  Bundler: Using tzinfo 2.0.6
+  Bundler: Using addressable 2.8.4
+  Bundler: Using tzinfo-data 1.2023.3
+  Bundler: Using jekyll 4.3.2
+  Bundler: Using jekyll-feed 0.17.0
+  Bundler: Using jekyll-seo-tag 2.8.0
+  Bundler: Using minima 2.5.1
+  Bundler: Bundle complete! 7 Gemfile dependencies, 36 gems now installed.
+  Bundler: Use `bundle info [gemname]` to see where a bundled gem is installed.
+New jekyll site installed in E:/Project_Booster/JSW.
+
+E:\Project_Booster>cd JSW
+
+E:\Project_Booster\JSW>bundle exec jekyll serve --livereload
+Configuration file: E:/Project_Booster/JSW/_config.yml
+            Source: E:/Project_Booster/JSW
+       Destination: E:/Project_Booster/JSW/_site
+ Incremental build: disabled. Enable with --incremental
+      Generating...
+       Jekyll Feed: Generating feed for posts
+Deprecation Warning: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div($spacing-unit, 2) or calc($spacing-unit / 2)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+   ╷
+40 │   margin-bottom: $spacing-unit / 2;
+   │                  ^^^^^^^^^^^^^^^^^
+   ╵
+    ..\..\..\..\minima-2.5.1\_sass\minima\_base.scss 40:18  @import
+    minima.scss 48:3                                        @import
+    E:\Project_Booster\JSW\assets\main.scss 1:9             root stylesheet
+Deprecation Warning: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div($spacing-unit, 2) or calc($spacing-unit / 2)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+    ╷
+134 │   padding-left: $spacing-unit / 2;
+    │                 ^^^^^^^^^^^^^^^^^
+    ╵
+    ..\..\..\..\minima-2.5.1\_sass\minima\_base.scss 134:17  @import
+    minima.scss 48:3                                         @import
+    E:\Project_Booster\JSW\assets\main.scss 1:9              root stylesheet
+Deprecation Warning: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div($spacing-unit, 2) or calc($spacing-unit / 2)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+    ╷
+189 │     padding-right: $spacing-unit / 2;
+    │                    ^^^^^^^^^^^^^^^^^
+    ╵
+    ..\..\..\..\minima-2.5.1\_sass\minima\_base.scss 189:20  @content
+    minima.scss 38:5                                         media-query()
+    ..\..\..\..\minima-2.5.1\_sass\minima\_base.scss 186:3   @import
+    minima.scss 48:3                                         @import
+    E:\Project_Booster\JSW\assets\main.scss 1:9              root stylesheet
+Deprecation Warning: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div($spacing-unit, 2) or calc($spacing-unit / 2)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+    ╷
+190 │     padding-left: $spacing-unit / 2;
+    │                   ^^^^^^^^^^^^^^^^^
+    ╵
+    ..\..\..\..\minima-2.5.1\_sass\minima\_base.scss 190:19  @content
+    minima.scss 38:5                                         media-query()
+    ..\..\..\..\minima-2.5.1\_sass\minima\_base.scss 186:3   @import
+    minima.scss 48:3                                         @import
+    E:\Project_Booster\JSW\assets\main.scss 1:9              root stylesheet
+Deprecation Warning: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div($spacing-unit, 3) or calc($spacing-unit / 3)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+    ╷
+244 │     padding: ($spacing-unit / 3) ($spacing-unit / 2);
+    │               ^^^^^^^^^^^^^^^^^
+    ╵
+    ..\..\..\..\minima-2.5.1\_sass\minima\_base.scss 244:15  @import
+    minima.scss 48:3                                         @import
+    E:\Project_Booster\JSW\assets\main.scss 1:9              root stylesheet
+Warning: 6 repetitive deprecation warnings omitted.
+Run in verbose mode to see all warnings.
+          Conflict: The following destination is shared by multiple files.
+                    The written file may end up with unexpected contents.
+                    E:/Project_Booster/JSW/_site/404.html
+                     - 404.html
+                     - jsw/404.html
+
+          Conflict: The following destination is shared by multiple files.
+                    The written file may end up with unexpected contents.
+                    E:/Project_Booster/JSW/_site/about/index.html
+                     - about.markdown
+                     - jsw/about.markdown
+
+          Conflict: The following destination is shared by multiple files.
+                    The written file may end up with unexpected contents.
+                    E:/Project_Booster/JSW/_site/index.html
+                     - index.markdown
+                     - E:/Project_Booster/JSW/index.html
+
+                    done in 1.064 seconds.
+ Auto-regeneration: enabled for 'E:/Project_Booster/JSW'
+LiveReload address: http://127.0.0.1:35729
+    Server address: http://127.0.0.1:4000/
+  Server running... press ctrl-c to stop.
+        LiveReload: Browser connected
+[2023-06-12 15:59:03] ERROR `/favicon.ico' not found.
