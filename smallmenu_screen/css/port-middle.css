@@ -76,3 +76,10 @@
   color: var(--COLOR-SCHEME-09);
   align-self: center;
 }
+
+.middle-button:focus,
+.middle-button-selected:focus,
+.middle-button:hover,
+.middle-button-selected:hover {
+  background: var(--COLOR-SCHEME-12);
+}

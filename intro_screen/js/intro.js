@@ -1,4 +1,4 @@
-import { ROOT, screenDispatcher } from "../../index.js";
+import { ROOT, screenDispatcher, INTRO_SCREEN, BIGMENU_SCREEN } from "../../index.js";
 
 const introText = [
   "Професійні пускові дроти<br>українського виробництва.",
@@ -8,7 +8,7 @@ const introText = [
 ];
 
 export const showIntroScreen = (orientationScreenLandscape) => {
-  ROOT.style.setProperty("--currentScreen", "1"); // поточний екран
+  ROOT.style.setProperty("--currentScreen", INTRO_SCREEN); // поточний екран
   if (orientationScreenLandscape) { createDOMIntro("main-intro-landscape", "<div class='intro-left-landscape'><div class='intro-text-landscape'>", "</div></div><div class='intro-right-landscape'></div>"); }
   else { createDOMIntro("main-intro-portrait", "<div class='intro-portrait'><div class='intro-text-portrait'>", "</div></div>"); }
 }
@@ -24,6 +24,6 @@ const createDOMIntro = (mainOrientation, openDiv, closeDiv) => {
   document.body.appendChild(parentDiv);
 
   document.querySelector(`.${mainOrientation}`).addEventListener('click', () => {
-    screenDispatcher("2", false);
+    screenDispatcher(BIGMENU_SCREEN, false);
   }, { once: 1 });
 };

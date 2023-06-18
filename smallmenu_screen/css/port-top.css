@@ -17,7 +17,6 @@
 }
 
 .smallmenu-top-div {
-  /* background: rgba(138, 117, 99, 0.2); */
   background: var(--COLOR-SCHEME-07);
   width: 100%;
   display: flex;

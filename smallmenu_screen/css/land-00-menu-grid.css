@@ -1,8 +1,11 @@
 #middle_button_000 {
+  grid-area: 1 / 1 / 2 / 4;
+  /* 
+  grid-row-start: 1;  
   grid-column-start: 1;
-  grid-column-end: 4;
-  grid-row-start: 1;
   grid-row-end: 2;
+  grid-column-end: 4;  
+  */
 }
 
 #middle_button_001 {

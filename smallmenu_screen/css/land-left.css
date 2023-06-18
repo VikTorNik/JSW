@@ -72,7 +72,7 @@
 
 .smallmenu-button:focus,
 .smallmenu-button:hover {
-  background: var(--COLOR-SCHEME-10);
+  background: var(--COLOR-SCHEME-10);  
 }
 
 .smallmenu-button:focus .smallmenu-header,

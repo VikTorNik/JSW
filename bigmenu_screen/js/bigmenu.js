@@ -1,4 +1,4 @@
-import { ROOT, screenDispatcher } from "../../index.js";
+import { ROOT, screenDispatcher, BIGMENU_SCREEN, SMALLMENU_SCREEN } from "../../index.js";
 
 export const bigMenuText = [
   ["Пускові дроти", "Пускові (стартові) дроти для «прикурювання»"],
@@ -16,7 +16,7 @@ export const bigMenuText = [
 ];
 
 export const showBigmenuScreen = (orientationScreenLandscape) => {
-  ROOT.style.setProperty("--currentScreen", "2"); // поточний екран
+  ROOT.style.setProperty("--currentScreen", BIGMENU_SCREEN); // поточний екран
   if (orientationScreenLandscape) { createDOMBigmenu("main-bigmenu-landscape", "<div class='bigmenu-land-bg'><div class='bigmenu-land-div'>"); }
   else { createDOMBigmenu("main-bigmenu-portrait", "<div class='bigmenu-port-bg'><div class='bigmenu-port-div'>"); }
 }
@@ -35,7 +35,7 @@ const createDOMBigmenu = (mainOrientation, openDiv) => {
   [...document.querySelectorAll('.bigmenu-button')].forEach(indexSmallMenu => {
     indexSmallMenu.addEventListener('click', () => {
       ROOT.style.setProperty("--currentMenu", indexSmallMenu.id); // вибране меню      
-      screenDispatcher("3", false);
+      screenDispatcher(SMALLMENU_SCREEN, false);
     }), { once: 1 }
   });
 };

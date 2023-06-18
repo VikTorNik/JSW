@@ -1,10 +1,67 @@
 .smallmenu-right-bg {
   background: rgba(59, 54, 50, 0.1);
+
 }
 
 .smallmenu-right-div {
   background: rgba(59, 54, 50, 0.3);
   width: 100%;
   height: calc(var(--height-smallmenu-land-div) * var(--ratioSizeWin));
+  /* display: grid;
+  grid-template-columns: 1fr 1fr; */
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+}
+
+.div-button-product {
+  cursor: pointer;
+  width: 360px;
+  height: 110px;
+  padding: 10px;
   display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: rgba(17, 178, 42, 0.3);
+  margin: 7px;
+
+
+  box-shadow: 4px 5px 10px rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  border-color: transparent;
+  border-style: none;
+}
+
+.div-image-product {
+  background: rgba(19, 124, 26, 0.791);
+  /* padding: 10px; */
+}
+
+.image-product {
+  /* width: 120px; */
+  height: 110px;
+}
+
+.div-description-product {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 7px;
+}
+
+.paragraph-header {
+  margin: 0;
+  font-family: 'Yanone Kaffeesatz';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  color: var(--COLOR-SCHEME-03);
+}
+
+.paragraph-value {
+  margin: 0;
+  font-family: 'Yanone Kaffeesatz';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  text-align: right;
+  color: var(--COLOR-SCHEME-03);
 }
