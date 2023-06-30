@@ -1,8 +1,19 @@
+@import url("landscape-first.css") screen and (orientation: landscape);
+@import url("landscape-second.css") screen and (orientation: landscape);
+@import url("landscape-third.css") screen and (orientation: landscape);
+
 @import url("land-00-menu-grid.css") screen and (orientation: landscape);
 @import url("land-01-menu-grid.css") screen and (orientation: landscape);
-@import url("land-left.css") screen and (orientation: landscape);
-@import url("land-middle.css") screen and (orientation: landscape);
-@import url("land-right.css") screen and (orientation: landscape);
+@import url("land-02-menu-grid.css") screen and (orientation: landscape);
+@import url("land-03-menu-grid.css") screen and (orientation: landscape);
+@import url("land-04-menu-grid.css") screen and (orientation: landscape);
+@import url("land-05-menu-grid.css") screen and (orientation: landscape);
+@import url("land-06-menu-grid.css") screen and (orientation: landscape);
+@import url("land-07-menu-grid.css") screen and (orientation: landscape);
+@import url("land-08-menu-grid.css") screen and (orientation: landscape);
+@import url("land-09-menu-grid.css") screen and (orientation: landscape);
+@import url("land-10-menu-grid.css") screen and (orientation: landscape);
+@import url("land-11-menu-grid.css") screen and (orientation: landscape);
 
 :root {
   --left-smallmenu-land: 0px;
@@ -46,5 +57,5 @@
   width: calc(var(--width-smallmenu-land-div) * var(--ratioSizeWin));
   height: calc(var(--height-smallmenu-land-div) * var(--ratioSizeWin));
   left: calc(var(--left-smallmenu-land-div) * var(--ratioSizeWin));
-  top: calc(var(--top-smallmenu-land-div) * var(--ratioSizeWin));
+  top: calc(var(--top-smallmenu-land-div) * var(--ratioSizeWin));    
 }

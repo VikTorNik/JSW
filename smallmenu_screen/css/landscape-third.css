@@ -1,0 +1,91 @@
+:root {
+  --width-button-product: 360px;
+  --height-button-product: 165px;
+  --padding-button-product: 10px;
+  --margin-button-product: 7px;
+  --radius-button-product: 7px;
+  --box-shadow-param-first: 4px;
+  --box-shadow-param-second: 5px;
+  --box-shadow-param-third: 10px;
+  --padding-description-product: 14px;
+  --height-image-product: 125px;
+  --border-image-product: 2px;
+  --fontsize-paragraph: 24px;
+}
+
+.smallmenu-third-land-div {
+  background: rgba(59, 54, 50, 0.3);
+  width: 100%;
+  height: calc(var(--height-smallmenu-land-div) * var(--ratioSizeWin));
+  /* display: grid;
+  grid-template-columns: 1fr 1fr; */
+  display: flex;
+  flex-wrap: wrap;
+  /* flex-direction: row; */
+  align-content: flex-start;
+  overflow-y: scroll;
+  overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  border-radius: 10px;
+  /* margin: 4px;
+    padding: 4px; */
+}
+
+.div-button-product {
+  cursor: pointer;
+  width: calc(var(--width-button-product) * var(--ratioSizeWin));
+  height: calc(var(--height-button-product) * var(--ratioSizeWin));
+  padding: calc(var(--padding-button-product) * var(--ratioSizeWin));
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  background: rgba(97, 201, 112, 0.211);
+  margin: calc(var(--margin-button-product) * var(--ratioSizeWin));
+  box-shadow: calc(var(--box-shadow-param-first) * var(--ratioSizeWin)) calc(var(--box-shadow-param-second) * var(--ratioSizeWin)) calc(var(--box-shadow-param-third) * var(--ratioSizeWin)) rgba(0, 0, 0, 0.4);
+  border-radius: calc(var(--radius-button-product) * var(--ratioSizeWin));
+}
+
+.div-button-product:hover,
+.div-button-product:focus {
+  background: var(--COLOR-SCHEME-10);
+}
+
+.div-image-product {
+  align-self: center;
+  justify-content: center;
+  display: flex;
+}
+
+.image-product {
+  height: calc(var(--height-image-product) * var(--ratioSizeWin));
+  border: calc(var(--border-image-product) * var(--ratioSizeWin));
+  border-color: var(--COLOR-SCHEME-06);
+  border-style: inset;
+  box-shadow: calc(var(--box-shadow-param-first) * var(--ratioSizeWin)) calc(var(--box-shadow-param-second) * var(--ratioSizeWin)) calc(var(--box-shadow-param-third) * var(--ratioSizeWin)) rgba(0, 0, 0, 0.4);
+}
+
+.div-description-product {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  padding: calc(var(--padding-description-product) * var(--ratioSizeWin));
+}
+
+.paragraph-header {
+  margin: 0;
+  font-family: 'Yanone Kaffeesatz';
+  font-style: normal;
+  font-weight: 400;
+  font-size: calc(var(--fontsize-paragraph) * var(--ratioSizeWin));
+  text-align: left;
+  color: var(--COLOR-SCHEME-03);
+}
+
+.paragraph-value {
+  margin: 0;
+  font-family: 'Yanone Kaffeesatz';
+  font-style: normal;
+  font-weight: 400;
+  font-size: calc(var(--fontsize-paragraph) * var(--ratioSizeWin));
+  text-align: right;
+  color: var(--COLOR-SCHEME-03);
+}

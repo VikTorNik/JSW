@@ -1,0 +1,80 @@
+:root {
+  --margin-top-button: 3.5px;
+  --margin-left-button: 10px;
+  --smallmenu-button-border-radius: 5px;
+  --smallmenu-shadow-right: 2px;
+  --smallmenu-shadow-bottom: 2px;
+  --smallmenu-shadow-blur: 7px;
+
+  --smallmenu-header-margin: 10px;
+  --smallmenu-header-padding: 3px;
+  --smallmenu-header-font-size: 32px;
+}
+
+.smallmenu-first-land-bg {
+  display: inline-flex;      
+}
+
+.smallmenu-first-land-div {  
+  background: var(--COLOR-SCHEME-07);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border-radius: 7px;
+}
+
+.smallmenu-button {
+  cursor: pointer;
+  margin: calc(var(--margin-top-button) * var(--ratioSizeWin)) calc(var(--margin-left-button) * var(--ratioSizeWin));
+  padding: 0;
+  background: var(--COLOR-SCHEME-05);
+  box-shadow: calc(var(--smallmenu-shadow-right) * var(--ratioSizeWin)) calc(var(--smallmenu-shadow-bottom) * var(--ratioSizeWin)) calc(var(--smallmenu-shadow-blur) * var(--ratioSizeWin)) rgba(0, 0, 0, 0.5);
+  border-radius: calc(var(--smallmenu-button-border-radius) * var(--ratioSizeWin));
+  border-color: transparent;
+  border-style: none;
+}
+
+.smallmenu-header {
+  color: var(--COLOR-SCHEME-03);
+  margin: 0 calc(var(--smallmenu-header-margin) * var(--ratioSizeWin));
+  padding: calc(var(--smallmenu-header-padding) * var(--ratioSizeWin));
+  font-family: 'Yanone Kaffeesatz';
+  font-style: normal;
+  letter-spacing: normal;
+  font-weight: 600;
+  font-size: calc(var(--smallmenu-header-font-size) * var(--ratioSizeWin));
+  text-align: left;  
+}
+
+.selected-button {
+  background: var(--COLOR-SCHEME-10);
+  margin: calc(var(--margin-top-button) * var(--ratioSizeWin)) calc(var(--margin-left-button) * var(--ratioSizeWin));
+  padding: 0;
+  box-shadow: calc(var(--smallmenu-shadow-right) * var(--ratioSizeWin)) calc(var(--smallmenu-shadow-bottom) * var(--ratioSizeWin)) calc(var(--smallmenu-shadow-blur) * var(--ratioSizeWin)) rgba(0, 0, 0, 0.5);
+  border-radius: calc(var(--smallmenu-button-border-radius) * var(--ratioSizeWin));
+  border-color: transparent;
+  border-style: none;
+}
+
+.selected-button .smallmenu-header {
+  color: var(--COLOR-SCHEME-11);  
+  margin: 0 calc(var(--smallmenu-header-margin) * var(--ratioSizeWin));
+  padding: calc(var(--smallmenu-header-padding) * var(--ratioSizeWin));
+  font-family: 'Yanone Kaffeesatz';
+  font-style: normal;
+  letter-spacing: normal;
+  font-weight: 600;
+  font-size: calc(var(--smallmenu-header-font-size) * var(--ratioSizeWin));
+  text-align: left;
+}
+
+.smallmenu-button:focus,
+.smallmenu-button:hover {
+  background: var(--COLOR-SCHEME-10);  
+}
+
+.smallmenu-button:focus .smallmenu-header,
+.smallmenu-button:hover .smallmenu-header {
+  color: var(--COLOR-SCHEME-11);
+}

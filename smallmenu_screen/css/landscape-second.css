@@ -1,0 +1,113 @@
+:root {
+  --second-button-header-font-size: 22px;
+  --second-header-font-size: 20px;
+  --padding-font: 0px; /* потрібно збільшити щоб центрувати текст на кнопках */
+  --letter-spacing-font: 1px;
+  --padding-header: 4px;
+  --margin-header: 12px;
+  --paragraph-information-font-size: 30px;
+  --paragraph-information-margin: 20px;
+}
+
+.smallmenu-second-div {
+  background: var(--COLOR-SCHEME-06);
+  width: 100%;
+  height: calc(var(--height-smallmenu-land-div) * var(--ratioSizeWin));
+  
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  border-radius: 7px;
+  /* margin: 4px;
+    padding: 4px; */
+}
+
+.second-button {
+  cursor: pointer;
+  padding: 0;
+  margin: calc(var(--margin-top-button) * var(--ratioSizeWin) * 1.9) calc(var(--margin-top-button) * var(--ratioSizeWin) * 2.6);
+  background: var(--COLOR-SCHEME-05);
+  box-shadow: calc(var(--smallmenu-shadow-right) * var(--ratioSizeWin)) calc(var(--smallmenu-shadow-bottom) * var(--ratioSizeWin)) calc(var(--smallmenu-shadow-blur) * var(--ratioSizeWin)) rgba(0, 0, 0, 0.4);
+  border-radius: calc(var(--smallmenu-button-border-radius) * var(--ratioSizeWin));
+  border-color: transparent;
+  border-style: none;
+}
+
+.second-button-header {
+  margin: 0;
+  padding: calc(var(--padding-font) * var(--ratioSizeWin)) 0 0 0;
+  font-family: 'Yanone Kaffeesatz';
+  font-style: normal;
+  letter-spacing: calc(var(--letter-spacing-font) * var(--ratioSizeWin));
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: calc(var(--second-button-header-font-size) * var(--ratioSizeWin));
+  color: var(--COLOR-SCHEME-03);
+}
+
+.second-button-selected {
+  cursor: pointer;
+  padding: 0;
+  margin: calc(var(--margin-top-button) * var(--ratioSizeWin) * 1.9) calc(var(--margin-top-button) * var(--ratioSizeWin) * 2.6);
+  background: var(--COLOR-SCHEME-10);
+  box-shadow: calc(var(--smallmenu-shadow-right) * var(--ratioSizeWin)) calc(var(--smallmenu-shadow-bottom) * var(--ratioSizeWin)) calc(var(--smallmenu-shadow-blur) * var(--ratioSizeWin)) rgba(0, 0, 0, 0.4);
+  border-radius: calc(var(--smallmenu-button-border-radius) * var(--ratioSizeWin));
+  border-color: transparent;
+  border-style: none;
+}
+
+.second-button-header-selected {
+  margin: 0;
+  padding: calc(var(--padding-font) * var(--ratioSizeWin)) 0 0 0;
+  font-family: 'Yanone Kaffeesatz';
+  font-style: normal;
+  letter-spacing: calc(var(--letter-spacing-font) * var(--ratioSizeWin));
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: calc(var(--second-button-header-font-size) * var(--ratioSizeWin));
+  color: var(--COLOR-SCHEME-11);
+}
+
+.second-header {
+  padding: calc(var(--padding-header) * var(--ratioSizeWin)) 0 0 0;
+  margin: 0 0 0 calc(var(--margin-header) * var(--ratioSizeWin));
+  font-family: 'Yanone Kaffeesatz';
+  font-style: normal;
+  letter-spacing: calc(var(--letter-spacing-font) * var(--ratioSizeWin) * 1.5);
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: calc(var(--second-header-font-size) * var(--ratioSizeWin));
+  color: var(--COLOR-SCHEME-09);
+  align-self: center;
+}
+
+.second-button-desabled {
+  cursor: not-allowed;
+  opacity: 0.25;
+  padding: 0;
+  margin: calc(var(--margin-top-button) * var(--ratioSizeWin) * 1.95) calc(var(--margin-top-button) * var(--ratioSizeWin) * 2.6);
+  box-shadow: calc(var(--smallmenu-shadow-right) * var(--ratioSizeWin)) calc(var(--smallmenu-shadow-bottom) * var(--ratioSizeWin)) calc(var(--smallmenu-shadow-blur) * var(--ratioSizeWin)) rgba(0, 0, 0, 0.4);
+  border-radius: calc(var(--smallmenu-button-border-radius) * var(--ratioSizeWin));
+  border-color: transparent;
+  border-style: none;
+}
+
+/* .div-information-product {  
+} */
+
+.paragraph-information {
+  margin: calc(var(--paragraph-information-margin) * var(--ratioSizeWin));
+  font-family: 'Yanone Kaffeesatz';
+  font-style: normal;
+  font-weight: 400;
+  font-size: calc(var(--paragraph-information-font-size) * var(--ratioSizeWin));
+  line-height: 1.05;
+  text-indent: calc(1.5 * var(--paragraph-information-margin) * var(--ratioSizeWin));
+  color: var(--COLOR-SCHEME-11);
+}
+
+.second-button:focus,
+.second-button-selected:focus,
+.second-button:hover,
+.second-button-selected:hover {
+  background: var(--COLOR-SCHEME-12);
+}

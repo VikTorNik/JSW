@@ -1,0 +1,179 @@
+#middle_button_500 {
+  grid-area: 1 / 1 / 2 / 7;
+}
+
+#middle_button_501 {
+  grid-area: 1 / 7 / 2 / 13;
+}
+
+#p_header_502 {
+  grid-area: 2 / 1 / 3 / 13;
+}
+
+#middle_button_502 {
+  grid-area: 3 / 1 / 4 / 7;
+}
+
+#middle_button_503 {
+  grid-area: 3 / 7 / 4 / 13;
+}
+
+#p_header_504 {
+  grid-area: 1 / 13 / 2 / 25;
+}
+
+#middle_button_504 {
+  grid-area: 2 / 13 / 3 / 16;
+}
+
+#middle_button_505 {
+  grid-area: 2 / 16 / 3 / 19;
+}
+
+#middle_button_506 {
+  grid-area: 2 / 19 / 3 / 22;
+}
+
+#middle_button_507 {
+  grid-area: 2 / 22 / 3 / 25;
+}
+
+#middle_button_508 {
+  grid-area: 3 / 13 / 4 / 16;
+}
+
+#middle_button_509 {
+  grid-area: 3 / 16 / 4 / 19;
+}
+
+#middle_button_510 {
+  grid-area: 3 / 19 / 4 / 22;
+}
+
+#middle_button_511 {
+  grid-area: 3 / 22 / 4 / 25;
+}
+
+#middle_button_512 {
+  grid-area: 4 / 13 / 5 / 16;
+}
+
+#middle_button_513 {
+  grid-area: 4 / 16 / 5 / 19;
+}
+
+#middle_button_514 {
+  grid-area: 4 / 19 / 5 / 22;
+}
+
+#middle_button_515 {
+  grid-area: 4 / 22 / 5 / 25;
+}
+
+#middle_button_516 {
+  grid-area: 5 / 13 / 6 / 16;
+}
+
+#middle_button_517 {
+  grid-area: 5 / 16 / 6 / 19;
+}
+
+#middle_button_518 {
+  grid-area: 5 / 19 / 6 / 22;
+}
+
+#middle_button_519 {
+  grid-area: 5 / 22 / 6 / 25;
+}
+
+#middle_button_520 {
+  grid-area: 6 / 13 / 7/ 16;
+}
+
+#middle_button_521 {
+  grid-area: 6 / 16 / 7 / 19;
+}
+
+#middle_button_522 {
+  grid-area: 6 / 19 / 7 / 22;
+}
+
+#middle_button_523 {
+  grid-area: 6 / 22 / 7 / 25;
+}
+
+#p_header_524 {
+  grid-area: 4 / 1 / 5 / 13;
+}
+
+#middle_button_524 {
+  grid-area: 5 / 1 / 6 / 5;
+}
+
+#middle_button_525 {
+  grid-area: 5 / 5 / 6 / 9;
+}
+
+#middle_button_526 {
+  grid-area: 5 / 9 / 6 / 13;
+}
+
+#middle_button_527 {
+  grid-area: 6 / 1 / 7 / 5;
+}
+
+#middle_button_528 {
+  grid-area: 6 / 5 / 7 / 9;
+}
+
+#middle_button_529 {
+  grid-area: 6 / 9 / 7 / 13;
+}
+
+#p_header_530 {
+  grid-area: 1 / 25 / 2 / 31;
+}
+
+#middle_button_530 {
+  grid-area: 2 / 25 / 3 / 31;
+}
+
+#middle_button_531 {
+  grid-area: 3 / 25 / 4 / 31;
+}
+
+#middle_button_532 {
+  grid-area: 4 / 25 / 5 / 31;
+}
+
+#p_header_533 {
+  grid-area: 1 / 31 / 2 / 37;
+}
+
+#middle_button_533 {
+  grid-area: 2 / 31 / 3 / 37;
+}
+
+#middle_button_534 {
+  grid-area: 3 / 31 / 4 / 37;
+}
+
+#middle_button_535 {
+  grid-area: 4 / 31 / 5 / 37;
+}
+
+#p_header_536 {
+  grid-area: 5 / 25 / 6 / 37;
+}
+
+#middle_button_536 {
+  grid-area: 6 / 25 / 7 / 29;
+}
+
+#middle_button_537 {
+  grid-area: 6 / 29 / 7 / 33;
+}
+
+#middle_button_538 {
+  grid-area: 6 / 33 / 7 / 37;
+}

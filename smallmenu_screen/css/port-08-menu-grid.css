@@ -1,0 +1,147 @@
+#middle_button_800 {
+  grid-area: 1 / 1 / 2 / 7;
+}
+
+#middle_button_801 {
+  grid-area: 1 / 7 / 2 / 13;
+}
+
+#p_header_802 {
+  grid-area: 2 / 1 / 3 / 13;
+}
+
+#middle_button_802 {
+  grid-area: 3 / 1 / 4 / 7;
+}
+
+#middle_button_803 {
+  grid-area: 3 / 7 / 4 / 13;
+}
+
+#p_header_804 {
+  grid-area: 1 / 13 / 2 / 25;
+}
+
+#middle_button_804 {
+  grid-area: 2 / 13 / 3 / 16;
+}
+
+#middle_button_805 {
+  grid-area: 2 / 16 / 3 / 19;
+}
+
+#middle_button_806 {
+  grid-area: 2 / 19 / 3 / 22;
+}
+
+#middle_button_807 {
+  grid-area: 2 / 22 / 3 / 25;
+}
+
+#middle_button_808 {
+  grid-area: 3 / 13 / 4 / 16;
+}
+
+#middle_button_809 {
+  grid-area: 3 / 16 / 4 / 19;
+}
+
+#middle_button_810 {
+  grid-area: 3 / 19 / 4 / 22;
+}
+
+#middle_button_811 {
+  grid-area: 3 / 22 / 4 / 25;
+}
+
+#p_header_812 {
+  grid-area: 4 / 25 / 5 / 37;
+}
+
+#middle_button_812 {
+  grid-area: 5 / 25 / 6 / 29;
+}
+
+#middle_button_813 {
+  grid-area: 5 / 29 / 6 / 33;
+}
+
+#middle_button_814 {
+  grid-area: 5 / 33 / 6 / 37;
+}
+
+#middle_button_815 {
+  grid-area: 6 / 25 / 7 / 29;
+}
+
+#middle_button_816 {
+  grid-area: 6 / 29 / 7 / 33;
+}
+
+#middle_button_817 {
+  grid-area: 6 / 33 / 7 / 37;
+}
+
+#p_header_818 {
+  grid-area: 1 / 25 / 2 / 37;
+}
+
+#middle_button_818 {
+  grid-area: 2 / 25 / 3 / 29;
+}
+
+#middle_button_819 {
+  grid-area: 2 / 29 / 3 / 33;
+}
+
+#middle_button_820 {
+  grid-area: 2 / 33 / 3 / 37;
+}
+
+#middle_button_821 {
+  grid-area: 3 / 25 / 4 / 29;
+}
+
+#middle_button_822 {
+  grid-area: 3 / 29 / 4 / 33;
+}
+
+#middle_button_823 {
+  grid-area: 3 / 33 / 4 / 37;
+}
+
+#p_header_824 {
+  grid-area: 4 / 13 / 5 / 25;
+}
+
+#middle_button_824 {
+  grid-area: 5 / 13 / 6 / 19;
+}
+
+#middle_button_825 {
+  grid-area: 5 / 19 / 6 / 25;
+}
+
+#middle_button_826 {
+  grid-area: 6 / 13 / 7 / 19;
+}
+
+#middle_button_827 {
+  grid-area: 6 / 19 / 7 / 25;
+}
+
+#p_header_828 {
+  grid-area: 4 / 1 / 5 / 13;
+}
+
+#middle_button_828 {
+  grid-area: 5 / 1 / 6 / 9;
+}
+
+#middle_button_829 {
+  grid-area: 6 / 1 / 7 / 9;
+}
+
+#middle_button_830 {
+  grid-area: 5 / 9 / 7 / 13;
+}

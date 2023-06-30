@@ -1,0 +1,12 @@
+#middle_button_1100 {
+  grid-area: 1 / 1 / 2 / 19;
+}
+
+#middle_button_1101 {
+  grid-area: 2 / 1 / 3 / 19;
+}
+
+#middle_button_1102 {
+  grid-area: 1 / 19 / 3 / 37;
+}
+

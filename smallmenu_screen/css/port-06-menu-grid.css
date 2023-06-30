@@ -1,0 +1,156 @@
+#middle_button_600 {
+  grid-area: 1 / 1 / 2 / 7;
+}
+
+#middle_button_601 {
+  grid-area: 1 / 7 / 2 / 13;
+}
+
+#p_header_602 {
+  grid-area: 2 / 1 / 3 / 13;
+}
+
+#middle_button_602 {
+  grid-area: 3 / 1 / 4 / 7;
+}
+
+#middle_button_603 {
+  grid-area: 3 / 7 / 4 / 13;
+}
+
+#p_header_604 {
+  grid-area: 1 / 13 / 2 / 25;
+}
+
+#middle_button_604 {
+  grid-area: 2 / 13 / 3 / 16;
+}
+
+#middle_button_605 {
+  grid-area: 2 / 16 / 3 / 19;
+}
+
+#middle_button_606 {
+  grid-area: 2 / 19 / 3 / 22;
+}
+
+#middle_button_607 {
+  grid-area: 2 / 22 / 3 / 25;
+}
+
+#middle_button_608 {
+  grid-area: 3 / 13 / 4 / 16;
+}
+
+#middle_button_609 {
+  grid-area: 3 / 16 / 4 / 19;
+}
+
+#middle_button_610 {
+  grid-area: 3 / 19 / 4 / 22;
+}
+
+#middle_button_611 {
+  grid-area: 3 / 22 / 4 / 25;
+}
+
+#middle_button_612 {
+  grid-area: 4 / 13 / 5 / 16;
+}
+
+#middle_button_613 {
+  grid-area: 4 / 16 / 5 / 19;
+}
+
+#middle_button_614 {
+  grid-area: 4 / 19 / 5 / 22;
+}
+
+#middle_button_615 {
+  grid-area: 4 / 22 / 5 / 25;
+}
+
+#p_header_616 {
+  grid-area: 4 / 1 / 5 / 13;
+}
+
+#middle_button_616 {
+  grid-area: 5 / 1 / 6 / 4;
+}
+
+#middle_button_617 {
+  grid-area: 5 / 4 / 6 / 7;
+}
+
+#middle_button_618 {
+  grid-area: 5 / 7 / 6 / 10;
+}
+
+#middle_button_619 {
+  grid-area: 5 / 10 / 6 / 13;
+}
+
+#middle_button_620 {
+  grid-area: 6 / 1 / 7 / 4;
+}
+
+#middle_button_621 {
+  grid-area: 6 / 4 / 7 / 7;
+}
+
+#middle_button_622 {
+  grid-area: 6 / 7 / 7 / 10;
+}
+
+#middle_button_623 {
+  grid-area: 6 / 10 / 7 / 13;
+}
+
+#p_header_624 {
+  grid-area: 1 / 25 / 2 / 37;
+}
+
+#middle_button_624 {
+  grid-area: 2 / 25 / 3 / 33;
+}
+
+#middle_button_625 {
+  grid-area: 3 / 25 / 4 / 33;
+}
+
+#middle_button_626 {
+  grid-area: 2 / 33 / 4 / 37;
+}
+
+#p_header_627 {
+  grid-area: 4 / 25 / 5 / 37;
+}
+
+#middle_button_627 {
+  grid-area: 5 / 25 / 6 / 33;
+}
+
+#middle_button_628 {
+  grid-area: 6 / 25 / 7 / 33;
+}
+
+#middle_button_629 {
+  grid-area: 5 / 33 / 7 / 37;
+}
+
+
+#p_header_630 {
+  grid-area: 5 / 13 / 6 / 25;
+}
+
+#middle_button_630 {
+  grid-area: 6 / 13 / 7 / 17;
+}
+
+#middle_button_631 {
+  grid-area: 6 / 17 / 7 / 21;
+}
+
+#middle_button_632 {
+  grid-area: 6 / 21 / 7 / 25;
+}

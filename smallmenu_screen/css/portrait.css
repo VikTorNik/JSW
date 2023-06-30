@@ -1,7 +1,19 @@
+@import url("portrait-first.css") (orientation: portrait);
+@import url("portrait-second.css") (orientation: portrait);
+@import url("portrait-third.css") (orientation: portrait);
+
 @import url("port-00-menu-grid.css") (orientation: portrait);
-@import url("port-top.css") (orientation: portrait);
-@import url("port-middle.css") (orientation: portrait);
-@import url("port-bottom.css") (orientation: portrait);
+@import url("port-01-menu-grid.css") (orientation: portrait);
+@import url("port-02-menu-grid.css") (orientation: portrait);
+@import url("port-03-menu-grid.css") (orientation: portrait);
+@import url("port-04-menu-grid.css") (orientation: portrait);
+@import url("port-05-menu-grid.css") (orientation: portrait);
+@import url("port-06-menu-grid.css") (orientation: portrait);
+@import url("port-07-menu-grid.css") (orientation: portrait);
+@import url("port-08-menu-grid.css") (orientation: portrait);
+@import url("port-09-menu-grid.css") (orientation: portrait);
+@import url("port-10-menu-grid.css") (orientation: portrait);
+@import url("port-11-menu-grid.css") (orientation: portrait);
 
 :root {
   --left-smallmenu-port: 0px;
@@ -40,9 +52,8 @@
 .smallmenu-port-div {
   display: grid;
   position: relative;
-  grid-template-columns: 1fr;
-  /* grid-template-rows: 4fr 5fr 14fr;   */
-  grid-template-rows: 12fr 3fr 4fr;
+  grid-template-columns: 1fr;  
+  grid-template-rows: 19fr 4fr 7fr;
   width: calc(var(--width-smallmenu-port-div) * var(--ratioSizeWin));
   height: calc(var(--height-smallmenu-port-div) * var(--ratioSizeWin));
   left: calc(var(--left-smallmenu-port-div) * var(--ratioSizeWin));

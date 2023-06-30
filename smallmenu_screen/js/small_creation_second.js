@@ -1,24 +1,25 @@
 import { ROOT } from "../../index.js";
 import { buttonSubMenu } from "../../smallmenu_screen/js/object_buttonSubMenu.js";
+import { functionsForButtonMenu } from "../../smallmenu_screen/js/smallmenu.js";
 
 // формуємо субменю з фільтрами і сортуванням
 export const creationSubMenu = (objectButtonMiddleMenu) => {
   const fragmentDiv = document.createElement("div");
-  fragmentDiv.className = "smallmenu-middle-bg";
+  fragmentDiv.className = "smallmenu-second-bg";
   const nodeTextHTML = [];
-  nodeTextHTML.push("<div class='smallmenu-middle-div'>");
+  nodeTextHTML.push("<div class='smallmenu-second-div'>");
   // перебираємо весь об'єкт і формуємо html-код
   for (const indexSubMenu in objectButtonMiddleMenu) {
     const currentElement = objectButtonMiddleMenu[indexSubMenu];
     if (currentElement.selector === 'button') {
       if (currentElement.status) {
-        nodeTextHTML.push(`<${currentElement.selector} class='middle-button-selected' id=${indexSubMenu}><p class='middle-button-header-selected'>${currentElement.header}</p></${currentElement.selector}>`);
+        nodeTextHTML.push(`<${currentElement.selector} class='second-button-selected' id=${indexSubMenu}><p class='second-button-header-selected'>${currentElement.header}</p></${currentElement.selector}>`);
       } else {
-        nodeTextHTML.push(`<${currentElement.selector} class='middle-button' id=${indexSubMenu}><p class='middle-button-header'>${currentElement.header}</p></${currentElement.selector}>`);
+        nodeTextHTML.push(`<${currentElement.selector} class='second-button' id=${indexSubMenu}><p class='second-button-header'>${currentElement.header}</p></${currentElement.selector}>`);
       }
     }
     if (currentElement.selector === 'p') {
-      nodeTextHTML.push(`<${currentElement.selector} class='middle-header' id=${indexSubMenu}>${currentElement.header}</${currentElement.selector}>`);
+      nodeTextHTML.push(`<${currentElement.selector} class='second-header' id=${indexSubMenu}>${currentElement.header}</${currentElement.selector}>`);
     }
   }
   nodeTextHTML.push("</div>");
@@ -30,7 +31,7 @@ export const creationSubMenu = (objectButtonMiddleMenu) => {
 
 // фіксація і відтискання кнопки
 export const clickButtonSubMenu = () => {
-  [...document.querySelectorAll('.middle-button'), ...document.querySelectorAll('.middle-button-selected')].forEach(indexMiddlelMenu => {
+  [...document.querySelectorAll('.second-button'), ...document.querySelectorAll('.second-button-selected')].forEach(indexMiddlelMenu => {
     indexMiddlelMenu.addEventListener('click', () => {
       // формування ліквідного вибору після натискання
       correctionButtonSubMenu(ROOT.style.getPropertyValue("--currentMenu"), indexMiddlelMenu.id);
@@ -41,7 +42,7 @@ export const clickButtonSubMenu = () => {
 };
 
 // формування ліквідного вибору після натискання
-const correctionButtonSubMenu = (objectButton /* "button_big_0" */, pressButton /* "middle-button-1" */) => {
+const correctionButtonSubMenu = (objectButton /* "button_big_0" */, pressButton /* "second-button-1" */) => {
 
   // СТВОРЮЄМО ДВОМІРНИЙ МАСИВ для збегірання статусів
 
@@ -177,14 +178,48 @@ const correctionButtonSubMenu = (objectButton /* "button_big_0" */, pressButton 
 };
 
 // корегування (оновлення) CSS згідно з вибором
-const correctionCSSButtonSubMenu = (objectButton /* "button_big_0" */) => {
-  for (const indexSubMenu in buttonSubMenu[objectButton]) {
-    const currentElement = buttonSubMenu[objectButton][indexSubMenu];
-    if (currentElement.selector === 'button') {
-      // знімаємо фокус з елемента бо йде баг при зміні класів в дереві DOM
-      document.querySelector(`#${indexSubMenu}`).blur();
-      if (currentElement.status) { document.querySelector(`#${indexSubMenu}`).className = 'middle-button-selected'; }
-      else { document.querySelector(`#${indexSubMenu}`).className = 'middle-button'; }
+export const correctionCSSButtonSubMenu = (objectButton /* "button_big_0" */) => {
+  // якщо кнопка "читати"
+
+  console.log(buttonSubMenu[objectButton]["status_submenu"]);
+
+  // якщо меню для вибору продукції, то формуємо вивід продуктів, чи довідкову інформацію
+  if (buttonSubMenu[objectButton]["status_submenu"] === "select production") {
+    if (buttonSubMenu[objectButton][functionsForButtonMenu[objectButton][3]].status) {
+      for (const indexSubMenu in buttonSubMenu[objectButton]) {
+        const currentElement = buttonSubMenu[objectButton][indexSubMenu];
+        if (currentElement.selector === 'button') {
+          // знімаємо фокус з елемента бо йде баг при зміні класів в дереві DOM
+          document.querySelector(`#${indexSubMenu}`).blur();
+          if (currentElement.status) { document.querySelector(`#${indexSubMenu}`).className = 'second-button-selected'; }
+          else { document.querySelector(`#${indexSubMenu}`).className = 'second-button'; }
+        }
+      }
+    }
+    if (buttonSubMenu[objectButton][functionsForButtonMenu[objectButton][4]].status) {
+      for (const indexSubMenu in buttonSubMenu[objectButton]) {
+        const currentElement = buttonSubMenu[objectButton][indexSubMenu];
+        if (currentElement.selector === 'button') {
+          // знімаємо фокус з елемента бо йде баг при зміні класів в дереві DOM
+          document.querySelector(`#${indexSubMenu}`).blur();
+          document.querySelector(`#${indexSubMenu}`).className = 'second-button-desabled';
+        }
+      }
+      document.querySelector(`#${functionsForButtonMenu[objectButton][3]}`).className = 'second-button';
+      document.querySelector(`#${functionsForButtonMenu[objectButton][4]}`).className = 'second-button-selected';
+    }
+  }
+
+  // якщо меню інформаційне - забезпечуємо підсвічування відповідних кнопок
+  if (buttonSubMenu[objectButton]["status_submenu"] === "information") {
+    for (const indexSubMenu in buttonSubMenu[objectButton]) {
+      const currentElement = buttonSubMenu[objectButton][indexSubMenu];
+      if (currentElement.selector === 'button') {
+        // знімаємо фокус з елемента бо йде баг при зміні класів в дереві DOM
+        document.querySelector(`#${indexSubMenu}`).blur();
+        if (currentElement.status) { document.querySelector(`#${indexSubMenu}`).className = 'second-button-selected'; }
+        else { document.querySelector(`#${indexSubMenu}`).className = 'second-button'; }
+      }
     }
   }
 }
