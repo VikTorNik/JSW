@@ -7,6 +7,8 @@
 @import url("bigmenu_screen/css/portrait.css") (orientation: portrait);
 @import url("smallmenu_screen/css/landscape.css") screen and (orientation: landscape);
 @import url("smallmenu_screen/css/portrait.css") (orientation: portrait);
+@import url("cart/css/landscape.css") screen and (orientation: landscape);
+@import url("cart/css/portrait.css") (orientation: portrait);
 
 
 :root {
@@ -22,9 +24,10 @@
   /* текст на вступній сторінці портрет */
   --COLOR-SCHEME-04: rgb(255, 251, 239);
   /* фон кнопок */
-  --COLOR-SCHEME-05: rgba(120, 109, 89, 0.65);
+  --COLOR-SCHEME-05: rgba(120, 109, 89, 0.65);  
+  /* --COLOR-SCHEME-05: rgba(130, 117, 93, 0.729); */
   /* фон середнього підменю */
-  --COLOR-SCHEME-06: rgba(24, 29, 24, 0.468);
+  --COLOR-SCHEME-06: rgba(64, 67, 33, 0.367);
   /* фон лівого / нижнього підменю */
   --COLOR-SCHEME-07: rgba(54, 69, 56, 0.243);
   /* текст дескріпшен у фокусі */
@@ -35,8 +38,21 @@
   --COLOR-SCHEME-10: rgba(17, 168, 22, 0.5);
   /* текст вибраних кнопок (хідер) у великому і малому меню */
   --COLOR-SCHEME-11: rgba(0, 5, 1, 0.654);
-  /* хідер і фокус для середніх меню */  
+  /* хідер і фокус для середніх меню */
   --COLOR-SCHEME-12: rgba(47, 158, 51, 0.27);
+  /* заголовок товару */
+  --COLOR-SCHEME-14: rgba(89, 18, 18, 0.912);
+  /* фоновий колір товару */
+  --COLOR-SCHEME-15: rgba(123, 212, 136, 0.311);
+  /* фоновий колір товару */
+  --COLOR-SCHEME-15: rgba(100, 184, 113, 0.399);
+  /* фоновий колір кнопки при додаванні у кошик */
+  --COLOR-SCHEME-16: rgba(52, 179, 33, 0.533);
+  /* фокус у фонового кольору  кнопки при додаванні у кошик */
+  --COLOR-SCHEME-17: rgba(121, 230, 58, 0.8);
+  /* додатковий фон під сумою і кількістю товарів у кошику */
+  --COLOR-SCHEME-18: rgba(104, 91, 51, 0.2);
+  --COLOR-SCHEME-19: rgba(159, 155, 145, 0.299);
 
   background: var(--COLOR-SCHEME-01);
 }

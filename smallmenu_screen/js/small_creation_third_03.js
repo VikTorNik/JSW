@@ -1,4 +1,5 @@
 import { buttonSubMenu } from "../../smallmenu_screen/js/object_buttonSubMenu.js";
+import { currentPrice } from "../../smallmenu_screen/js/object_current_price.js";
 
 const objectProductParameters = {
   infoParametrs: {
@@ -7,16 +8,16 @@ const objectProductParameters = {
     typeLeftBayonet: ["10-25 папа", "35-50 папа", "10-25 мама", "35-50 мама"],
     typeRightBayonet: ["10-25 папа", "35-50 папа", "10-25 мама", "35-50 мама"],
     productionTime: ["за 2 дні", "за 4 дні",],
-    priceCable_10: 80,
-    priceCable_16: 120,
-    priceCable_25: 175,
-    priceCable_35: 240,
-    priceCable_50: 360,
-    pricePlug_1025: 170,
-    pricePlug_3550: 300,
-    priceSocet_1025: 170,
-    priceSocet_3550: 300,
-    tradeMargin: 1.26,
+    priceCable_10: currentPrice.priceCable_10,
+    priceCable_16: currentPrice.priceCable_16,
+    priceCable_25: currentPrice.priceCable_25,
+    priceCable_35: currentPrice.priceCable_35,
+    priceCable_50: currentPrice.priceCable_50,
+    pricePlug_1025: currentPrice.pricePlug_1025,
+    pricePlug_3550: currentPrice.pricePlug_3550,
+    priceSocet_1025: currentPrice.priceSocet_1025,
+    priceSocet_3550: currentPrice.priceSocet_3550,
+    tradeMargin: currentPrice.tradeMargin_03,
   },
 
   // формуємо можливі варіанти (сети) для кожного перерізу кабеля
@@ -88,19 +89,24 @@ const objectProductParameters = {
 }
 
 const textReferenceInformation = [
-  "Подовжувачі зварні ....",
-
+  "Подовжувачі для зварювальних апаратів відрізняються типом і розміром байонетних роз'ємів однієї і другої сторони.",
+  "Байонетні роз'єми використовуються виробництва німецької компанії Abicor Binzel. Це латунні байонети чудової якості. Звераємо увагу, що аналогічні байонети китайського виробництва виготовляються з заліза, а не з латуні. При купівлі перевіряйне якість байонета за допомогою магніта. Латунь на магніт не реагує. Наразі найчастіше використовують два розміри байонетнів — 10-25 (діаметр 3/8 дюйми — 9,5 мм) і 35-50 (діаметр 1/2 дюйма — 12,5 мм).",
+  "Довжину кабелю потрібно вибирати мінімально можливою. Чим менша довжина кабелю, тим менша «просадка» напруги й, відповідно, інвертор буде стабільно «тримати» відповідну силу струму. При збільшенні довжини кабеля потрібно, відповідно збільшувати переріз мідної жили, щоб компенсувати втрати.",
+  "Для виготовлення використовується мідний багатожильний провід українського виробництва. Кабель має гумову оболонку, яка не втрачає гнучкості до мінус 40 градусів морозу. Має відповідне маркування — виробник, переріз і дійсно гнучкий навіть при низькій температурі. Кабель для з'єднання з клемою маси чи байонетом завжди опресовується мідними наконечниками, а також додатково оздоблений термоусадкою з клеєм для запобігання окислення.",
 ];
 
 export const getCreationButtonProduct_03 = (objectButtonProduct) => {
   const nodeTextHTML = [];
-  nodeTextHTML.push("<div class='div-button-product'>");
+  nodeTextHTML.push(`<div class='div-button-product' id=${objectButtonProduct.ID}>`);
+
+  // формуємо заголовок товару
+  nodeTextHTML.push(`<p class='header-name-product'>Подовжувач зварний - ${objectButtonProduct.lengthCable} - ${objectButtonProduct.squareCable}</p>`);
 
   // формуємо фото продукту
   nodeTextHTML.push("<div class='div-image-product'>");
   if (true) {
     nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/083.jpg' alt='Image cable'>");
-  }  
+  }
   nodeTextHTML.push("</div>");
   // формуємо опис продукту
   nodeTextHTML.push("<div class='div-description-product'>");
@@ -108,10 +114,29 @@ export const getCreationButtonProduct_03 = (objectButtonProduct) => {
   nodeTextHTML.push(`<p class='paragraph-value'> ${objectButtonProduct.lengthCable} </p>`);
   nodeTextHTML.push("<p class='paragraph-header'>Кабель</p>");
   nodeTextHTML.push(`<p class='paragraph-value'> ${objectButtonProduct.squareCable} </p>`);
-  nodeTextHTML.push("<p class='paragraph-header'><--></p>");
-  nodeTextHTML.push(`<p class='paragraph-value'> ${objectButtonProduct.typeLeftBayonet} </p>`);
-  nodeTextHTML.push("<p class='paragraph-header'><--></p>");
-  nodeTextHTML.push(`<p class='paragraph-value'> ${objectButtonProduct.typeRightBayonet} </p>`);
+
+  switch (objectButtonProduct.typeLeftBayonet.slice(-4)) {
+    case "мама":
+      nodeTextHTML.push("<p class='paragraph-header'>Гніздо</p>");
+      nodeTextHTML.push(`<p class='paragraph-value'> ${objectButtonProduct.typeLeftBayonet.slice(0, 5)} </p>`);
+      break;
+    case "папа":
+      nodeTextHTML.push("<p class='paragraph-header'>Штекер</p>");
+      nodeTextHTML.push(`<p class='paragraph-value'> ${objectButtonProduct.typeLeftBayonet.slice(0, 5)} </p>`);
+      break;
+  }
+
+  switch (objectButtonProduct.typeRightBayonet.slice(-4)) {
+    case "мама":
+      nodeTextHTML.push("<p class='paragraph-header'>Гніздо</p>");
+      nodeTextHTML.push(`<p class='paragraph-value'> ${objectButtonProduct.typeRightBayonet.slice(0, 5)} </p>`);
+      break;
+    case "папа":
+      nodeTextHTML.push("<p class='paragraph-header'>Штекер</p>");
+      nodeTextHTML.push(`<p class='paragraph-value'> ${objectButtonProduct.typeRightBayonet.slice(0, 5)} </p>`);
+      break;
+  }
+
   nodeTextHTML.push("<p class='paragraph-header'>Термін</p>");
   nodeTextHTML.push(`<p class='paragraph-value'> ${objectButtonProduct.productionTime} </p>`);
   nodeTextHTML.push("<p class='paragraph-header'>Ціна</p>");
@@ -259,8 +284,8 @@ export const getFilteredAssortedProduct_03 = () => {
                         indexCountProduct += 1;
                         exportObjectProduct[indexCountProduct] = [];
                         exportObjectProduct[indexCountProduct]["ID"] = `product_${indexCountProduct}`;
-                        exportObjectProduct[indexCountProduct]["lengthCable"] = `${length_cable} м`;
-                        exportObjectProduct[indexCountProduct]["squareCable"] = `${square_cable} кв.мм.`;
+                        exportObjectProduct[indexCountProduct]["lengthCable"] = `${length_cable}&nbspм`;
+                        exportObjectProduct[indexCountProduct]["squareCable"] = `${square_cable}&nbspкв.мм.`;
                         exportObjectProduct[indexCountProduct]["typeLeftBayonet"] = `${type_leftbayonet}`;
                         exportObjectProduct[indexCountProduct]["typeRightBayonet"] = `${type_rightbayonet}`;
                         exportObjectProduct[indexCountProduct]["productionTime"] = `${production_time}`;

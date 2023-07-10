@@ -1,4 +1,5 @@
 import { buttonSubMenu } from "../../smallmenu_screen/js/object_buttonSubMenu.js";
+import { currentPrice } from "../../smallmenu_screen/js/object_current_price.js";
 
 const objectProductParameters = {
   infoParametrs: {
@@ -6,13 +7,13 @@ const objectProductParameters = {
     squareCable: ["10", "16", "25", "35",],
     typeAlligator: ["залізо", "пластик"],
     productionTime: ["готове", "за 1 день", "за 2 дні", "за 4 дні",],
-    priceCable_10: 80,
-    priceCable_16: 120,
-    priceCable_25: 175,
-    priceCable_35: 240,
-    priceAlligatorFerum: 337,
-    priceAlligatorPlastic: 516,
-    tradeMargin: 1.18,
+    priceCable_10: currentPrice.priceCable_10,
+    priceCable_16: currentPrice.priceCable_16,
+    priceCable_25: currentPrice.priceCable_25,
+    priceCable_35: currentPrice.priceCable_35,
+    priceAlligatorFerum: currentPrice.priceTwoAlligatorFerum,
+    priceAlligatorPlastic: currentPrice.priceTwoAlligatorPlastic,
+    tradeMargin: currentPrice.tradeMargin_00,
   },
 
   // формуємо можливі варіанти (сети) для кожного перерізу кабеля
@@ -87,10 +88,10 @@ const objectProductParameters = {
 }
 
 const textReferenceInformation = [
-  "Комплект пускових дротів складається з «плюсового» та «мінусового» кабелю на закінченні якого закріплені «крокодили» відповідного кольору. «Плюсовий» кабель має «крокодили» червоного кольору, а «мінусовий» кабель має «крокодили» чорного кольору.",
-  "Довжину кабелю потрібно вибирати мінімально можливої довжини. Чим менша довжина кабелю, тим менша «просадка» напруги й, відповідно, тим більше шансів успішно завершити процедуру прикурювання. Зазвичай для легкових авто буде достатньою довжина кабелю 2,8 - 3,0 метри.",
+  "Комплект пускових дротів складається з «плюсового» та «мінусового» кабелю. На закінченні кожного кабеля закріплені «крокодили» відповідного кольору. «Плюсовий» кабель має «крокодили» червоного кольору, а «мінусовий» кабель має «крокодили» чорного кольору.",
+  "Довжину кабелю потрібно вибирати мінімально можливою. Чим менша довжина кабелю, тим менша «просадка» напруги й, відповідно, тим більше шансів успішно завершити процедуру прикурювання. Зазвичай для легкових авто буде достатньою довжина кабелю 2,5 - 3,0 метри.",
   "Для виготовлення використовується мідний багатожильний провід українського виробництва. Кабель має гумову оболонку, яка не втрачає гнучкості до мінус 40 градусів морозу. Має відповідне маркування — виробник, переріз і дійсно гнучкий навіть при низькій температурі. Кабель обтиснений мідними наконечниками та додатково оздоблений термоусадкою з клеєм для запобігання окислення.",
-  "Звертаємо увагу, що зазвичай в автомобільних магазинах та на ринках на 90% китайська продукція - товсте обплетення та тонкий алюмінієвий кабель усередині.",
+  "Звертаємо увагу, що зазвичай в автомобільних магазинах та на ринках на 90% китайська продукція - товсте обплетення та тонкий алюмінієвий кабель усередині. Варто додати, що китайська оболонка кабеля не витримує довготривалого використання і починає руйнуватися, а алюмінієві жили кабеля пофарбовані у померанчовий колір для імітації міді.",
   "Можливий вибір між двома типами «крокодилів»: залізними та пластиковими.",
   "Залізні крокодили мають менший розмір та більш компактні ніж пластикові. Дозволяють підключатися у важкодоступних місцях. Їх недоліки в тому, що вони не ізольовані, тобто потрібно бути обережним при підключенні, щоб запобігти короткому замиканню. Також до недоліків, порівняно з пластиковими можна віднести те, що кабель кріпиться не безпосередньо до губок контакту, а до ручки «крокодилу», що дещо збільшує їх опір.",
   "Пластикові крокодили - великі, повністю ізольовані. Це робить процедуру прикурювання безпечною та мінімізує ризики короткого замикання. Кабель надійно закріплений безпосередньо до губок.",
@@ -102,17 +103,88 @@ const textReferenceInformation = [
 
 export const getCreationButtonProduct_00 = (objectButtonProduct) => {
   const nodeTextHTML = [];
-  nodeTextHTML.push("<div class='div-button-product'>");
+  nodeTextHTML.push(`<div class='div-button-product' id=${objectButtonProduct.ID}>`);
+  // формуємо заголовок товару
+  nodeTextHTML.push(`<p class='header-name-product'> Пускові дроти - ${objectButtonProduct.lengthCable} - ${objectButtonProduct.squareCable} - ${objectButtonProduct.typeAlligator}</p>`);
 
   // формуємо фото продукту
   nodeTextHTML.push("<div class='div-image-product'>");
+
   if (objectButtonProduct.typeAlligator === "залізо") {
-    nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/083.jpg' alt='Image cable'>");
+    switch (objectButtonProduct.squareCable.slice(0, 2)) {
+      case "10":
+        nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/00/m-10-28.jpg' alt='Cable 10 square, metal alligator'>");
+        break;
+      case "16":
+        if (Number(objectButtonProduct.lengthCable.slice(0, 3)) <= 3) {
+          nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/00/m-16-3.jpg' alt='Cable 16 square, metal alligator'>");
+        }
+        else {
+          nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/00/m-16-4.jpg' alt='Cable 16 square, metal alligator'>");
+        }
+        break;
+      case "25":
+        if (Number(objectButtonProduct.lengthCable.slice(0, 3)) <= 4) {
+          nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/00/m-25-4.jpg' alt='Cable 25 square, metal alligator'>");
+        }
+        else {
+          if (Number(objectButtonProduct.lengthCable.slice(0, 3)) <= 6) {
+            nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/00/m-25-6.jpg' alt='Cable 25 square, metal alligator'>");
+          } else {
+            nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/00/m-25-7.jpg' alt='Cable 25 square, metal alligator'>");
+          }
+        }
+        break;
+      case "35":
+        nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/00/m-25-7.jpg' alt='Cable 35 square, metal alligator'>");
+        break;
+    }
   }
   if (objectButtonProduct.typeAlligator === "пластик") {
-    nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/082.jpg' alt='Image cable'>");
+    switch (objectButtonProduct.squareCable.slice(0, 2)) {
+      case "10":
+        nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/00/p-16-25.jpg' alt='Cable 10 square, plastic alligator'>");
+        break;
+      case "16":
+        switch (Number(objectButtonProduct.lengthCable.slice(0, 3))) {
+          case 2.5:
+            nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/00/p-16-25.jpg' alt='Cable 16 square, plastic alligator'>");
+            break;
+          case 2.8:
+          case 3.0:
+            nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/00/p-16-3.jpg' alt='Cable 16 square, plastic alligator'>");
+            break;
+          case 4.0:
+          case 5.0:
+            nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/00/p-16-4.jpg' alt='Cable 16 square, plastic alligator'>");
+            break;
+          case 6.0:
+          case 7.0:
+          case 8.0:
+            nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/00/p-16-6.jpg' alt='Cable 16 square, plastic alligator'>");
+            break;
+        }
+        break;
+      case "25":
+        if (Number(objectButtonProduct.lengthCable.slice(0, 3)) <= 5) {
+          nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/00/p-25-4.jpg' alt='Cable 25 square, plastic alligator'>");
+        }
+        else {
+          nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/00/p-25-7.jpg' alt='Cable 25 square, plastic alligator'>");
+        }
+        break;
+      case "35":
+        if (Number(objectButtonProduct.lengthCable.slice(0, 3)) <= 5) {
+          nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/00/p-25-4.jpg' alt='Cable 35 square, plastic alligator'>");
+        }
+        else {
+          nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/00/p-35-7.jpg' alt='Cable 35 square, plastic alligator'>");
+        }
+        break;
+    }
   }
   nodeTextHTML.push("</div>");
+
   // формуємо опис продукту
   nodeTextHTML.push("<div class='div-description-product'>");
   nodeTextHTML.push("<p class='paragraph-header'> Довжина</p>");
@@ -126,7 +198,6 @@ export const getCreationButtonProduct_00 = (objectButtonProduct) => {
   nodeTextHTML.push("<p class='paragraph-header'> Ціна </p>");
   nodeTextHTML.push(`<p class='paragraph-value'> ${objectButtonProduct.priceProduct} </p>`);
   nodeTextHTML.push("</div>");
-
   nodeTextHTML.push("</div>");
   return nodeTextHTML;
 }
@@ -249,10 +320,19 @@ export const getFilteredAssortedProduct_00 = () => {
                     indexCountProduct += 1;
                     exportObjectProduct[indexCountProduct] = [];
                     exportObjectProduct[indexCountProduct]["ID"] = `product_${indexCountProduct}`;
-                    exportObjectProduct[indexCountProduct]["lengthCable"] = `${length_cable} м`;
-                    exportObjectProduct[indexCountProduct]["squareCable"] = `${square_cable} кв.мм.`;
+                    exportObjectProduct[indexCountProduct]["lengthCable"] = `${length_cable}&nbspм`;
+                    exportObjectProduct[indexCountProduct]["squareCable"] = `${square_cable}&nbspкв.мм.`;
                     exportObjectProduct[indexCountProduct]["typeAlligator"] = `${type_alligator}`;
                     exportObjectProduct[indexCountProduct]["productionTime"] = `${production_time}`;
+                    // product_001 [
+                    //   ID: "product_1",
+                    //   lengthCable: "3 м",
+                    //   squareCable: "16 кв.мм.",
+                    //   typeAlligator: "метал",
+                    //   productionTime: "готове",
+                    //   priceProduct: "1250 грн.",
+                    // ]
+
                     // розрахунок вартості продукту
                     switch (square_cable) {
                       case "10":
@@ -278,14 +358,6 @@ export const getFilteredAssortedProduct_00 = () => {
                     }
                     priceCurrentProduct = 50 * Math.ceil(tradeMargin * (Number(length_cable) * priceCurrentCable * 2 + priceCurrentAlligator) / 50);
                     exportObjectProduct[indexCountProduct]["priceProduct"] = `${priceCurrentProduct} грн.`;
-                    // product_001 [
-                    //   ID: "product_1",
-                    //   lengthCable: "3 м",
-                    //   squareCable: "16 кв.мм.",
-                    //   typeAlligator: "метал",
-                    //   productionTime: "готове",
-                    //   priceProduct: "1250 грн.",
-                    // ]
                   }
                 })
               };

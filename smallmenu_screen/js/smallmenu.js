@@ -3,6 +3,9 @@ import { buttonSubMenu } from "../../smallmenu_screen/js/object_buttonSubMenu.js
 import { creationMainMenu } from "../../smallmenu_screen/js/small_creation_first.js";
 import { creationSubMenu, clickButtonSubMenu, correctionCSSButtonSubMenu }
   from "../../smallmenu_screen/js/small_creation_second.js";
+import { cartChoice, setСartChoice } from "../../cart/js/cart_choice.js";
+import { cartWait, setСartWait } from "../../cart/js/cart_wait.js";
+
 
 import { getFilteredAssortedProduct_00, getCreationButtonProduct_00, getReferenceInformationProduct_00 }
   from "../../smallmenu_screen/js/small_creation_third_00.js";
@@ -22,7 +25,7 @@ import { getFilteredAssortedProduct_07, getCreationButtonProduct_07, getReferenc
   from "../../smallmenu_screen/js/small_creation_third_07.js";
 import { getFilteredAssortedProduct_08, getCreationButtonProduct_08, getReferenceInformationProduct_08 }
   from "../../smallmenu_screen/js/small_creation_third_08.js";
-import {getReferenceInformationProduct_09 }
+import { getReferenceInformationProduct_09 }
   from "../../smallmenu_screen/js/small_creation_third_09.js";
 import { getReferenceInformationProduct_10 }
   from "../../smallmenu_screen/js/small_creation_third_10.js";
@@ -53,7 +56,7 @@ export const functionsForButtonMenu = {
     "middle_button_700", "middle_button_701"],
   "button_big_8": [getFilteredAssortedProduct_08, getCreationButtonProduct_08, getReferenceInformationProduct_08,
     "middle_button_800", "middle_button_801"],
-  "button_big_9": [null, null, getReferenceInformationProduct_09],  
+  "button_big_9": [null, null, getReferenceInformationProduct_09],
   "button_big_10": [null, null, getReferenceInformationProduct_10],
   "button_big_11": [null, null, getReferenceInformationProduct_11],
 }
@@ -61,14 +64,14 @@ export const functionsForButtonMenu = {
 export const showSmallmenuScreen = (orientationScreenLandscape) => {
   ROOT.style.setProperty("--currentScreen", SMALLMENU_SCREEN); // поточна сторінка  
   if (orientationScreenLandscape) {
-    showSubMenu("main-small-landscape", 'smallmenu-landscape-bg', 'smallmenu-land-div', ".smallmenu-land-div", BIG_MENU, SUB_MENU, PRODUCT_LIST, "smallmenu-first-land-bg", "smallmenu-first-land-div", "smallmenu-third-land-bg", "smallmenu-third-land-div");
+    showSubMenu("main-small-landscape", 'smallmenu-landscape-bg', 'smallmenu-land-div', BIG_MENU, SUB_MENU, PRODUCT_LIST, "smallmenu-first-land-bg", "smallmenu-first-land-div", "smallmenu-third-land-bg", "smallmenu-third-land-div");
   }
   else {
-    showSubMenu("main-small-portrait", 'smallmenu-portrait-bg', 'smallmenu-port-div', ".smallmenu-port-div", PRODUCT_LIST, BIG_MENU, SUB_MENU, "smallmenu-top-bg", "smallmenu-top-div", "smallmenu-bottom-bg", "smallmenu-bottom-div");
+    showSubMenu("main-small-portrait", 'smallmenu-portrait-bg', 'smallmenu-port-div', PRODUCT_LIST, BIG_MENU, SUB_MENU, "smallmenu-top-bg", "smallmenu-top-div", "smallmenu-bottom-bg", "smallmenu-bottom-div");
   }
 }
 
-const showSubMenu = (mainSmall, menuBG, menuDiv, classMenuDiv, subScreen1, subScreen2, subScreen3, firstBG, firstDiv, thirdBG, thirdDiv) => {
+const showSubMenu = (mainSmall, menuBG, menuDiv, subScreen1, subScreen2, subScreen3, firstBG, firstDiv, thirdBG, thirdDiv) => {
   // локальна змінна для фіксації поточного меню
   let currentMenu = ROOT.style.getPropertyValue("--currentMenu");
 
@@ -82,8 +85,8 @@ const showSubMenu = (mainSmall, menuBG, menuDiv, classMenuDiv, subScreen1, subSc
   parentDiv.innerHTML = introTextHTML.join("");
   document.body.appendChild(parentDiv);
 
-  // послідовність відображення підекранів (меню / підменю / товар) в залежності від орієнтації
-  const smallmenuDiv = document.querySelector(classMenuDiv);
+  // послідовність відображення підекранів (меню / підменю / товар) в залежності від орієнтації  
+  const smallmenuDiv = document.querySelector(`.${menuDiv}`);
   let bigMenuDiv, subMenuDiv, productMenuDiv;
   if (subScreen1 === BIG_MENU) { bigMenuDiv = smallmenuDiv.appendChild(document.createElement("div")); }
   if (subScreen1 === PRODUCT_LIST) { productMenuDiv = smallmenuDiv.appendChild(document.createElement("div")); }
@@ -96,28 +99,211 @@ const showSubMenu = (mainSmall, menuBG, menuDiv, classMenuDiv, subScreen1, subSc
 
   // формуємо колонку з пунктами меню  
   const fragmentLeft = creationMainMenu(firstBG, firstDiv);
-  smallmenuDiv.replaceChild(fragmentLeft, bigMenuDiv);
-  // підсвічуємо поточний вибраний пункт
-  document.querySelector(`#${currentMenu}`).className = 'selected-button';
-  // формуємо колонку з субменю
-  const fragmentMiddle = creationSubMenu(buttonSubMenu[currentMenu]);
-  smallmenuDiv.replaceChild(fragmentMiddle, subMenuDiv);
-  // обробка натискання кнопок у субменю та відображення колонки з товаром
-  clickButtonSubMenu();
-  // забеспечення кольору конопок субменю при зміні орієнтації  
-  correctionCSSButtonSubMenu(currentMenu);
-  // формуємо колонку з товаром
-  const fragmentRight = creationWindowProduct(thirdBG, thirdDiv, currentMenu,
-    functionsForButtonMenu[currentMenu][0], functionsForButtonMenu[currentMenu][1], functionsForButtonMenu[currentMenu][2]);
-  smallmenuDiv.replaceChild(fragmentRight, productMenuDiv);
-  // оновлення колонки з товаром після натискання кнопки субменю - 
-  [...document.querySelectorAll('.second-button'), ...document.querySelectorAll('.second-button-selected')].forEach(indexMiddlelMenu => {
-    indexMiddlelMenu.addEventListener('click', () => {
-      const fragmentRight = creationWindowProduct(thirdBG, thirdDiv, currentMenu,
-        functionsForButtonMenu[currentMenu][0], functionsForButtonMenu[currentMenu][1], functionsForButtonMenu[currentMenu][2]);
-      document.querySelector(`.${thirdBG}`).replaceWith(fragmentRight);
-    })
-  });
+  bigMenuDiv.replaceWith(fragmentLeft);
+
+
+  // тимчасовий div для сумісності при настуній заміні
+  const fragmentDiv = document.createElement("div");
+  fragmentDiv.className = "smallmenu-second-bg";
+  subMenuDiv.replaceWith(fragmentDiv);
+  // document.querySelector(`.${menuDiv}`).appendChild(fragmentDiv);
+
+  // тимчасовий div для сумісності при настуній заміні
+  const fragmentThir = document.createElement("div");
+  fragmentThir.className = thirdBG;
+  productMenuDiv.replaceWith(fragmentThir);
+
+  // обробка меню кошика
+  const fixedClickButtonCart = () => {
+
+    // фіксуємо натискання на продукт
+    [...document.querySelectorAll('.button-ordering')].forEach(indexButtonClick => {
+
+      // document.querySelector('#button-wait-moving').disabled = true;
+      // document.getElementById("button-goto-ordering").disabled = true;
+      // console.log(document.getElementById("button-goto-ordering").disabled);
+      // var btn = document.getElementById("button-goto-ordering");
+      // btn.disabled = false;
+      indexButtonClick.addEventListener('click', (buttonOrdering) => {
+        switch (indexButtonClick.id) {
+          case 'button-goto-ordering': // Оформлення замовлення
+            document.querySelector("#middle_button_1102").click();
+            break;
+          case 'button-wait-moving': // Перенести все у список вподобань
+            setСartWait(cartWait.concat(cartChoice));
+            cartChoice.length = 0;
+            document.querySelector("#middle_button_1100").click();
+            document.querySelector("#middle_button_1100").click();
+            break;
+          case 'button-cart-deliting': // Видалити товари з кошика
+            cartChoice.length = 0;
+            document.querySelector("#middle_button_1100").click();
+            document.querySelector("#middle_button_1100").click();
+            break;
+          case 'button-cart-moving': // Перенести товари у кошик            
+            setСartChoice(cartChoice.concat(cartWait));
+            cartWait.length = 0;
+            document.querySelector("#middle_button_1101").click();
+            document.querySelector("#middle_button_1101").click();
+            break;
+          case 'button-wait-deliting': // Видалити товари зі списку вподобань
+            cartWait.length = 0;
+            document.querySelector("#middle_button_1101").click();
+            document.querySelector("#middle_button_1101").click();
+            break;
+          case 'button-goto-cart': // Перейти у кошик
+            document.querySelector("#middle_button_1100").click();
+            break;
+        };
+      })
+    });
+    // реакція на кнопки під товаром Кошика - видалити і перенести у Вподобання
+    [...document.querySelectorAll('.button-cart-delete'), ...document.querySelectorAll('.button-cart-move')].forEach(indexButtonClick => {
+      indexButtonClick.addEventListener('click', (buttonOrdering) => {
+        if (indexButtonClick.className === "button-cart-delete") {
+          cartChoice.splice(Number(indexButtonClick.id), 1);
+          document.querySelector("#middle_button_1100").click();
+          document.querySelector("#middle_button_1100").click();
+        };
+        if (indexButtonClick.className === "button-cart-move") {
+          cartWait.push(cartChoice[Number(indexButtonClick.id)]);
+          cartChoice.splice(Number(indexButtonClick.id), 1);
+          document.querySelector("#middle_button_1100").click();
+          document.querySelector("#middle_button_1100").click();
+        };
+      })
+    });
+    // реакція на кнопки під товаром Вподобання - видалити і перенести у Кошик
+    [...document.querySelectorAll('.button-wait-delete'), ...document.querySelectorAll('.button-wait-move')].forEach(indexButtonClick => {
+      indexButtonClick.addEventListener('click', (buttonOrdering) => {
+        if (indexButtonClick.className === "button-wait-delete") {
+          cartWait.splice(Number(indexButtonClick.id), 1);
+          document.querySelector("#middle_button_1101").click();
+          document.querySelector("#middle_button_1101").click();
+        };
+        if (indexButtonClick.className === "button-wait-move") {
+          cartChoice.push(cartWait[Number(indexButtonClick.id)]);
+          cartWait.splice(Number(indexButtonClick.id), 1);
+          document.querySelector("#middle_button_1101").click();
+          document.querySelector("#middle_button_1101").click();
+        };
+      })
+    });
+  };
+
+  // обробка вибору товара для додавання у кошик
+  const fixedClickButtonProduct = () => {
+    // фіксуємо натискання на продукт
+    [...document.querySelectorAll('.div-button-product')].forEach(indexButtonClick => {
+      indexButtonClick.addEventListener('click', (choiceCurrentProduct) => {
+        // якщо натиснути на будь-який товар у правому вікні - "гасимо" всі кнопки у підменю
+        buttonSubMenu[currentMenu]["status_select_pruduct"] = true;
+        correctionCSSButtonSubMenu(currentMenu);
+        // створюємо новий "div" для відображення продукта і заміняємо старий
+        const divSelectProduct = document.createElement("div");
+        divSelectProduct.className = "div-select-product";
+        // зберігаємо DOM-дерево правого вікна
+        const divWindowProduct = document.querySelector(`.${thirdBG}`).replaceChild(divSelectProduct, document.querySelector(`.${thirdDiv}`));
+        // відображаємо три кнопки і вікно з товаром
+        const nodePruductHTML = [];
+        nodePruductHTML.push(`<div class=div-button-to-cart>`);
+        nodePruductHTML.push(`<button class='button-add-cart' id='button-cart-choices'><p class='header-button-add-cart'>Додати у кошик</p></button>`);
+        nodePruductHTML.push(`<button class='button-add-cart' id='button-cart-wait'><p class='header-button-add-cart'>Додати до вподобань</p></button>`);
+        nodePruductHTML.push(`<button class='button-add-cart' id='button-cart-cancel'><p class='header-button-add-cart'>Повернутись до каталогу</p></button>`);
+        nodePruductHTML.push(`</div>`);
+
+        nodePruductHTML.push(`<div class=div-description-to-cart>`);
+        nodePruductHTML.push(`</div>`);
+
+        divSelectProduct.innerHTML = nodePruductHTML.join("");
+
+        // клонуємо вибраний продукт для відображення ПЕРЕД переміщенням у кошик
+        const cloneCartProductForSelect = choiceCurrentProduct.target.closest('.div-button-product').cloneNode(true);
+        document.querySelector(".div-description-to-cart").appendChild(cloneCartProductForSelect);
+        // заміна класу вибраного товару - щоб змініти форму курсора та margin від тексту
+        document.querySelector(".div-button-product").className = "div-button-product-before-cart";
+
+        // клонуємо вибраний продукт для ПЕРЕМІЩЕННЯ у кошик
+        const cloneCartProductForCart = choiceCurrentProduct.target.closest('.div-button-product').cloneNode(true);
+        // заміна класу вибраного товару - щоб змініти форму курсора
+        cloneCartProductForCart.className = "div-button-product-cart";
+
+        // створюємо новий "div" для відображення інформації по продукту
+        const divAdditionalInformationProduct = document.createElement("div");
+        divAdditionalInformationProduct.className = "div-additional-information-product";
+        const nodeAddInformHTML = [];
+        nodeAddInformHTML.push(...functionsForButtonMenu[currentMenu][2]());
+        nodeAddInformHTML.push(`</div>`);
+        divAdditionalInformationProduct.innerHTML = nodeAddInformHTML.join("");
+        document.querySelector(".div-description-to-cart").appendChild(divAdditionalInformationProduct);
+
+        // зберігаємо id товара на випадок форс-мажора (зміна орієнтації екрана)
+        buttonSubMenu[currentMenu]["ID_select_product"] = indexButtonClick.id;
+        // безпосереднє додавання товару у кошик
+        [...document.querySelectorAll('.button-add-cart')].forEach(buttonClick => {
+          buttonClick.addEventListener('click', (buttonSelectedCart) => {
+            switch (buttonSelectedCart.currentTarget.id) {
+              case 'button-cart-choices':
+                cartChoice.push(cloneCartProductForCart);
+                break;
+              case 'button-cart-wait':
+                cartWait.push(cloneCartProductForCart);
+                break;
+            };
+            // ----> Відновлюємо всі товари у правому вікні
+            document.querySelector(`.${thirdBG}`).replaceChild(divWindowProduct, divSelectProduct);
+            // ----> Відновлюємо всі кнопки у підменю
+            buttonSubMenu[currentMenu]["status_select_pruduct"] = false;
+            correctionCSSButtonSubMenu(currentMenu);
+          })
+        });
+      });
+    });
+
+    // якщо вийшла зміна орієнтації екрану в момент додавання товара у кошик
+    if (buttonSubMenu[currentMenu]["status_select_pruduct"]) {
+      // повертаємо всі кнопки субменю в нормальний стан (корегуємо CSS)
+      buttonSubMenu[currentMenu]["status_select_pruduct"] = false;
+      correctionCSSButtonSubMenu(currentMenu);
+      // імітуємо натискання на вибраний товар по збереженому id
+      document.querySelector(`#${buttonSubMenu[currentMenu]["ID_select_product"]}`).click();
+    }
+  }
+
+  const createSubMenu = () => {
+    // підсвічуємо поточний вибраний пункт
+    document.querySelector(`#${currentMenu}`).className = 'selected-button';
+    // формуємо колонку з субменю   
+    const fragmentMiddle = creationSubMenu(buttonSubMenu[currentMenu]);
+    document.querySelector(".smallmenu-second-bg").replaceWith(fragmentMiddle);
+    // обробка натискання кнопок у субменю та відображення колонки з товаром
+    clickButtonSubMenu();
+    // забеспечення кольору конопок субменю при зміні орієнтації  
+    correctionCSSButtonSubMenu(currentMenu);
+    // формуємо колонку з товаром
+    const fragmentRight = creationWindowProduct(thirdBG, thirdDiv, currentMenu,
+      functionsForButtonMenu[currentMenu][0], functionsForButtonMenu[currentMenu][1], functionsForButtonMenu[currentMenu][2]);
+    document.querySelector(`.${thirdBG}`).replaceWith(fragmentRight);
+    // обробка вибору товара для додавання у кошик
+    fixedClickButtonProduct();
+    // обробка натискань у меню кошик
+    fixedClickButtonCart();
+
+    // оновлення колонки з товаром після натискання кнопки субменю - 
+    [...document.querySelectorAll('.second-button'), ...document.querySelectorAll('.second-button-selected')].forEach(indexMiddlelMenu => {
+      indexMiddlelMenu.addEventListener('click', () => {
+        const fragmentRight = creationWindowProduct(thirdBG, thirdDiv, currentMenu,
+          functionsForButtonMenu[currentMenu][0], functionsForButtonMenu[currentMenu][1], functionsForButtonMenu[currentMenu][2]);
+        document.querySelector(`.${thirdBG}`).replaceWith(fragmentRight);
+        // обробка вибору товара для додавання у кошик
+        fixedClickButtonProduct();
+        // обробка натискань у меню кошик
+        fixedClickButtonCart();
+      });
+    });
+  }
+
+  createSubMenu();
 
   // реалізація вибіру і підсвітки вибраного пункта меню
   [...document.querySelectorAll('.smallmenu-button'), ...document.querySelectorAll('.selected-button')].forEach(indexSmallMenu => {
@@ -127,26 +313,7 @@ const showSubMenu = (mainSmall, menuBG, menuDiv, classMenuDiv, subScreen1, subSc
       // новий вибраний пункт підсвічуємо 
       currentMenu = indexSmallMenu.id; // вибране меню - локальна змінна
       ROOT.style.setProperty("--currentMenu", indexSmallMenu.id); // вибране меню  - глобальна змінна
-      document.querySelector(`#${currentMenu}`).className = 'selected-button';
-      // оновлюємо колонку з субменю
-      const fragmentMiddle = creationSubMenu(buttonSubMenu[currentMenu]);
-      //* - ВИПРАВИТИ ПОСИЛАННЯ НА - ЗРОБИТИ РІЗНИМ ДЛЯ АЛЬБОМУ І ПОРТРЕТУ
-      document.querySelector(".smallmenu-second-bg").replaceWith(fragmentMiddle);
-      // обробка натискання кнопок у середній колонці
-      clickButtonSubMenu();
-      correctionCSSButtonSubMenu(currentMenu);
-      // оновлюємо колонку з товаром
-      const fragmentRight = creationWindowProduct(thirdBG, thirdDiv, currentMenu,
-        functionsForButtonMenu[currentMenu][0], functionsForButtonMenu[currentMenu][1], functionsForButtonMenu[currentMenu][2]);
-      document.querySelector(`.${thirdBG}`).replaceWith(fragmentRight);
-      // оновлення колонки з товаром після натискання кнопки субменю
-      [...document.querySelectorAll('.second-button'), ...document.querySelectorAll('.second-button-selected')].forEach(indexMiddlelMenu => {
-        indexMiddlelMenu.addEventListener('click', () => {
-          const fragmentRight = creationWindowProduct(thirdBG, thirdDiv, currentMenu,
-            functionsForButtonMenu[currentMenu][0], functionsForButtonMenu[currentMenu][1], functionsForButtonMenu[currentMenu][2]);
-          document.querySelector(`.${thirdBG}`).replaceWith(fragmentRight);
-        })
-      });
+      createSubMenu();
     })
   });
 };
@@ -177,10 +344,10 @@ const creationWindowProduct = (classNameBG, classNameDiv, currentButtonBig, getF
   }
   // якщо меню інформаційне - 
   if (buttonSubMenu[currentButtonBig]["status_submenu"] === "information") {
-    // Знаходимо нажату кнопку і отрумуємо по ній інформаційну сторінку    
+    // Знаходимо нажату кнопку і отримуємо по ній інформаційну сторінку    
     for (const indexSubMenu in buttonSubMenu[currentButtonBig]) {
       const currentElement = buttonSubMenu[currentButtonBig][indexSubMenu];
-      if (currentElement.selector === 'button') {        
+      if (currentElement.selector === 'button') {
         if (currentElement.status) {
           nodeTextHTML.push(...getReferenceInformationProduct(currentElement.header));
         }
@@ -190,7 +357,5 @@ const creationWindowProduct = (classNameBG, classNameDiv, currentButtonBig, getF
 
   nodeTextHTML.push("</div>");
   fragmentDiv.innerHTML = nodeTextHTML.join("");
-  const fragment = document.createDocumentFragment();
-  fragment.appendChild(fragmentDiv);
-  return fragment;
+  return fragmentDiv;
 }

@@ -1,25 +1,25 @@
 import { buttonSubMenu } from "../../smallmenu_screen/js/object_buttonSubMenu.js";
+import { currentPrice } from "../../smallmenu_screen/js/object_current_price.js";
 
 const objectProductParameters = {
   infoParametrs: {
     lengthCable: ["5", "10", "15", "20", "25", "30", "35", "40", "50", "60", "70"],
     squareCable: ["10", "16", "25", "35", "50", "70", "95"],
     typePML: ["лужена", "не лужена"],
-    typeTip: ["стандартні", "плоскі"],
+    typeTip: ["стандарт", "плоский"],
     productionTime: ["за 2 дні", "за 4 дні",],
-
-    pricePML_10: 80,
-    pricePML_16: 120,
-    pricePML_25: 175,
-    pricePML_35: 240,
-    pricePML_50: 360,
-    pricePML_70: 420,
-    pricePML_95: 550,
-    priceTipStandart: 40,
-    priceTipFlat: 90,
-    tradeСopper: 1.05,
-    tradeCoating: 1.15,
-    tradeMargin: 1.26,
+    pricePML_10: currentPrice.pricePML_10,
+    pricePML_16: currentPrice.pricePML_16,
+    pricePML_25: currentPrice.pricePML_25,
+    pricePML_35: currentPrice.pricePML_35,
+    pricePML_50: currentPrice.pricePML_50,
+    pricePML_70: currentPrice.pricePML_70,
+    pricePML_95: currentPrice.pricePML_95,
+    priceTipStandart: currentPrice.priceTipStandart,
+    priceTipFlat: currentPrice.priceTipFlat,
+    tradeСopper: currentPrice.tradeСopper,
+    tradeCoating: currentPrice.tradeCoating,
+    tradeMargin: currentPrice.tradeMargin_06,
   },
 
   // формуємо можливі варіанти (сети) для кожного перерізу кабеля
@@ -28,139 +28,143 @@ const objectProductParameters = {
       lengthCable: ["5", "10", "15", "20", "25", "30", "35", "40", "50", "60", "70"],
       squareCable: ["10"],
       typePML: ["лужена", "не лужена"],
-      typeTip: ["стандартні"],
+      typeTip: ["стандарт"],
       productionTime: ["за 2 дні"],
     },
     set_10_2: {
       lengthCable: ["5", "10", "15", "20", "25", "30", "35", "40", "50", "60", "70"],
       squareCable: ["10"],
       typePML: ["лужена", "не лужена"],
-      typeTip: ["плоскі"],
+      typeTip: ["плоский"],
       productionTime: ["за 4 дні"],
     },
     set_16_1: {
       lengthCable: ["5", "10", "15", "20", "25", "30", "35", "40", "50", "60", "70"],
       squareCable: ["16"],
       typePML: ["лужена", "не лужена"],
-      typeTip: ["стандартні"],
+      typeTip: ["стандарт"],
       productionTime: ["за 2 дні"],
     },
     set_16_2: {
       lengthCable: ["5", "10", "15", "20", "25", "30", "35", "40", "50", "60", "70"],
       squareCable: ["16"],
       typePML: ["лужена", "не лужена"],
-      typeTip: ["плоскі"],
+      typeTip: ["плоский"],
       productionTime: ["за 4 дні"],
     },
     set_25_1: {
       lengthCable: ["5", "10", "15", "20", "25", "30", "35", "40", "50", "60", "70"],
       squareCable: ["25"],
       typePML: ["лужена", "не лужена"],
-      typeTip: ["стандартні"],
+      typeTip: ["стандарт"],
       productionTime: ["за 2 дні"],
     },
     set_25_2: {
       lengthCable: ["5", "10", "15", "20", "25", "30", "35", "40", "50", "60", "70"],
       squareCable: ["25"],
       typePML: ["лужена", "не лужена"],
-      typeTip: ["плоскі"],
+      typeTip: ["плоский"],
       productionTime: ["за 4 дні"],
     },
     set_35_1: {
       lengthCable: ["5", "10", "15", "20", "25", "30", "35", "40"],
       squareCable: ["35"],
       typePML: ["лужена", "не лужена"],
-      typeTip: ["стандартні"],
+      typeTip: ["стандарт"],
       productionTime: ["за 2 дні"],
     },
     set_35_2: {
       lengthCable: ["50", "60", "70"],
       squareCable: ["35"],
       typePML: ["лужена", "не лужена"],
-      typeTip: ["стандартні"],
+      typeTip: ["стандарт"],
       productionTime: ["за 4 дні"],
     },
     set_35_3: {
       lengthCable: ["5", "10", "15", "20", "25", "30", "35", "40", "50", "60", "70"],
       squareCable: ["35"],
       typePML: ["лужена", "не лужена"],
-      typeTip: ["плоскі"],
+      typeTip: ["плоский"],
       productionTime: ["за 4 дні"],
     },
     set_50_1: {
       lengthCable: ["5", "10", "15", "20", "25", "30"],
       squareCable: ["50"],
       typePML: ["лужена", "не лужена"],
-      typeTip: ["стандартні"],
+      typeTip: ["стандарт"],
       productionTime: ["за 2 дні"],
     },
     set_50_2: {
       lengthCable: ["35", "40", "50", "60", "70"],
       squareCable: ["50"],
       typePML: ["лужена", "не лужена"],
-      typeTip: ["стандартні"],
+      typeTip: ["стандарт"],
       productionTime: ["за 4 дні"],
     },
     set_50_3: {
       lengthCable: ["5", "10", "15", "20", "25", "30", "35", "40", "50", "60", "70"],
       squareCable: ["50"],
       typePML: ["лужена", "не лужена"],
-      typeTip: ["плоскі"],
+      typeTip: ["плоский"],
       productionTime: ["за 4 дні"],
     },
     set_70_1: {
       lengthCable: ["5", "10", "15", "20", "25", "30"],
       squareCable: ["70"],
       typePML: ["лужена", "не лужена"],
-      typeTip: ["стандартні"],
+      typeTip: ["стандарт"],
       productionTime: ["за 2 дні"],
     },
     set_70_2: {
       lengthCable: ["35", "40", "50", "60", "70"],
       squareCable: ["70"],
       typePML: ["лужена", "не лужена"],
-      typeTip: ["стандартні"],
+      typeTip: ["стандарт"],
       productionTime: ["за 4 дні"],
     },
     set_70_3: {
       lengthCable: ["5", "10", "15", "20", "25", "30", "35", "40", "50", "60", "70"],
       squareCable: ["70"],
       typePML: ["лужена", "не лужена"],
-      typeTip: ["плоскі"],
+      typeTip: ["плоский"],
       productionTime: ["за 4 дні"],
     },
     set_95_1: {
       lengthCable: ["5", "10", "15", "20", "25", "30"],
       squareCable: ["95"],
       typePML: ["лужена", "не лужена"],
-      typeTip: ["стандартні"],
+      typeTip: ["стандарт"],
       productionTime: ["за 2 дні"],
     },
     set_95_2: {
       lengthCable: ["35", "40", "50", "60", "70"],
       squareCable: ["95"],
       typePML: ["лужена", "не лужена"],
-      typeTip: ["стандартні"],
+      typeTip: ["стандарт"],
       productionTime: ["за 4 дні"],
     },
     set_95_3: {
       lengthCable: ["5", "10", "15", "20", "25", "30", "35", "40", "50", "60", "70"],
       squareCable: ["95"],
       typePML: ["лужена", "не лужена"],
-      typeTip: ["плоскі"],
+      typeTip: ["плоский"],
       productionTime: ["за 4 дні"],
     }
   }
 }
 
 const textReferenceInformation = [
-  " Перемички ПМЛ  ....",
-
+  "Шини маси з мідної плетінки можуть використовуватись у якості перемичок АКБ чи у іншій якості де потрібно передавати струм. Для виготовлення використовується мідна плетінка різного перерізу.",
+  "Переріз шини впливає на здатність передавати струм. Чим більший переріз, тим більший струм шина може витримати без суттєвого перегріву поза межами визначеними виробником. Плетінка буває мідною чи мідною з покриттям (лужена). Лужена більш захищена від окислення при експлуатації в несприятливих умовах. Додатковим параметром є діаметр отвору у наконечниках на кінцівках перемичок.",
+  "Наконечники можуть бути двох типів — стандартні та плоскі. Стандартні - це звичайні наконечники, які виготовляються промисловістю. Плоскі - це наконечники малої довжини плоскої форми. Всі типи наконечників опресовуються гідравлічним пресом.",
 ];
 
 export const getCreationButtonProduct_06 = (objectButtonProduct) => {
-  const nodeTextHTML = [];
-  nodeTextHTML.push("<div class='div-button-product'>");
+  const nodeTextHTML = [];  
+  nodeTextHTML.push(`<div class='div-button-product' id=${objectButtonProduct.ID}>`);
+
+  // формуємо заголовок товару
+  nodeTextHTML.push(`<p class='header-name-product'>Шина плетена, ${objectButtonProduct.typePML} - ${objectButtonProduct.lengthCable} - ${objectButtonProduct.squareCable}</p>`);
 
   // формуємо фото продукту
   nodeTextHTML.push("<div class='div-image-product'>");
@@ -174,9 +178,9 @@ export const getCreationButtonProduct_06 = (objectButtonProduct) => {
   nodeTextHTML.push(`<p class='paragraph-value'> ${objectButtonProduct.lengthCable} </p>`);
   nodeTextHTML.push("<p class='paragraph-header'>Кабель</p>");
   nodeTextHTML.push(`<p class='paragraph-value'> ${objectButtonProduct.squareCable} </p>`);
-  nodeTextHTML.push("<p class='paragraph-header'></p>");
-  nodeTextHTML.push(`<p class='paragraph-value'> ${objectButtonProduct.typePML} </p>`);
-  nodeTextHTML.push("<p class='paragraph-header'></p>");
+  // nodeTextHTML.push("<p class='paragraph-header'></p>");
+  // nodeTextHTML.push(`<p class='paragraph-value'> ${objectButtonProduct.typePML} </p>`);
+  nodeTextHTML.push("<p class='paragraph-header'>Наконечник</p>");
   nodeTextHTML.push(`<p class='paragraph-value'> ${objectButtonProduct.typeTip} </p>`);
   nodeTextHTML.push("<p class='paragraph-header'>Термін</p>");
   nodeTextHTML.push(`<p class='paragraph-value'> ${objectButtonProduct.productionTime} </p>`);
@@ -281,7 +285,7 @@ export const getFilteredAssortedProduct_06 = () => {
     }
     if (buttonsForTipAll.includes(nameButton)) {
       if (buttonSubMenu.button_big_6[nameButton].status) {
-        includedTip.push("стандартні", "плоскі");
+        includedTip.push("стандарт", "плоский");
       }
     }
   }
@@ -329,8 +333,8 @@ export const getFilteredAssortedProduct_06 = () => {
                         indexCountProduct += 1;
                         exportObjectProduct[indexCountProduct] = [];
                         exportObjectProduct[indexCountProduct]["ID"] = `product_${indexCountProduct}`;
-                        exportObjectProduct[indexCountProduct]["lengthCable"] = `${length_cable} см`;
-                        exportObjectProduct[indexCountProduct]["squareCable"] = `${square_cable} кв.мм.`;
+                        exportObjectProduct[indexCountProduct]["lengthCable"] = `${length_cable}&nbspсм`;
+                        exportObjectProduct[indexCountProduct]["squareCable"] = `${square_cable}&nbspкв.мм.`;
                         exportObjectProduct[indexCountProduct]["typePML"] = `${type_pml}`;
                         exportObjectProduct[indexCountProduct]["typeTip"] = `${type_tip}`;
                         exportObjectProduct[indexCountProduct]["productionTime"] = `${production_time}`;
@@ -367,10 +371,10 @@ export const getFilteredAssortedProduct_06 = () => {
                             break;
                         }
                         switch (type_tip) {
-                          case "стандартні":
+                          case "стандарт":
                             priceCurrentTip = priceTipStandart;
                             break;
-                          case "плоскі":
+                          case "плоский":
                             priceCurrentTip = priceTipFlat;
                             break;
                         }

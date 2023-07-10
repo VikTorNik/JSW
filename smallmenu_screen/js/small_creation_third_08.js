@@ -1,4 +1,5 @@
 import { buttonSubMenu } from "./object_buttonSubMenu.js";
+import { currentPrice } from "../../smallmenu_screen/js/object_current_price.js";
 
 const objectProductParameters = {
   infoParametrs: {
@@ -7,15 +8,15 @@ const objectProductParameters = {
     lengthOutputVoltage: ["1.0", "2.0", "3.0", "4.0", "5.0"],
     squareCable: ["3 * 2.5", "3 * 4.0", "3 * 6.0"],
     productionTime: ["за 2 дні", "за 4 дні"],
-    priceCable_2_5: 50,
-    priceCable_4_0: 90,
-    priceCable_6_0: 150,
-    priceSocket_1: 150,
-    priceSocket_2: 190,
-    priceSocket_3: 240,
-    priceSocket_4: 300,
-    priceSocket_5: 360,
-    tradeMargin: 1.3,
+    priceCable_2_5: currentPrice.priceCable_2_5,
+    priceCable_4_0: currentPrice.priceCable_4_0,
+    priceCable_6_0: currentPrice.priceCable_6_0,
+    priceSocket_1: currentPrice.priceSocket_1,
+    priceSocket_2: currentPrice.priceSocket_2,
+    priceSocket_3: currentPrice.priceSocket_3,
+    priceSocket_4: currentPrice.priceSocket_4,
+    priceSocket_5: currentPrice.priceSocket_5,
+    tradeMargin: currentPrice.tradeMargin_08,
   },
 
   // формуємо можливі варіанти (сети) для кожного перерізу кабеля
@@ -45,12 +46,23 @@ const objectProductParameters = {
 }
 
 const textReferenceInformation = [
-  " 220 В подовжувач ....",
+  "Дроти 220В використовуються для вхідного підключення інверторів до мережі 220В та вихідного підключення споживачів.",
+  "Кабель для вхідного підключення потрібен, якщо ваш інвертор не підключений безпосередньо до щитка та живиться від розетки. Кабель включає в себе стандартний штекер для розетки та кабель відповідної довжини на кінцях якого обжаті штирьові наконечники для зажиму у відповідних роз'ємах інвертора. Переріз кабель визначається потужністю інвертора у відповідності до потужності підключених споживачів.",
+  "Кабель для вихідного підключення включає в себе планку з розетками від 1 до 5 штук для підключення споживачів.Другий кінец кабеля має обжаті штирьові наконечники для зажиму у відповідних роз'ємах інвертора. Переріз кабель визначається потужністю інвертора у відповідності до потужності підключених споживачів.",
+  "Використовуєтья марка кабеля ПВС відповідного перерізку.Для невеликої потужності(до 1 кВт) — ПВС 3 * 2, 5. Для потужності від 1 до 3 кВт — ПВС 3 * 4, 0. І для потужності більше 3 кВт - ПВС 3 * 6, 0.",
 ];
 
 export const getCreationButtonProduct_08 = (objectButtonProduct) => {
   const nodeTextHTML = [];
-  nodeTextHTML.push("<div class='div-button-product'>");
+  nodeTextHTML.push(`<div class='div-button-product' id=${objectButtonProduct.ID}>`);
+
+  // формуємо заголовок товару
+  if (objectButtonProduct.lengthOutputVoltage) {
+    nodeTextHTML.push(`<p class='header-name-product'>Кабель вихідний з розетками (${objectButtonProduct.lengthOutputVoltage})</p>`);
+  }
+  if (objectButtonProduct.lengthInputVoltage) {
+    nodeTextHTML.push(`<p class='header-name-product'>Кабель вхідний (${objectButtonProduct.lengthInputVoltage} - ${objectButtonProduct.squareCable})</p>`);
+  }
 
   // формуємо фото продукту
   nodeTextHTML.push("<div class='div-image-product'>");
@@ -77,9 +89,9 @@ export const getCreationButtonProduct_08 = (objectButtonProduct) => {
   }
 
   if (objectButtonProduct.lengthInputVoltage) {
-    nodeTextHTML.push("<div class='div-description-product'>");    
-    nodeTextHTML.push("<p class='paragraph-header'>Кабель</p>");
-    nodeTextHTML.push(`<p class='paragraph-value'>вхідний</p>`);
+    nodeTextHTML.push("<div class='div-description-product'>");
+    // nodeTextHTML.push("<p class='paragraph-header'>Кабель</p>");
+    // nodeTextHTML.push(`<p class='paragraph-value'>вхідний</p>`);
     nodeTextHTML.push("<p class='paragraph-header'>Довжина</p>");
     nodeTextHTML.push(`<p class='paragraph-value'> ${objectButtonProduct.lengthInputVoltage} </p>`);
     nodeTextHTML.push("<p class='paragraph-header'>Кабель</p>");
@@ -288,8 +300,8 @@ export const getFilteredAssortedProduct_08 = () => {
                 indexCountProduct += 1;
                 exportObjectProduct[indexCountProduct] = [];
                 exportObjectProduct[indexCountProduct]["ID"] = `product_${indexCountProduct}`;
-                exportObjectProduct[indexCountProduct]["lengthInputVoltage"] = `${input_voltage} м`;
-                exportObjectProduct[indexCountProduct]["squareCable"] = `${square_cable} кв.мм`;
+                exportObjectProduct[indexCountProduct]["lengthInputVoltage"] = `${input_voltage}&nbspм`;
+                exportObjectProduct[indexCountProduct]["squareCable"] = `${square_cable}&nbspкв.мм`;
                 exportObjectProduct[indexCountProduct]["productionTime"] = `${production_time}`;
                 // розрахунок вартості продукту                
                 switch (square_cable) {

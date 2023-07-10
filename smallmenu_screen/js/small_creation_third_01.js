@@ -1,4 +1,5 @@
 import { buttonSubMenu } from "../../smallmenu_screen/js/object_buttonSubMenu.js";
+import { currentPrice } from "../../smallmenu_screen/js/object_current_price.js";
 
 const objectProductParameters = {
   infoParametrs: {
@@ -6,14 +7,14 @@ const objectProductParameters = {
     squareCable: ["10", "16", "25", "35", "50"],
     typeAlligator: ["залізо", "пластик"],
     productionTime: ["готове", "за 1 день", "за 2 дні", "за 4 дні",],
-    priceCable_10: 80,
-    priceCable_16: 120,
-    priceCable_25: 175,
-    priceCable_35: 240,
-    priceCable_50: 360,
-    priceAlligatorFerum: 337 / 2,
-    priceAlligatorPlastic: 516 / 2,
-    tradeMargin: 1.26,
+    priceCable_10: currentPrice.priceCable_10,
+    priceCable_16: currentPrice.priceCable_16,
+    priceCable_25: currentPrice.priceCable_25,
+    priceCable_35: currentPrice.priceCable_35,
+    priceCable_50: currentPrice.priceCable_50,
+    priceAlligatorFerum: currentPrice.priceOneAlligatorFerum,
+    priceAlligatorPlastic: currentPrice.priceOneAlligatorPlastic,
+    tradeMargin: currentPrice.tradeMargin_01,
   },
 
   // формуємо можливі варіанти (сети) для кожного перерізу кабеля
@@ -83,7 +84,7 @@ const objectProductParameters = {
 
 const textReferenceInformation = [
   "Комплект дротів для пуско-зарядних пристроїв складається з «плюсового» та «мінусового» кабелю з однєї сторони закріплені «крокодили» відповідного кольору, а з іншого мідний наконечник. «Плюсовий» кабель має «крокодил» червоного кольору, а «мінусовий» кабель має «крокодил» чорного кольору.",
-  "Довжину кабелю потрібно вибирати мінімально можливої довжини. Чим менша довжина кабелю, тим менша «просадка» напруги й, відповідно, тим більше шансів успішно завершити процедуру пуску двигуна.",
+  "Довжину кабелю потрібно вибирати мінімально можливою. Чим менша довжина кабелю, тим менша «просадка» напруги й, відповідно, тим більше шансів успішно завершити процедуру пуску двигуна.",
   "Для виготовлення використовується мідний багатожильний провід українського виробництва. Кабель має гумову оболонку, яка не втрачає гнучкості до мінус 40 градусів морозу. Має відповідне маркування — виробник, переріз і дійсно гнучкий навіть при низькій температурі. Кабель додатково оздоблений термоусадкою з клеєм для запобігання окислення.",
   "Звертаємо увагу, що зазвичай у стандартній комплектації до пуско-зарядних пристроїв ви отримаєте комплект кабелів з алюмінієвими жилами всередені.",
   "Можливий вибір між двома типами «крокодилів»: залізними та пластиковими.",
@@ -95,17 +96,76 @@ const textReferenceInformation = [
 
 export const getCreationButtonProduct_01 = (objectButtonProduct) => {
   const nodeTextHTML = [];
-  nodeTextHTML.push("<div class='div-button-product'>");
+  nodeTextHTML.push(`<div class='div-button-product' id=${objectButtonProduct.ID}>`);
+
+  // формуємо заголовок товару
+  nodeTextHTML.push(`<p class='header-name-product'>Пуско-зарядні дроти - ${objectButtonProduct.lengthCable} - ${objectButtonProduct.squareCable}</p>`);
 
   // формуємо фото продукту
   nodeTextHTML.push("<div class='div-image-product'>");
+
   if (objectButtonProduct.typeAlligator === "залізо") {
-    nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/083.jpg' alt='Image cable'>");
+    switch (objectButtonProduct.squareCable.slice(0, 2)) {
+      case "10":
+        nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/01/m-1.jpg' alt='Cable 10 square, metal alligator'>");
+        break;
+      case "16":
+        nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/01/m-2.jpg' alt='Cable 16 square, metal alligator'>");
+        break;
+      case "25":
+        nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/01/m-3.jpg' alt='Cable 25 square, metal alligator'>");
+        break;
+      case "35":
+        nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/01/m-4.jpg' alt='Cable 35 square, metal alligator'>");
+        break;
+      case "50":
+        nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/01/m-5.jpg' alt='Cable 35 square, metal alligator'>");
+        break;
+    }
   }
   if (objectButtonProduct.typeAlligator === "пластик") {
-    nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/082.jpg' alt='Image cable'>");
+    switch (objectButtonProduct.squareCable.slice(0, 2)) {
+      case "10":
+        if (Number(objectButtonProduct.lengthCable.slice(0, 3)) <= 2.5) {
+          nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/01/p-1.jpg' alt='Cable 10 square, plastic alligator'>");
+        }
+        else {
+          nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/01/p-2.jpg' alt='Cable 10 square, plastic alligator'>");
+        }
+        break;
+      case "16":
+        if (Number(objectButtonProduct.lengthCable.slice(0, 3)) <= 2) {
+          nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/01/p-3.jpg' alt='Cable 16 square, plastic alligator'>");
+        }
+        else {
+          if (Number(objectButtonProduct.lengthCable.slice(0, 3)) <= 4) {
+            nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/01/p-4.jpg' alt='Cable 16 square, plastic alligator'>");
+          } else {
+            nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/01/p-5.jpg' alt='Cable 16 square, plastic alligator'>");
+          }
+        }
+        break;
+      case "25":
+        if (Number(objectButtonProduct.lengthCable.slice(0, 3)) <= 3) {
+          nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/01/p-6.jpg' alt='Cable 25 square, plastic alligator'>");
+        }
+        else {
+          nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/01/p-7.jpg' alt='Cable 25 square, plastic alligator'>");
+        }
+        break;
+      case "35":
+        if (Number(objectButtonProduct.lengthCable.slice(0, 3)) <= 3) {
+          nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/01/p-8.jpg' alt='Cable 35 square, plastic alligator'>");
+        }
+        else {
+          nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/01/p-9.jpg' alt='Cable 35 square, plastic alligator'>");
+        }
+        break;
+    }
   }
   nodeTextHTML.push("</div>");
+
+
   // формуємо опис продукту
   nodeTextHTML.push("<div class='div-description-product'>");
   nodeTextHTML.push("<p class='paragraph-header'> Довжина</p>");
@@ -242,8 +302,8 @@ export const getFilteredAssortedProduct_01 = () => {
                     indexCountProduct += 1;
                     exportObjectProduct[indexCountProduct] = [];
                     exportObjectProduct[indexCountProduct]["ID"] = `product_${indexCountProduct}`;
-                    exportObjectProduct[indexCountProduct]["lengthCable"] = `${length_cable} м`;
-                    exportObjectProduct[indexCountProduct]["squareCable"] = `${square_cable} кв.мм.`;
+                    exportObjectProduct[indexCountProduct]["lengthCable"] = `${length_cable}&nbspм`;
+                    exportObjectProduct[indexCountProduct]["squareCable"] = `${square_cable}&nbspкв.мм.`;
                     exportObjectProduct[indexCountProduct]["typeAlligator"] = `${type_alligator}`;
                     exportObjectProduct[indexCountProduct]["productionTime"] = `${production_time}`;
                     // розрахунок вартості продукту

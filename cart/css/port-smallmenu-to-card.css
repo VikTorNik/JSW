@@ -1,0 +1,87 @@
+:root {
+  --div-select-product-for-cart: 10px;
+  --top-from-info-text: 20px;
+  --right-from-info-text: 45px;
+  --bottom-from-info-text: 20px;
+  --left-from-info-text: 20px;
+}
+
+.div-select-product {
+  width: 100%;
+  height: calc(var(--height-smallmenu-land-div) * var(--ratioSizeWin));
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  overflow-y: scroll;
+  overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  border-radius: calc(var(--div-select-product-for-cart) * var(--ratioSizeWin));
+}
+
+.div-button-to-cart {
+  /* background: var(--COLOR-SCHEME-07); */
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  /* border-radius: 7px; */
+  padding: calc(var(--padding-button-product) * var(--ratioSizeWin));
+}
+
+.button-add-cart {
+  cursor: pointer;
+  margin: calc(var(--margin-top-button) * var(--ratioSizeWin)) calc(var(--margin-left-button) * var(--ratioSizeWin));
+  padding: 0;
+  background: var(--COLOR-SCHEME-16);
+  box-shadow: calc(var(--smallmenu-shadow-right) * var(--ratioSizeWin)) calc(var(--smallmenu-shadow-bottom) * var(--ratioSizeWin)) calc(var(--smallmenu-shadow-blur) * var(--ratioSizeWin)) rgba(0, 0, 0, 0.5);
+  border-radius: calc(var(--smallmenu-button-border-radius) * var(--ratioSizeWin));
+  border-color: transparent;
+  border-style: none;
+}
+
+.header-button-add-cart {
+  color: var(--COLOR-SCHEME-03);
+  margin: 0 calc(var(--smallmenu-header-margin) * var(--ratioSizeWin));
+  padding: calc(var(--smallmenu-header-padding) * var(--ratioSizeWin));
+  font-family: 'Yanone Kaffeesatz';
+  font-style: normal;
+  letter-spacing: normal;
+  font-weight: 600;
+  font-size: calc(var(--smallmenu-header-font-size) * var(--ratioSizeWin));
+  text-align: left;
+}
+
+.button-add-cart:focus,
+.button-add-cart:hover {
+  background: var(--COLOR-SCHEME-17);
+  transform: scale(1.03);
+}
+
+.div-button-product-before-cart {
+  /* zoom: 2; */
+  float: left;
+  cursor: default;
+  display: grid;
+  /* grid-template-columns: 3fr 1fr; */
+  background: var(--COLOR-SCHEME-15);
+  width: calc(var(--width-button-product) * var(--ratioSizeWin));
+  height: calc(var(--height-button-product) * var(--ratioSizeWin));
+  padding: calc(var(--padding-button-product) * var(--ratioSizeWin));
+  margin: calc(var(--top-from-info-text) * var(--ratioSizeWin)) calc(var(--right-from-info-text) * var(--ratioSizeWin)) calc(var(--bottom-from-info-text) * var(--ratioSizeWin)) calc(var(--left-from-info-text) * var(--ratioSizeWin));
+  box-shadow: calc(var(--box-shadow-param-first) * var(--ratioSizeWin)) calc(var(--box-shadow-param-second) * var(--ratioSizeWin)) calc(var(--box-shadow-param-third) * var(--ratioSizeWin)) rgba(0, 0, 0, 0.4);
+  border-radius: calc(var(--radius-button-product) * var(--ratioSizeWin));
+}
+
+
+.div-button-product-cart {
+  cursor: default;
+  width: calc(var(--width-button-product) * var(--ratioSizeWin));
+  height: calc(var(--height-button-product) * var(--ratioSizeWin));
+  padding: calc(var(--padding-button-product) * var(--ratioSizeWin));
+  display: grid;
+  /* grid-template-columns: 1fr 3fr; */
+  background: var(--COLOR-SCHEME-15);
+  margin: calc(var(--margin-button-product) * var(--ratioSizeWin));
+  box-shadow: calc(var(--box-shadow-param-first) * var(--ratioSizeWin)) calc(var(--box-shadow-param-second) * var(--ratioSizeWin)) calc(var(--box-shadow-param-third) * var(--ratioSizeWin)) rgba(0, 0, 0, 0.4);
+  border-radius: calc(var(--radius-button-product) * var(--ratioSizeWin));
+}

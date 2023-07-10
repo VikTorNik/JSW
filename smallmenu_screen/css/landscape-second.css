@@ -1,7 +1,8 @@
 :root {
   --second-button-header-font-size: 22px;
   --second-header-font-size: 20px;
-  --padding-font: 0px; /* потрібно збільшити щоб центрувати текст на кнопках */
+  --padding-font: 0px;
+  /* потрібно збільшити щоб центрувати текст на кнопках */
   --letter-spacing-font: 1px;
   --padding-header: 4px;
   --margin-header: 12px;
@@ -13,12 +14,9 @@
   background: var(--COLOR-SCHEME-06);
   width: 100%;
   height: calc(var(--height-smallmenu-land-div) * var(--ratioSizeWin));
-  
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   border-radius: 7px;
-  /* margin: 4px;
-    padding: 4px; */
 }
 
 .second-button {
@@ -81,8 +79,8 @@
 }
 
 .second-button-desabled {
-  cursor: not-allowed;
-  opacity: 0.25;
+  pointer-events: none;
+  background: var(--COLOR-SCHEME-19);
   padding: 0;
   margin: calc(var(--margin-top-button) * var(--ratioSizeWin) * 1.95) calc(var(--margin-top-button) * var(--ratioSizeWin) * 2.6);
   box-shadow: calc(var(--smallmenu-shadow-right) * var(--ratioSizeWin)) calc(var(--smallmenu-shadow-bottom) * var(--ratioSizeWin)) calc(var(--smallmenu-shadow-blur) * var(--ratioSizeWin)) rgba(0, 0, 0, 0.4);
@@ -91,8 +89,12 @@
   border-style: none;
 }
 
-/* .div-information-product {  
-} */
+.second-button-desabled .second-button-header,
+.second-button-desabled .second-button-header-selected {
+  opacity: 0.6;
+}
+
+/* .div-information-product {} */
 
 .paragraph-information {
   margin: calc(var(--paragraph-information-margin) * var(--ratioSizeWin));
@@ -109,5 +111,5 @@
 .second-button-selected:focus,
 .second-button:hover,
 .second-button-selected:hover {
-  background: var(--COLOR-SCHEME-12);
+  background: var(--COLOR-SCHEME-10);
 }

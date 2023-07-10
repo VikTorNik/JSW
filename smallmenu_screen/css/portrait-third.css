@@ -79,8 +79,8 @@
 }
 
 .second-button-desabled {
-  cursor: not-allowed;
-  opacity: 0.35;
+  pointer-events: none;
+  background: var(--COLOR-SCHEME-19);
   padding: 0;
   margin: calc(var(--margin-top-button-second) * var(--ratioSizeWin) * 1.95) calc(var(--margin-top-button-second) * var(--ratioSizeWin) * 2.6);
   box-shadow: calc(var(--smallmenu-shadow-right) * var(--ratioSizeWin)) calc(var(--smallmenu-shadow-bottom) * var(--ratioSizeWin)) calc(var(--smallmenu-shadow-blur) * var(--ratioSizeWin)) rgba(0, 0, 0, 0.4);
@@ -89,8 +89,12 @@
   border-style: none;
 }
 
-/* .div-information-product {  
-} */
+.second-button-desabled .second-button-header,
+.second-button-desabled .second-button-header-selected {
+  opacity: 0.6;
+}
+
+/* .div-information-product {} */
 
 .paragraph-information {
   margin: calc(var(--paragraph-information-margin) * var(--ratioSizeWin));
@@ -107,5 +111,5 @@
 .second-button-selected:focus,
 .second-button:hover,
 .second-button-selected:hover {
-  background: var(--COLOR-SCHEME-12);
+  background: var(--COLOR-SCHEME-10);
 }

@@ -1,4 +1,5 @@
 import { buttonSubMenu } from "../../smallmenu_screen/js/object_buttonSubMenu.js";
+import { currentPrice } from "../../smallmenu_screen/js/object_current_price.js";
 
 const objectProductParameters = {
   infoParametrs: {
@@ -7,15 +8,15 @@ const objectProductParameters = {
     leftCableTermination: ["наконечник", "штирь", "нічого"],
     rightCableTermination: ["наконечник", "штирь", "нічого"],
     productionTime: ["готове", "за 1 день"],
-    priceCable_10: 80,
-    priceCable_16: 120,
-    priceCable_25: 175,
-    priceCable_35: 240,
-    priceCable_50: 360,
-    priceTip: 20,
-    pricePin: 30,
-    priceNothingTip: 10,
-    tradeMargin: 1.30,
+    priceCable_10: currentPrice.priceCable_10,
+    priceCable_16: currentPrice.priceCable_16,
+    priceCable_25: currentPrice.priceCable_25,
+    priceCable_35: currentPrice.priceCable_35,
+    priceCable_50: currentPrice.priceCable_50,
+    priceTip: currentPrice.priceTip_05,
+    pricePin: currentPrice.pricePin_05,
+    priceNothingTip: currentPrice.priceNothingTip_05,
+    tradeMargin: currentPrice.tradeMargin_05,
   },
 
   // формуємо можливі варіанти (сети) для кожного перерізу кабеля
@@ -94,13 +95,18 @@ const objectProductParameters = {
 }
 
 const textReferenceInformation = [
-  "Перемички гнучки за кабеля КГ ....",
-
+  "Перемички для акумуляторих батарей різного типу виготовляються з гнучкого за кабеля марки КГ.",
+  "Параметри, які впливають на вартість: переріз кабеля і довжина. Доважина повинна бути мінімально необхідною. Не потрібно робити довжину про запас. Чим більше довжина кабеля, тим більші втрати наприги на цьому кабелю. Переріз кабеля впливає на здатність пропускати через себе струм без суттєвого перегріву поза межами визначеними виробником. Для розрахунку перерізу кабеля потрібно знати номінальну потужність інвертора. Додатковим параметром є діаметр отвору у наконечниках на кінцівках перемичок.",
+  "Наконечники можуть бути двох типів — кільцеві (з отвором під гвинт) та штирьовим (для затискання гвинтом у спеціальних отворах інвертора). Для всіх перемичок наконечники опресоються гідравлічним пресом і до них додається подвійний шар клейової термоусадки відповідного кольору — червого чи чорного.",
+  "Для виготовлення використовується мідний багатожильний провід українського виробництва. Кабель має гумову оболонку, яка не втрачає гнучкості до мінус 40 градусів морозу. Має відповідне маркування — виробник, переріз і дійсно гнучкий навіть при низькій температурі. Звераємо увагу, що кабель марки ПВ-3, незважаючи на міньшу вартість порівняно з кабелем КГ — є поганим вибором. Кабель марки ПВ-3 - це кабель з обонкою ПВХ, який має досить пагану гнучкість та помітно меньші температурні допуски для використання.",
 ];
 
 export const getCreationButtonProduct_05 = (objectButtonProduct) => {
-  const nodeTextHTML = [];
-  nodeTextHTML.push("<div class='div-button-product'>");
+  const nodeTextHTML = [];  
+  nodeTextHTML.push(`<div class='div-button-product' id=${objectButtonProduct.ID}>`);
+
+  // формуємо заголовок товару
+  nodeTextHTML.push(`<p class='header-name-product'>Перемичка (${objectButtonProduct.leftCableTermination}-${objectButtonProduct.rightCableTermination}) <br> ${objectButtonProduct.lengthCable} - ${objectButtonProduct.squareCable}</p>`);
 
   // формуємо фото продукту
   nodeTextHTML.push("<div class='div-image-product'>");
@@ -114,10 +120,10 @@ export const getCreationButtonProduct_05 = (objectButtonProduct) => {
   nodeTextHTML.push(`<p class='paragraph-value'> ${objectButtonProduct.lengthCable} </p>`);
   nodeTextHTML.push("<p class='paragraph-header'>Кабель</p>");
   nodeTextHTML.push(`<p class='paragraph-value'> ${objectButtonProduct.squareCable} </p>`);
-  nodeTextHTML.push("<p class='paragraph-header'></p>");
-  nodeTextHTML.push(`<p class='paragraph-value'> ${objectButtonProduct.leftCableTermination} </p>`);
-  nodeTextHTML.push("<p class='paragraph-header'></p>");
-  nodeTextHTML.push(`<p class='paragraph-value'> ${objectButtonProduct.rightCableTermination} </p>`);
+  // nodeTextHTML.push("<p class='paragraph-header'></p>");
+  // nodeTextHTML.push(`<p class='paragraph-value'> ${objectButtonProduct.leftCableTermination} </p>`);
+  // nodeTextHTML.push("<p class='paragraph-header'></p>");
+  // nodeTextHTML.push(`<p class='paragraph-value'> ${objectButtonProduct.rightCableTermination} </p>`);
   nodeTextHTML.push("<p class='paragraph-header'>Термін</p>");
   nodeTextHTML.push(`<p class='paragraph-value'> ${objectButtonProduct.productionTime} </p>`);
   nodeTextHTML.push("<p class='paragraph-header'>Ціна</p>");
@@ -251,8 +257,8 @@ export const getFilteredAssortedProduct_05 = () => {
                         indexCountProduct += 1;
                         exportObjectProduct[indexCountProduct] = [];
                         exportObjectProduct[indexCountProduct]["ID"] = `product_${indexCountProduct}`;
-                        exportObjectProduct[indexCountProduct]["lengthCable"] = `${length_cable} cм`;
-                        exportObjectProduct[indexCountProduct]["squareCable"] = `${square_cable} кв.мм.`;
+                        exportObjectProduct[indexCountProduct]["lengthCable"] = `${length_cable}&nbspcм`;
+                        exportObjectProduct[indexCountProduct]["squareCable"] = `${square_cable}&nbspкв.мм.`;
                         exportObjectProduct[indexCountProduct]["leftCableTermination"] = `${left_cable_termination}`;
                         exportObjectProduct[indexCountProduct]["rightCableTermination"] = `${right_cable_termination}`;
                         exportObjectProduct[indexCountProduct]["productionTime"] = `${production_time}`;

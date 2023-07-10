@@ -2,7 +2,7 @@ import { ROOT } from "../../index.js";
 import { buttonSubMenu } from "../../smallmenu_screen/js/object_buttonSubMenu.js";
 import { functionsForButtonMenu } from "../../smallmenu_screen/js/smallmenu.js";
 
-// формуємо субменю з фільтрами і сортуванням
+// формуємо субменю з кнопками
 export const creationSubMenu = (objectButtonMiddleMenu) => {
   const fragmentDiv = document.createElement("div");
   fragmentDiv.className = "smallmenu-second-bg";
@@ -24,9 +24,7 @@ export const creationSubMenu = (objectButtonMiddleMenu) => {
   }
   nodeTextHTML.push("</div>");
   fragmentDiv.innerHTML = nodeTextHTML.join("");
-  const fragment = document.createDocumentFragment();
-  fragment.appendChild(fragmentDiv);
-  return fragment;
+  return fragmentDiv;
 }
 
 // фіксація і відтискання кнопки
@@ -179,10 +177,6 @@ const correctionButtonSubMenu = (objectButton /* "button_big_0" */, pressButton 
 
 // корегування (оновлення) CSS згідно з вибором
 export const correctionCSSButtonSubMenu = (objectButton /* "button_big_0" */) => {
-  // якщо кнопка "читати"
-
-  console.log(buttonSubMenu[objectButton]["status_submenu"]);
-
   // якщо меню для вибору продукції, то формуємо вивід продуктів, чи довідкову інформацію
   if (buttonSubMenu[objectButton]["status_submenu"] === "select production") {
     if (buttonSubMenu[objectButton][functionsForButtonMenu[objectButton][3]].status) {
@@ -196,6 +190,7 @@ export const correctionCSSButtonSubMenu = (objectButton /* "button_big_0" */) =>
         }
       }
     }
+    // якщо кнопка "читати"
     if (buttonSubMenu[objectButton][functionsForButtonMenu[objectButton][4]].status) {
       for (const indexSubMenu in buttonSubMenu[objectButton]) {
         const currentElement = buttonSubMenu[objectButton][indexSubMenu];
@@ -207,6 +202,18 @@ export const correctionCSSButtonSubMenu = (objectButton /* "button_big_0" */) =>
       }
       document.querySelector(`#${functionsForButtonMenu[objectButton][3]}`).className = 'second-button';
       document.querySelector(`#${functionsForButtonMenu[objectButton][4]}`).className = 'second-button-selected';
+    }
+  }
+
+  // якщо вибрали один з товарів - відключаємо всі пункти меню
+  if (buttonSubMenu[objectButton]["status_select_pruduct"]) {
+    for (const indexSubMenu in buttonSubMenu[objectButton]) {
+      const currentElement = buttonSubMenu[objectButton][indexSubMenu];
+      if (currentElement.selector === 'button') {
+        // знімаємо фокус з елемента бо йде баг при зміні класів в дереві DOM
+        document.querySelector(`#${indexSubMenu}`).blur();
+        document.querySelector(`#${indexSubMenu}`).className = 'second-button-desabled';
+      }
     }
   }
 

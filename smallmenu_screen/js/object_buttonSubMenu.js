@@ -7,7 +7,9 @@ middle_button_*** ["button", "Вибрати", true] - кнопка, хидер 
 
 export const buttonSubMenu = {
   button_big_0: {
-    status_submenu: "select production",
+    status_submenu: "select production", // тип під меню - продуктове, чи інформаційне
+    status_select_product: false, // селектор вибру товару в цей момент для деактивації кнопок
+    ID_select_product: "", // id вибраного продукту
     middle_button_000: { selector: "button", header: "Вибрати", status: true },
     middle_button_001: { selector: "button", header: "Читати", status: false },
     p_header_002: { selector: "p", header: "Сортування за ціною" },
@@ -57,6 +59,9 @@ export const buttonSubMenu = {
 
   button_big_1: {
     status_submenu: "select production",
+    status_select_product: false,
+    ID_select_product: "",
+    status_select_pruduct: false,
     middle_button_100: { selector: "button", header: "Вибрати", status: true },
     middle_button_101: { selector: "button", header: "Читати", status: false },
     p_header_102: { selector: "p", header: "Сортування за ціною" },
@@ -101,6 +106,8 @@ export const buttonSubMenu = {
 
   button_big_2: {
     status_submenu: "select production",
+    status_select_product: false,
+    ID_select_product: "",
     middle_button_200: { selector: "button", header: "Вибрати", status: true },
     middle_button_201: { selector: "button", header: "Читати", status: false },
     p_header_202: { selector: "p", header: "Сортування за ціною" },
@@ -151,6 +158,8 @@ export const buttonSubMenu = {
 
   button_big_3: {
     status_submenu: "select production",
+    status_select_product: false,
+    ID_select_product: "",
     middle_button_300: { selector: "button", header: "Вибрати", status: true },
     middle_button_301: { selector: "button", header: "Читати", status: false },
     p_header_302: { selector: "p", header: "Сортування за ціною" },
@@ -202,6 +211,8 @@ export const buttonSubMenu = {
 
   button_big_4: {
     status_submenu: "select production",
+    status_select_product: false,
+    ID_select_product: "",
     middle_button_400: { selector: "button", header: "Вибрати", status: true },
     middle_button_401: { selector: "button", header: "Читати", status: false },
     p_header_402: { selector: "p", header: "Сортування за ціною" },
@@ -234,6 +245,8 @@ export const buttonSubMenu = {
 
   button_big_5: {
     status_submenu: "select production",
+    status_select_product: false,
+    ID_select_product: "",
     middle_button_500: { selector: "button", header: "Вибрати", status: true },
     middle_button_501: { selector: "button", header: "Читати", status: false },
     p_header_502: { selector: "p", header: "Сортування за ціною" },
@@ -293,6 +306,8 @@ export const buttonSubMenu = {
 
   button_big_6: {
     status_submenu: "select production",
+    status_select_product: false,
+    ID_select_product: "",
     middle_button_600: { selector: "button", header: "Вибрати", status: true },
     middle_button_601: { selector: "button", header: "Читати", status: false },
     p_header_602: { selector: "p", header: "Сортування за ціною" },
@@ -325,8 +340,8 @@ export const buttonSubMenu = {
     middle_button_625: { selector: "button", header: "не лужена", status: false },
     middle_button_626: { selector: "button", header: "всі", status: true },
     p_header_627: { selector: "p", header: "Опресовка" },
-    middle_button_627: { selector: "button", header: "стандартні", status: true },
-    middle_button_628: { selector: "button", header: "плоскі", status: false },
+    middle_button_627: { selector: "button", header: "стандарт", status: true },
+    middle_button_628: { selector: "button", header: "плоский", status: false },
     middle_button_629: { selector: "button", header: "всі", status: false },
     p_header_630: { selector: "p", header: "Термін виготовлення" },
     middle_button_630: { selector: "button", header: "2 д.", status: false },
@@ -346,6 +361,8 @@ export const buttonSubMenu = {
 
   button_big_7: {
     status_submenu: "select production",
+    status_select_product: false,
+    ID_select_product: "",
     middle_button_700: { selector: "button", header: "Вибрати", status: true },
     middle_button_701: { selector: "button", header: "Читати", status: false },
     p_header_702: { selector: "p", header: "Сортування за ціною" },
@@ -401,6 +418,8 @@ export const buttonSubMenu = {
 
   button_big_8: {
     status_submenu: "select production",
+    status_select_product: false,
+    ID_select_product: "",
     middle_button_800: { selector: "button", header: "Вибрати", status: true },
     middle_button_801: { selector: "button", header: "Читати", status: false },
     p_header_802: { selector: "p", header: "Сортування за ціною" },
@@ -451,15 +470,11 @@ export const buttonSubMenu = {
   ],
 
   button_big_9: {
-    status_submenu: "information",
-    // p_header_900: { selector: "p", header: "Інформація по вибору товару для оформлення покупки" },    
-    middle_button_900: { selector: "button", header: "Навігація по сайту", status: false },
-    // p_header_901: { selector: "p", header: "Інформація щодо оформлення покупки" },    
-    middle_button_901: { selector: "button", header: "Оформлення покупки", status: true },
-    // p_header_902: { selector: "p", header: "Гарантійні зобов'язання для різних груп товарів" },    
-    middle_button_902: { selector: "button", header: "Гарантійні зобов'язання", status: false },
-    // p_header_903: { selector: "p", header: "Готова продукція і продукція під замовлення" },    
-    middle_button_903: { selector: "button", header: "Терміни виготовлення", status: false },
+    status_submenu: "information",    
+    middle_button_900: { selector: "button", header: "Пускові дроти", status: true },    
+    middle_button_901: { selector: "button", header: "Зварювальні дроти", status: false },    
+    middle_button_902: { selector: "button", header: "Перемички АКБ", status: false },    
+    middle_button_903: { selector: "button", header: "Тверда шина", status: false },
   },
 
   "button_big_9_structure": [
@@ -468,20 +483,21 @@ export const buttonSubMenu = {
 
   button_big_10: {
     status_submenu: "information",
-    middle_button_1000: { selector: "button", header: "Телефон", status: true },
-    middle_button_1001: { selector: "button", header: "Вайбер", status: false },
-    middle_button_1002: { selector: "button", header: "Телеграм", status: false },
-    middle_button_1003: { selector: "button", header: "Сайт", status: false },
+    middle_button_1000: { selector: "button", header: "Контакти", status: true },    
+    middle_button_1001: { selector: "button", header: "Навігація по сайту", status: false },
+    middle_button_1002: { selector: "button", header: "Терміни виготовлення", status: false },    
+    middle_button_1003: { selector: "button", header: "Гарантійні зобов'язання", status: false },
+    middle_button_1004: { selector: "button", header: "Оформлення покупки", status: false },    
   },
 
   "button_big_10_structure": [
-    ["button_boolean", ["middle_button_1000", "middle_button_1001", "middle_button_1002", "middle_button_1003"]],
+    ["button_boolean", ["middle_button_1000", "middle_button_1001", "middle_button_1002", "middle_button_1003", "middle_button_1004"]],
   ],
 
   button_big_11: {
     status_submenu: "information",
-    middle_button_1100: { selector: "button", header: "Перегляд замовлення", status: true },
-    middle_button_1101: { selector: "button", header: "Видалення замовлення", status: false },
+    middle_button_1100: { selector: "button", header: "Товар у кошику", status: true },
+    middle_button_1101: { selector: "button", header: "Список вподобань", status: false },
     middle_button_1102: { selector: "button", header: "Оформлення замовлення", status: false },
   },
 

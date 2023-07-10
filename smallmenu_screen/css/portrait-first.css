@@ -10,6 +10,8 @@
   --height-image-product: 160px;
   --border-image-product: 2px;
   --fontsize-paragraph: 26px;
+  --fontsize-header-name: 23px;
+  --margin-header-name-product: 2px;
 }
 
 .smallmenu-bottom-bg {
@@ -18,11 +20,10 @@
   /* overflow-y: scroll; */
   -ms-overflow-style: none;
   scrollbar-width: none;
-
 }
 
 .smallmenu-bottom-div {
-  background: rgba(59, 54, 50, 0.3);
+  background: var(--COLOR-SCHEME-18);
   height: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -32,7 +33,24 @@
   /* overflow-y: scroll; */
   -ms-overflow-style: none;
   scrollbar-width: none;
-  border-radius: 10px;
+  border-radius: 5px;
+}
+
+.div-description-product {
+  display: grid;
+  /* grid-template-rows: 2fr 3fr; */
+  padding: 0 calc(var(--padding-description-product) * var(--ratioSizeWin));
+}
+
+.header-name-product {
+  grid-area: 1 / 1 / 4 / 1;
+  margin: calc(var(--margin-header-name-product) * var(--ratioSizeWin));
+  font-family: 'Yanone Kaffeesatz';
+  font-style: normal;
+  font-weight: 700;
+  font-size: calc(var(--fontsize-header-name) * var(--ratioSizeWin));
+  text-align: center;
+  color: var(--COLOR-SCHEME-14);
 }
 
 .div-button-product {
@@ -40,8 +58,12 @@
   width: calc(var(--width-button-product) * var(--ratioSizeWin));
   padding: calc(var(--padding-button-product) * var(--ratioSizeWin));
   display: grid;
-  grid-template-rows: 3fr 3fr;
-  background: rgba(97, 201, 112, 0.211);
+
+  grid-template-rows: 3fr 3fr 3fr;
+  /* grid-template-columns: 1fr 3fr; */
+
+
+  background: var(--COLOR-SCHEME-15);
   margin: calc(var(--margin-button-product) * var(--ratioSizeWin));
   box-shadow: calc(var(--box-shadow-param-first) * var(--ratioSizeWin)) calc(var(--box-shadow-param-second) * var(--ratioSizeWin)) calc(var(--box-shadow-param-third) * var(--ratioSizeWin)) rgba(0, 0, 0, 0.4);
   border-radius: calc(var(--radius-button-product) * var(--ratioSizeWin));
@@ -60,7 +82,7 @@
 
 .image-product {
   height: calc(var(--height-image-product) * var(--ratioSizeWin));
-  border: calc(var(--border-image-product) * var(--ratioSizeWin));
+  border-width: calc(var(--border-image-product) * var(--ratioSizeWin));
   border-color: var(--COLOR-SCHEME-06);
   border-style: inset;
   box-shadow: calc(var(--box-shadow-param-first) * var(--ratioSizeWin)) calc(var(--box-shadow-param-second) * var(--ratioSizeWin)) calc(var(--box-shadow-param-third) * var(--ratioSizeWin)) rgba(0, 0, 0, 0.4);

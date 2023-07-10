@@ -1,4 +1,5 @@
 import { buttonSubMenu } from "../../smallmenu_screen/js/object_buttonSubMenu.js";
+import { currentPrice } from "../../smallmenu_screen/js/object_current_price.js";
 
 const objectProductParameters = {
   infoParametrs: {
@@ -7,12 +8,11 @@ const objectProductParameters = {
     widthThickness: ["2", "3", "4", "5"],
     typeMaterial: ["мідь", "алюміній"],
     productionTime: ["за 1 день", "2 д.", "за 4 дні"],
-
-    priceAluminum: 300,
-    priceCopper: 900,
-    densityCopper: 8.9,
-    densityAluminum: 2.7,
-    tradeMargin: 1.26,
+    priceAluminum: currentPrice.priceAluminum,
+    priceCopper: currentPrice.priceCopper,
+    densityCopper: currentPrice.densityCopper,
+    densityAluminum: currentPrice.densityAluminum,
+    tradeMargin: currentPrice.tradeMargin_07,
   },
 
   // формуємо можливі варіанти (сети) для кожного перерізу кабеля
@@ -119,13 +119,16 @@ const objectProductParameters = {
 }
 
 const textReferenceInformation = [
-  " Тверда шина мідна і алюмінієва  ....",
-
+  "Тверда шина використовується як альтернатива гнучкій мідній перемичці з кабеля КГ чи мідній плетеній шині. Переваги в тому, що можна зробити шину досить великого перерізу та невеликої довжини. Виготовлення подібних шин для з'єднання акумуляторих батарей може бути більш економічно вигідним, ніж використання гнучких перемичок з кабеля.",
+  "В якості матеріала для шин використовується мідь чи алюміній. Базовими параметрами твердих шин є довжина та переріз (це товщина помножена на ширину), який визначає максимальний струм. Додатковий параметр це діаметр отвору для кріплення. Шини можуть додатково комплектуватися термоусадкою відповідного кольору.",
 ];
 
 export const getCreationButtonProduct_07 = (objectButtonProduct) => {
   const nodeTextHTML = [];
-  nodeTextHTML.push("<div class='div-button-product'>");
+  nodeTextHTML.push(`<div class='div-button-product' id=${objectButtonProduct.ID}>`);
+
+  // формуємо заголовок товару
+  nodeTextHTML.push(`<p class='header-name-product'>Тверда шина, ${objectButtonProduct.typeMaterial} (${objectButtonProduct.lengthTire}-${objectButtonProduct.widthTire}-${objectButtonProduct.widthThickness})</p>`);
 
   // формуємо фото продукту
   nodeTextHTML.push("<div class='div-image-product'>");
@@ -138,11 +141,11 @@ export const getCreationButtonProduct_07 = (objectButtonProduct) => {
   nodeTextHTML.push("<p class='paragraph-header'>Довжина</p>");
   nodeTextHTML.push(`<p class='paragraph-value'> ${objectButtonProduct.lengthTire}</p>`);
   nodeTextHTML.push("<p class='paragraph-header'>Ширина</p>");
-  nodeTextHTML.push(`<p class='paragraph-value'> ${objectButtonProduct.widthTire} </p>`);
+  nodeTextHTML.push(`<p class='paragraph-value'> ${objectButtonProduct.widthTire}</p>`);
   nodeTextHTML.push("<p class='paragraph-header'>Товщина</p>");
-  nodeTextHTML.push(`<p class='paragraph-value'> ${objectButtonProduct.widthThickness} </p>`);
-  nodeTextHTML.push("<p class='paragraph-header'>Матеріал</p>");
-  nodeTextHTML.push(`<p class='paragraph-value'> ${objectButtonProduct.typeMaterial} </p>`);
+  nodeTextHTML.push(`<p class='paragraph-value'> ${objectButtonProduct.widthThickness}</p>`);
+  // nodeTextHTML.push("<p class='paragraph-header'>Матеріал</p>");
+  // nodeTextHTML.push(`<p class='paragraph-value'> ${objectButtonProduct.typeMaterial} </p>`);
   nodeTextHTML.push("<p class='paragraph-header'>Термін</p>");
   nodeTextHTML.push(`<p class='paragraph-value'> ${objectButtonProduct.productionTime} </p>`);
   nodeTextHTML.push("<p class='paragraph-header'>Ціна</p>");
@@ -171,7 +174,7 @@ export const getFilteredAssortedProduct_07 = () => {
   const priceCopper = objProductParameters.infoParametrs.priceCopper;
   const densityCopper = objProductParameters.infoParametrs.densityCopper;
   const densityAluminum = objProductParameters.infoParametrs.densityAluminum;
-  const tradeMargin = objProductParameters.infoParametrs.tradeMargin;  
+  const tradeMargin = objProductParameters.infoParametrs.tradeMargin;
   let indexCountProduct = 0;
   let priceCurrentMaterial = 0;
   let densityCurrentMaterial = 0;
@@ -290,9 +293,9 @@ export const getFilteredAssortedProduct_07 = () => {
                         indexCountProduct += 1;
                         exportObjectProduct[indexCountProduct] = [];
                         exportObjectProduct[indexCountProduct]["ID"] = `product_${indexCountProduct}`;
-                        exportObjectProduct[indexCountProduct]["widthTire"] = `${width_tire} мм`;
-                        exportObjectProduct[indexCountProduct]["lengthTire"] = `${length_tire} см.`;
-                        exportObjectProduct[indexCountProduct]["widthThickness"] = `${width_thickness} мм`;
+                        exportObjectProduct[indexCountProduct]["widthTire"] = `${width_tire}&nbspмм`;
+                        exportObjectProduct[indexCountProduct]["lengthTire"] = `${length_tire}&nbspсм`;
+                        exportObjectProduct[indexCountProduct]["widthThickness"] = `${width_thickness}&nbspмм`;
                         exportObjectProduct[indexCountProduct]["typeMaterial"] = `${type_material}`;
                         exportObjectProduct[indexCountProduct]["productionTime"] = `${production_time}`;
                         // розрахунок вартості продукту
@@ -306,7 +309,7 @@ export const getFilteredAssortedProduct_07 = () => {
                             densityCurrentMaterial = densityAluminum;
                             break;
                         }
-                        priceCurrentProduct = 10 * Math.ceil(tradeMargin * priceCurrentMaterial * densityCurrentMaterial * (Number(width_tire) * Number(length_tire) * Number(width_thickness) / 100/1000) / 10);
+                        priceCurrentProduct = 10 * Math.ceil(tradeMargin * priceCurrentMaterial * densityCurrentMaterial * (Number(width_tire) * Number(length_tire) * Number(width_thickness) / 100 / 1000) / 10);
                         exportObjectProduct[indexCountProduct]["priceProduct"] = `${priceCurrentProduct} грн.`;
                       }
                     })
