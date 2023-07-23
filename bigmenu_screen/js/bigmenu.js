@@ -17,24 +17,24 @@ export const bigMenuText = [
 
 export const showBigmenuScreen = (orientationScreenLandscape) => {
   ROOT.style.setProperty("--currentScreen", BIGMENU_SCREEN); // поточний екран
-  if (orientationScreenLandscape) { createDOMBigmenu("main-bigmenu-landscape", "<div class='bigmenu-land-bg'><div class='bigmenu-land-div'>"); }
-  else { createDOMBigmenu("main-bigmenu-portrait", "<div class='bigmenu-port-bg'><div class='bigmenu-port-div'>"); }
+  if (orientationScreenLandscape) { createDOMBigmenu('main-bigmenu-landscape', '<div class="bigmenu-land-bg"><div class="bigmenu-land-div">'); }
+  else { createDOMBigmenu('main-bigmenu-portrait', '<div class="bigmenu-port-bg"><div class="bigmenu-port-div">'); }
 }
 
 const createDOMBigmenu = (mainOrientation, openDiv) => {
-  const parentDiv = document.createElement("main");
+  const parentDiv = document.createElement('main');
   parentDiv.className = mainOrientation;
-  document.querySelector("main").replaceWith(parentDiv);
+  document.querySelector('main').replaceWith(parentDiv);
   const introTextHTML = [openDiv];
 
-  bigMenuText.forEach((buttonMenu, numberButton) => { introTextHTML.push(`<button class='bigmenu-button' id=button_big_${numberButton}><p class='bigmenu-header'>${buttonMenu[0]}</p><p class='bigmenu-description'>${buttonMenu[1]}</p></button>`); });
-  introTextHTML.push("</div></div>");
-  parentDiv.innerHTML = introTextHTML.join("");
+  bigMenuText.forEach((buttonMenu, numberButton) => { introTextHTML.push(`<button class="bigmenu-button" id=button_big_${numberButton}><p class="bigmenu-header">${buttonMenu[0]}</p><p class="bigmenu-description">${buttonMenu[1]}</p></button>`); });
+  introTextHTML.push('</div></div>');
+  parentDiv.innerHTML = introTextHTML.join('');
   document.body.appendChild(parentDiv);
 
   [...document.querySelectorAll('.bigmenu-button')].forEach(indexSmallMenu => {
     indexSmallMenu.addEventListener('click', () => {
-      ROOT.style.setProperty("--currentMenu", indexSmallMenu.id); // вибране меню      
+      ROOT.style.setProperty('--currentMenu', indexSmallMenu.id); // вибране меню      
       screenDispatcher(SMALLMENU_SCREEN, false);
     }), { once: 1 }
   });

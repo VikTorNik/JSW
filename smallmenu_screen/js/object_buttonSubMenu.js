@@ -283,11 +283,11 @@ export const buttonSubMenu = {
     p_header_530: { selector: "p", header: "Ліворуч" },
     middle_button_530: { selector: "button", header: "наконечник", status: true },
     middle_button_531: { selector: "button", header: "штирь", status: false },
-    middle_button_532: { selector: "button", header: "нічого", status: false },
+    middle_button_532: { selector: "button", header: "автоклема", status: false },
     p_header_533: { selector: "p", header: "Праворуч" },
     middle_button_533: { selector: "button", header: "наконечник", status: true },
     middle_button_534: { selector: "button", header: "штирь", status: false },
-    middle_button_535: { selector: "button", header: "нічого", status: false },
+    middle_button_535: { selector: "button", header: "автоклема", status: false },
     p_header_536: { selector: "p", header: "Термін виготовлення" },
     middle_button_536: { selector: "button", header: "готове", status: false },
     middle_button_537: { selector: "button", header: "1 д.", status: false },
@@ -483,15 +483,17 @@ export const buttonSubMenu = {
 
   button_big_10: {
     status_submenu: "information",
-    middle_button_1000: { selector: "button", header: "Контакти", status: true },    
+    middle_button_1000: { selector: "button", header: "Телефон, пошта", status: true },    
     middle_button_1001: { selector: "button", header: "Навігація по сайту", status: false },
     middle_button_1002: { selector: "button", header: "Терміни виготовлення", status: false },    
     middle_button_1003: { selector: "button", header: "Гарантійні зобов'язання", status: false },
     middle_button_1004: { selector: "button", header: "Оформлення покупки", status: false },    
+    middle_button_1005: { selector: "button", header: "Згода на обробку персональних даних", status: false },    
+    middle_button_1006: { selector: "button", header: "Політика конфіденційності<br>та умови<br>використання сайту", status: false },        
   },
 
   "button_big_10_structure": [
-    ["button_boolean", ["middle_button_1000", "middle_button_1001", "middle_button_1002", "middle_button_1003", "middle_button_1004"]],
+    ["button_boolean", ["middle_button_1000", "middle_button_1001", "middle_button_1002", "middle_button_1003", "middle_button_1004", "middle_button_1005", "middle_button_1006"]],
   ],
 
   button_big_11: {

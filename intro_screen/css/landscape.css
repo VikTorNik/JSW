@@ -91,12 +91,10 @@
 
 .intro-text-landscape {
   position: relative;
-
   width: calc(var(--intro-width) * var(--ratioSizeWin));
   height: calc(var(--intro-height) * var(--ratioSizeWin));
   left: calc(var(--intro-left) * var(--ratioSizeWin));
   top: calc(var(--intro-top) * var(--ratioSizeWin));
-
   font-family: 'Jura';
   font-style: normal;
   font-weight: 600;
@@ -105,7 +103,6 @@
   line-height: calc(var(--intro-line-height) * var(--ratioSizeWin));
   text-align: right;
   color: var(--COLOR-SCHEME-03);
-
   text-shadow: calc(var(--intro-text-shadow) * var(--ratioSizeWin)) calc(var(--intro-text-shadow) * var(--ratioSizeWin)) calc(var(--intro-text-shadow) * var(--ratioSizeWin)) rgba(0, 0, 0, 0.2);
 }
 

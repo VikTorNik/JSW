@@ -51,18 +51,26 @@
   text-align: left;
 }
 
-.button-add-cart:focus,
-.button-add-cart:hover {
-  background: var(--COLOR-SCHEME-17);
-  transform: scale(1.03);
+@media (hover: hover) and (pointer: fine) {
+
+  .button-add-cart:focus,
+  .button-add-cart:hover {
+    background: var(--COLOR-SCHEME-17);
+    transform: scale(1.03);
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .button-add-cart:focus {
+    background: var(--COLOR-SCHEME-17);
+    transform: scale(1.03);
+  }
 }
 
 .div-button-product-before-cart {
-  /* zoom: 2; */
   float: left;
   cursor: default;
   display: grid;
-  /* grid-template-columns: 3fr 1fr; */
   background: var(--COLOR-SCHEME-15);
   width: calc(var(--width-button-product) * var(--ratioSizeWin));
   height: calc(var(--height-button-product) * var(--ratioSizeWin));
@@ -71,7 +79,6 @@
   box-shadow: calc(var(--box-shadow-param-first) * var(--ratioSizeWin)) calc(var(--box-shadow-param-second) * var(--ratioSizeWin)) calc(var(--box-shadow-param-third) * var(--ratioSizeWin)) rgba(0, 0, 0, 0.4);
   border-radius: calc(var(--radius-button-product) * var(--ratioSizeWin));
 }
-
 
 .div-button-product-cart {
   cursor: default;

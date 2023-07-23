@@ -1,9 +1,9 @@
 #middle_button_1000 {
-  grid-area: 3 / 1 / 4 / 19;
+  grid-area: 1 / 1 / 2 / 19;
 }
 
 #middle_button_1004 {
-  grid-area: 3 / 19 / 4 / 37;
+  grid-area: 1 / 19 / 2 / 37;
 }
 
 #middle_button_1001 {
@@ -11,9 +11,17 @@
 }
 
 #middle_button_1002 {
-  grid-area: 4 / 1 / 5 / 19;
+  grid-area: 2 / 1 / 3 / 19;
 }
 
 #middle_button_1003 {
-  grid-area: 4 / 19 / 5 / 37;
+  grid-area: 2 / 19 / 3 / 37;
+}
+
+#middle_button_1005 {
+  grid-area: 4 / 1 / 5 / 37;
+}
+
+#middle_button_1006 {
+  grid-area: 3 / 1 / 4 / 37;
 }

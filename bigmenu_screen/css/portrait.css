@@ -93,19 +93,39 @@
   color: var(--COLOR-SCHEME-03);
 }
 
-.bigmenu-button:focus,
-.bigmenu-button:hover {
-  background-color: var(--COLOR-SCHEME-10);
-  opacity: 0.9;
-  transform: scale(1.02);  
+@media (hover: hover) and (pointer: fine) {
+
+  .bigmenu-button:focus,
+  .bigmenu-button:hover {
+    background-color: var(--COLOR-SCHEME-10);
+    opacity: 0.9;
+    transform: scale(1.02);
+  }
+
+  .bigmenu-button:focus .bigmenu-header,
+  .bigmenu-button:hover .bigmenu-header {
+    color: var(--COLOR-SCHEME-11);
+  }
+
+  .bigmenu-button:focus .bigmenu-description,
+  .bigmenu-button:hover .bigmenu-description {
+    color: var(--COLOR-SCHEME-08);
+  }
 }
 
-.bigmenu-button:focus .bigmenu-header,
-.bigmenu-button:hover .bigmenu-header {
-  color: var(--COLOR-SCHEME-11);
-}
+@media (hover: none) and (pointer: coarse) {
 
-.bigmenu-button:focus .bigmenu-description,
-.bigmenu-button:hover .bigmenu-description {
-  color: var(--COLOR-SCHEME-08);
+  .bigmenu-button:focus {
+    background-color: var(--COLOR-SCHEME-10);
+    opacity: 0.9;
+    transform: scale(1.02);
+  }
+
+  .bigmenu-button:focus .bigmenu-header {
+    color: var(--COLOR-SCHEME-11);
+  }
+
+  .bigmenu-button:focus .bigmenu-description {
+    color: var(--COLOR-SCHEME-08);
+  }
 }

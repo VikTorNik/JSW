@@ -160,18 +160,66 @@ const textReferenceInformation = [
 ];
 
 export const getCreationButtonProduct_06 = (objectButtonProduct) => {
-  const nodeTextHTML = [];  
+  const nodeTextHTML = [];
   nodeTextHTML.push(`<div class='div-button-product' id=${objectButtonProduct.ID}>`);
 
   // формуємо заголовок товару
   nodeTextHTML.push(`<p class='header-name-product'>Шина плетена, ${objectButtonProduct.typePML} - ${objectButtonProduct.lengthCable} - ${objectButtonProduct.squareCable}</p>`);
 
+
   // формуємо фото продукту
   nodeTextHTML.push("<div class='div-image-product'>");
-  if (true) {
-    nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/083.jpg' alt='Image cable'>");
-  }  
+  if (objectButtonProduct.typePML === "не лужена") {
+    switch (objectButtonProduct.squareCable.slice(0, 2)) {
+      case "10":
+        nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/06/cup-1.jpg' alt='Cuprum'>");
+        break;
+      case "16":
+        nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/06/cup-2.jpg' alt='Cuprum'>");
+        break;
+      case "25":
+        nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/06/cup-3.jpg' alt='Cuprum'>");
+        break;
+      case "35":
+        nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/06/cup-4.jpg' alt='Cuprum'>");
+        break;
+      case "50":
+        nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/06/cup-5.jpg' alt='Cuprum'>");
+        break;
+      case "70":
+      case "95":
+        nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/06/cup-6.jpg' alt='Cuprum'>");
+        break;
+    }
+  } else {
+    switch (objectButtonProduct.squareCable.slice(0, 2)) {
+      case "10":
+        nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/06/10-1.jpg' alt='PML'>");
+        break;
+      case "16":
+        nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/06/10-2.jpg' alt='PML'>");
+        break;
+      case "25":
+        nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/06/10-3.jpg' alt='PML'>");
+        break;
+      case "35":
+        nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/06/10-4.jpg' alt='PML'>");
+        break;
+      case "50":
+        nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/06/16-1.jpg' alt='PML'>");
+        break;
+      case "70":
+        nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/06/16-2.jpg' alt='PML'>");
+        break;
+      case "95":
+        nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/06/16-3.jpg' alt='PML'>");
+        break;
+    }
+  }
   nodeTextHTML.push("</div>");
+
+
+
   // формуємо опис продукту
   nodeTextHTML.push("<div class='div-description-product'>");
   nodeTextHTML.push("<p class='paragraph-header'>Довжина</p>");

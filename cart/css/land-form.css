@@ -1,0 +1,331 @@
+:root {
+  --margin-table-ordering: 10px;
+  --margin-header-placing-an-order-1: 24px;
+  --margin-header-placing-an-order-2: 15px;
+  --font-size-header-placing-an-order: 30px;
+  --padding-thead-ordering: 5px;
+  --font-size-thead-ordering: 24px;
+  --padding-table-ordering: 5px;
+  --font-size-table-ordering: 23px;
+  --padding-td-total-product: 10px;
+  --font-td-total-product: 25px;
+  --margin-form: 10px;
+  --size-label-radio: 20px;
+  --shift-label-radio: 4px;
+  --size-after-label-radio: 12px;
+  --border-fieldset-order: 2px;
+  --padding-fieldset-order: 10px;
+  --margin-fieldset-order: 12px;
+  --padding-fieldset-order-input: 4px;
+  --font-size-fieldset-order: 28px;
+  --margin-fieldset-order-input-2: 12px;
+  --margin-fieldset-order-input-3: 4px;
+  --margin-fieldset-order-input-4: 8px;
+  --margin-fieldset-order-textarea: 8px;
+  --shadow-fieldset-order-textarea-1: 3px;
+  --shadow-fieldset-order-textarea-2: 4px;
+  --shadow-fieldset-order-textarea-3: 10px;
+  --border-radius-fieldset-order-textarea: 4px;
+  --height-fieldset-order-textarea: 30px;
+  --font-size-fieldset-order-textarea: 24px;
+  --margin-fieldset-order-label-2: 10px;
+  --margin-fieldset-order-label-4: 10px;
+  --font-size-fieldset-order-label: 24px;
+  --width-email: 220px;
+  --width-viber: 155px;
+  --width-addinginfo: 705px;
+  --height-addinginfo: 68px;
+  --width-name: 220px;
+  --width-surname: 310px;
+  --width-city: 450px;
+  --width-index: 83px;
+  --margin-1-checkbox-div: 10px;
+  --margin-submit: 8px;
+  --height-submit: 40px;
+  --font-size-submit: 26px;
+  --padding-1-submit: 11px;
+  --padding-2-submit: 15px;
+}
+
+.table-ordering {
+  margin: calc(var(--margin-table-ordering) * var(--ratioSizeWin));
+  table-layout: fixed;
+  width: 100%;
+}
+
+.header-placing-an-order {
+  color: var(--COLOR-SCHEME-14);
+  margin: calc(var(--margin-header-placing-an-order-1) * var(--ratioSizeWin)) 0 calc(var(--margin-header-placing-an-order-2) * var(--ratioSizeWin)) 0;
+  font-family: 'Yanone Kaffeesatz';
+  font-style: normal;
+  letter-spacing: normal;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: calc(var(--font-size-header-placing-an-order) * var(--ratioSizeWin));
+  text-align: center;
+}
+
+.thead-ordering th {
+  padding: calc(var(--padding-thead-ordering) * var(--ratioSizeWin));
+  background: rgba(0, 0, 0, 0.15);
+  font-family: 'Yanone Kaffeesatz';
+  font-style: normal;
+  letter-spacing: normal;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: calc(var(--font-size-thead-ordering) * var(--ratioSizeWin));
+  text-align: center;
+}
+
+.th-number {
+  width: 3%;
+}
+
+.th-name {
+  width: 35%;
+}
+
+.th-characteristic {
+  width: 36%;
+}
+
+.th-readiness {
+  width: 13%;
+}
+
+.th-price {
+  width: 13%;
+}
+
+.table-ordering .td-order-product {
+  background: rgba(10, 10, 10, 0.1);
+  color: var(--COLOR-SCHEME-11);
+  padding: calc(var(--padding-table-ordering) * var(--ratioSizeWin));
+  font-family: 'Yanone Kaffeesatz';
+  font-style: normal;
+  letter-spacing: normal;
+  font-weight: 400;
+  font-size: calc(var(--font-size-table-ordering) * var(--ratioSizeWin));
+  text-align: center;
+}
+
+.td-total-product {
+  background: rgba(0, 0, 0, 0.15);
+  color: var(--COLOR-SCHEME-14);
+  padding: calc(var(--padding-td-total-product) * var(--ratioSizeWin));
+  font-family: 'Yanone Kaffeesatz';
+  font-style: normal;
+  font-weight: 700;
+  font-size: calc(var(--font-td-total-product) * var(--ratioSizeWin));
+  text-align: center;
+}
+
+#form_delivery {
+  margin: calc(var(--margin-form) * var(--ratioSizeWin));
+}
+
+.radio-div {
+  display: flex;
+  align-items: center;
+}
+
+.input-radio {  
+  display: none;
+}
+
+.input-radio:checked+.label-radio::after {
+  transform: scale(1);
+}
+
+.label-radio {
+  cursor: pointer;
+  display: inline-flex;
+  position: relative;
+  flex-grow: 1;
+}
+
+.label-radio::before {
+  content: "";
+  align-self: flex-start;
+  flex: 0 0 calc(var(--size-label-radio) * var(--ratioSizeWin));
+  height: calc(var(--size-label-radio) * var(--ratioSizeWin));
+  background-color: var(--COLOR-SCHEME-09);
+  border-radius: 50%;
+  margin: 0 calc(var(--margin-fieldset-order-label-2) * var(--ratioSizeWin)) 0 0;
+}
+
+.label-radio::after {
+  transition: transform 0.4s ease 0s;
+  content: "";
+  position: absolute;
+  top: calc(var(--shift-label-radio) * var(--ratioSizeWin));
+  left: calc(var(--shift-label-radio) * var(--ratioSizeWin));
+  width: calc(var(--size-after-label-radio) * var(--ratioSizeWin));
+  height: calc(var(--size-after-label-radio) * var(--ratioSizeWin));
+  background-color: var(--COLOR-SCHEME-10);
+  border-radius: 50%;
+  transform: scale(0);
+}
+
+
+/*  хак для кольору фону і кольору тексту при автозаповненні */
+input:-webkit-autofill {
+  /* колір фону */
+  /* -webkit-box-shadow: inset 0 0 0 50px var(--COLOR-SCHEME-09);
+  box-shadow: inset 0 0 0 50px var(--COLOR-SCHEME-09); */
+  /* колір тексту */
+  -webkit-text-fill-color: rgb(120, 120, 120);
+}
+
+.fieldset-order {
+  color: var(--COLOR-SCHEME-14);
+  padding: calc(var(--padding-fieldset-order) * var(--ratioSizeWin));
+  margin: calc(var(--margin-fieldset-order) * var(--ratioSizeWin));
+  border: calc(var(--border-fieldset-order) * var(--ratioSizeWin)) solid var(--COLOR-SCHEME-06);
+  font-family: 'Yanone Kaffeesatz';
+  font-style: normal;
+  font-weight: 400;
+  font-size: calc(var(--font-size-fieldset-order) * var(--ratioSizeWin));
+  text-align: left;
+}
+
+.fieldset-order input,
+.fieldset-order textarea {
+  margin: 0 calc(var(--margin-fieldset-order-input-2) * var(--ratioSizeWin)) calc(var(--margin-fieldset-order-input-3) * var(--ratioSizeWin)) calc(var(--margin-fieldset-order-input-4) * var(--ratioSizeWin));
+  background: var(--COLOR-SCHEME-09);
+  padding: calc(var(--padding-fieldset-order-input) * var(--ratioSizeWin));
+}
+
+.fieldset-order textarea,
+.fieldset-order input[type='tel'],
+.fieldset-order input[type='email'],
+.fieldset-order input[type='text'] {
+  margin: calc(var(--margin-fieldset-order-textarea) * var(--ratioSizeWin));
+  padding: calc(var(--padding-fieldset-order-input) * var(--ratioSizeWin));
+  box-shadow: calc(var(--shadow-fieldset-order-textarea-1) * var(--ratioSizeWin)) calc(var(--shadow-fieldset-order-textarea-2) * var(--ratioSizeWin)) calc(var(--shadow-fieldset-order-textarea-3) * var(--ratioSizeWin)) rgba(0, 0, 0, 0.5);
+  border-radius: calc(var(--border-radius-fieldset-order-textarea) * var(--ratioSizeWin));
+  height: calc(var(--height-fieldset-order-textarea) * var(--ratioSizeWin));
+  border: 0;
+  font-family: 'Yanone Kaffeesatz';
+  font-style: normal;
+  font-weight: 400;
+  font-size: calc(var(--font-size-fieldset-order-textarea) * var(--ratioSizeWin));
+  text-align: left;
+  color: rgb(120, 120, 120);
+}
+
+.fieldset-order textarea {
+  resize: none;
+}
+
+.fieldset-order label {
+  margin: 0 calc(var(--margin-fieldset-order-label-2) * var(--ratioSizeWin)) 0 calc(var(--margin-fieldset-order-label-4) * var(--ratioSizeWin));
+  color: var(--COLOR-SCHEME-03);
+  font-size: calc(var(--font-size-fieldset-order-label) * var(--ratioSizeWin));
+}
+
+#email {
+  width: calc(var(--width-email) * var(--ratioSizeWin));
+}
+
+#viber {
+  width: calc(var(--width-viber) * var(--ratioSizeWin));
+}
+
+#addinginfo {
+  width: calc(var(--width-addinginfo) * var(--ratioSizeWin));
+  height: calc(var(--height-addinginfo) * var(--ratioSizeWin));
+}
+
+#name_client {
+  width: calc(var(--width-name) * var(--ratioSizeWin));
+}
+
+#surname_client {
+  width: calc(var(--width-surname) * var(--ratioSizeWin));
+}
+
+#city {
+  width: calc(var(--width-city) * var(--ratioSizeWin));
+}
+
+#numberdepartment,
+#index {
+  width: calc(var(--width-index) * var(--ratioSizeWin));
+}
+
+.checkbox-div {
+  display: flex;
+  align-items: center;
+  margin: calc(var(--margin-1-checkbox-div) * var(--ratioSizeWin)) 0 0 0;
+
+}
+
+.checkbox-input {
+  display: none;
+}
+
+.checkbox-input:checked+.checkbox-label::after {
+  transform: scale(1);
+}
+
+.checkbox-label {
+  cursor: pointer;
+  display: inline-flex;
+  position: relative;
+  flex-grow: 1;
+}
+
+.checkbox-label::before {
+  content: "";
+  align-self: flex-start;
+  flex: 0 0 calc(var(--size-label-radio) * var(--ratioSizeWin));
+  height: calc(var(--size-label-radio) * var(--ratioSizeWin));
+  background-color: var(--COLOR-SCHEME-09);
+  margin: 0 calc(var(--margin-fieldset-order-label-2) * var(--ratioSizeWin)) 0 0;
+}
+
+.checkbox-label::after {
+  transition: transform 0.4s ease 0s;
+  content: "";
+  position: absolute;
+  top: calc(var(--shift-label-radio) * var(--ratioSizeWin));
+  left: calc(var(--shift-label-radio) * var(--ratioSizeWin));
+  width: calc(var(--size-after-label-radio) * var(--ratioSizeWin));
+  height: calc(var(--size-after-label-radio) * var(--ratioSizeWin));
+  background-color: var(--COLOR-SCHEME-10);
+  transform: scale(0);
+}
+
+#buttonAgreement,
+#buttonConditions {
+  cursor: pointer;
+  background: var(--COLOR-SCHEME-10);
+  color: var(--COLOR-SCHEME-13);
+  border: 0;
+  border-radius: calc(var(--border-radius-fieldset-order-textarea) * var(--ratioSizeWin));
+  box-shadow: calc(var(--shadow-fieldset-order-textarea-1) * var(--ratioSizeWin)) calc(var(--shadow-fieldset-order-textarea-2) * var(--ratioSizeWin)) calc(var(--shadow-fieldset-order-textarea-3) * var(--ratioSizeWin)) rgba(0, 0, 0, 0.3);
+  font-family: 'Yanone Kaffeesatz';
+  font-style: normal;
+  font-weight: 400;
+  font-size: calc(var(--font-size-fieldset-order-textarea) * var(--ratioSizeWin));
+}
+
+.button-submit {
+  cursor: pointer;
+  background: var(--COLOR-SCHEME-10);
+  margin: calc(var(--margin-submit) * var(--ratioSizeWin));
+  height: calc(var(--height-submit) * var(--ratioSizeWin));
+  padding: calc(var(--padding-1-submit) * var(--ratioSizeWin)) calc(var(--padding-1-submit) * var(--ratioSizeWin));
+  box-shadow: calc(var(--shadow-fieldset-order-textarea-1) * var(--ratioSizeWin)) calc(var(--shadow-fieldset-order-textarea-2) * var(--ratioSizeWin)) calc(var(--shadow-fieldset-order-textarea-3) * var(--ratioSizeWin)) rgba(0, 0, 0, 0.5);
+  border-radius: calc(var(--border-radius-fieldset-order-textarea) * var(--ratioSizeWin));
+  border: 0;
+  font-family: 'Yanone Kaffeesatz';
+  font-style: normal;
+  font-weight: 400;
+  font-size: calc(var(--font-size-submit) * var(--ratioSizeWin));
+  text-transform: uppercase;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+}

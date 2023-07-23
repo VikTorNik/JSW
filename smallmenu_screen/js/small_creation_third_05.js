@@ -5,8 +5,8 @@ const objectProductParameters = {
   infoParametrs: {
     lengthCable: ["10", "15", "20", "25", "30", "35", "40", "50", "60", "70", "80", "90", "100", "110", "120", "140", "160", "180", "200"],
     squareCable: ["10", "16", "25", "35", "50"],
-    leftCableTermination: ["наконечник", "штирь", "нічого"],
-    rightCableTermination: ["наконечник", "штирь", "нічого"],
+    leftCableTermination: ["наконечник", "штирь", "автоклема"],
+    rightCableTermination: ["наконечник", "штирь", "автоклема"],
     productionTime: ["готове", "за 1 день"],
     priceCable_10: currentPrice.priceCable_10,
     priceCable_16: currentPrice.priceCable_16,
@@ -24,71 +24,71 @@ const objectProductParameters = {
     set_10_1: {
       squareCable: ["10"],
       lengthCable: ["10", "15", "20", "25", "30", "35", "40", "50", "60", "70", "80", "90", "100"],
-      leftCableTermination: ["наконечник", "штирь", "нічого"],
-      rightCableTermination: ["наконечник", "штирь", "нічого"],
+      leftCableTermination: ["наконечник", "штирь", "автоклема"],
+      rightCableTermination: ["наконечник", "штирь", "автоклема"],
       productionTime: ["готове"],
     },
     set_10_2: {
       squareCable: ["10"],
       lengthCable: ["110", "120", "140", "160", "180", "200"],
-      leftCableTermination: ["наконечник", "штирь", "нічого"],
-      rightCableTermination: ["наконечник", "штирь", "нічого"],
+      leftCableTermination: ["наконечник", "штирь", "автоклема"],
+      rightCableTermination: ["наконечник", "штирь", "автоклема"],
       productionTime: ["за 1 день"],
     },
     set_16_1: {
       squareCable: ["16"],
       lengthCable: ["10", "15", "20", "25", "30", "35", "40", "50", "60", "70", "80", "90", "100"],
-      leftCableTermination: ["наконечник", "штирь", "нічого"],
-      rightCableTermination: ["наконечник", "штирь", "нічого"],
+      leftCableTermination: ["наконечник", "штирь", "автоклема"],
+      rightCableTermination: ["наконечник", "штирь", "автоклема"],
       productionTime: ["готове"],
     },
     set_16_2: {
       squareCable: ["16"],
       lengthCable: ["110", "120", "140", "160", "180", "200"],
-      leftCableTermination: ["наконечник", "штирь", "нічого"],
-      rightCableTermination: ["наконечник", "штирь", "нічого"],
+      leftCableTermination: ["наконечник", "штирь", "автоклема"],
+      rightCableTermination: ["наконечник", "штирь", "автоклема"],
       productionTime: ["за 1 день"],
     },
     set_25_1: {
       squareCable: ["25"],
       lengthCable: ["15", "20", "25", "30", "35", "40", "50", "60", "70", "80", "90", "100"],
-      leftCableTermination: ["наконечник", "штирь", "нічого"],
-      rightCableTermination: ["наконечник", "штирь", "нічого"],
+      leftCableTermination: ["наконечник", "штирь", "автоклема"],
+      rightCableTermination: ["наконечник", "штирь", "автоклема"],
       productionTime: ["готове"],
     },
     set_25_2: {
       squareCable: ["25"],
       lengthCable: ["110", "120", "140", "160", "180", "200"],
-      leftCableTermination: ["наконечник", "штирь", "нічого"],
-      rightCableTermination: ["наконечник", "штирь", "нічого"],
+      leftCableTermination: ["наконечник", "штирь", "автоклема"],
+      rightCableTermination: ["наконечник", "штирь", "автоклема"],
       productionTime: ["за 1 день"],
     },
     set_35_1: {
       squareCable: ["35"],
       lengthCable: ["15", "20", "25", "30", "35", "40", "50", "60", "70", "80"],
-      leftCableTermination: ["наконечник", "штирь", "нічого"],
-      rightCableTermination: ["наконечник", "штирь", "нічого"],
+      leftCableTermination: ["наконечник", "штирь", "автоклема"],
+      rightCableTermination: ["наконечник", "штирь", "автоклема"],
       productionTime: ["готове"],
     },
     set_35_2: {
       squareCable: ["35"],
       lengthCable: ["90", "100", "110", "120", "140", "160", "180", "200"],
-      leftCableTermination: ["наконечник", "штирь", "нічого"],
-      rightCableTermination: ["наконечник", "штирь", "нічого"],
+      leftCableTermination: ["наконечник", "штирь", "автоклема"],
+      rightCableTermination: ["наконечник", "штирь", "автоклема"],
       productionTime: ["за 1 день"],
     },
     set_50_1: {
       squareCable: ["50"],
       lengthCable: ["20", "25", "30", "35", "40", "50", "60", "70", "80"],
-      leftCableTermination: ["наконечник", "штирь", "нічого"],
-      rightCableTermination: ["наконечник", "штирь", "нічого"],
+      leftCableTermination: ["наконечник", "штирь", "автоклема"],
+      rightCableTermination: ["наконечник", "штирь", "автоклема"],
       productionTime: ["готове"],
     },
     set_50_2: {
       squareCable: ["50"],
       lengthCable: ["90", "100", "110", "120", "140", "160", "180", "200"],
-      leftCableTermination: ["наконечник", "штирь", "нічого"],
-      rightCableTermination: ["наконечник", "штирь", "нічого"],
+      leftCableTermination: ["наконечник", "штирь", "автоклема"],
+      rightCableTermination: ["наконечник", "штирь", "автоклема"],
       productionTime: ["за 1 день"],
     },
   }
@@ -102,18 +102,94 @@ const textReferenceInformation = [
 ];
 
 export const getCreationButtonProduct_05 = (objectButtonProduct) => {
-  const nodeTextHTML = [];  
+  const nodeTextHTML = [];
   nodeTextHTML.push(`<div class='div-button-product' id=${objectButtonProduct.ID}>`);
 
   // формуємо заголовок товару
   nodeTextHTML.push(`<p class='header-name-product'>Перемичка (${objectButtonProduct.leftCableTermination}-${objectButtonProduct.rightCableTermination}) <br> ${objectButtonProduct.lengthCable} - ${objectButtonProduct.squareCable}</p>`);
 
+
   // формуємо фото продукту
   nodeTextHTML.push("<div class='div-image-product'>");
-  if (true) {
-    nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/083.jpg' alt='Image cable'>");
+  if ((objectButtonProduct.leftCableTermination === "автоклема") || (objectButtonProduct.rightCableTermination === "автоклема")) {
+    switch (objectButtonProduct.squareCable.slice(0, 2)) {
+      case "10":
+        nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/05/auto-1.jpg' alt='Avto'>");
+        break;
+      case "16":
+      case "25":
+        nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/05/auto-2.jpg' alt='Avto'>");
+        break;
+      case "35":
+      case "50":
+        nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/05/auto-3.jpg' alt='Avto'>");
+        break;
+    }
+  } else {
+    if ((Number(objectButtonProduct.lengthCable.slice(0, -7)) <= 20) && (Number(objectButtonProduct.lengthCable.slice(0, -7)) > 0)) {
+      nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/05/short-1.jpg' alt='Cable'>");
+    }
+    if ((Number(objectButtonProduct.lengthCable.slice(0, -7)) <= 40) && (Number(objectButtonProduct.lengthCable.slice(0, -7)) > 20)) {
+      nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/05/short-2.jpg' alt='Cable'>");
+    }
+    if (Number(objectButtonProduct.lengthCable.slice(0, -7)) > 40) {
+      switch (objectButtonProduct.squareCable.slice(0, 2)) {
+        case "10":
+          if (Number(objectButtonProduct.lengthCable.slice(0, -7)) <= 70) {
+            nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/05/10-1.jpg' alt='Cable 10'>");
+          } else {
+            if (Number(objectButtonProduct.lengthCable.slice(0, -7)) <= 110) {
+              nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/05/10-2.jpg' alt='Cable 10'>");
+            } else {
+              nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/05/10-3.jpg' alt='Cable 10'>");
+            }
+          }
+          break;
+        case "16":
+          if (Number(objectButtonProduct.lengthCable.slice(0, -7)) <= 70) {
+            nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/05/16-1.jpg' alt='Cable 16'>");
+          } else {
+            if (Number(objectButtonProduct.lengthCable.slice(0, -7)) <= 110) {
+              nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/05/16-2.jpg' alt='Cable 16'>");
+            } else {
+              nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/05/16-3.jpg' alt='Cable 16'>");
+            }
+          }
+          break;
+        case "25":
+          if (Number(objectButtonProduct.lengthCable.slice(0, -7)) <= 60) {
+            nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/05/25-1.jpg' alt='Cable 25'>");
+          } else {
+            if (Number(objectButtonProduct.lengthCable.slice(0, -7)) <= 90) {
+              nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/05/25-2.jpg' alt='Cable 25'>");
+            } else {
+              if (Number(objectButtonProduct.lengthCable.slice(0, -7)) <= 140) {
+                nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/05/25-3.jpg' alt='Cable 25'>");
+              } else {
+                nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/05/25-4.jpg' alt='Cable 25'>");
+              }
+            }
+          }
+          break;
+        case "35":
+          if (Number(objectButtonProduct.lengthCable.slice(0, -7)) <= 120) {
+            nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/05/35-1.jpg' alt='Cable 35'>");
+          } else {
+            nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/05/35-2.jpg' alt='Cable 35'>");
+          }
+          break;
+        case "50":
+          if (Number(objectButtonProduct.lengthCable.slice(0, -7)) <= 100) {
+            nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/05/50-1.jpg' alt='Cable 50'>");
+          } else {
+            nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/05/50-2.jpg' alt='Cable 50'>");
+          }
+          break;
+      }
+    }
   }
   nodeTextHTML.push("</div>");
+
   // формуємо опис продукту
   nodeTextHTML.push("<div class='div-description-product'>");
   nodeTextHTML.push("<p class='paragraph-header'>Довжина</p>");
@@ -155,11 +231,11 @@ export const getFilteredAssortedProduct_05 = () => {
   const priceCable_50 = objProductParameters.infoParametrs.priceCable_50;
   const priceTip = objProductParameters.infoParametrs.priceTip;
   const pricePin = objProductParameters.infoParametrs.pricePin;
-  const priceNothingTip = objProductParameters.infoParametrs.priceNothingTip;  
+  const priceNothingTip = objProductParameters.infoParametrs.priceNothingTip;
   const tradeMargin = objProductParameters.infoParametrs.tradeMargin;
   let indexCountProduct = 0;
   let priceCurrentProduct = 0;
-  let priceCurrentCable = 0;  
+  let priceCurrentCable = 0;
   let priceCurrentLeftCableTermination = 0;
   let priceCurrentRightCableTermination = 0;
 
@@ -197,15 +273,15 @@ export const getFilteredAssortedProduct_05 = () => {
   }
 
   const includedLeftCableTermination = [];
-  const buttonsForLeftCableTermination = ["middle_button_530", "middle_button_531", "middle_button_532"];  
+  const buttonsForLeftCableTermination = ["middle_button_530", "middle_button_531", "middle_button_532"];
   for (const nameButton in buttonSubMenu.button_big_5) {
     if (buttonsForLeftCableTermination.includes(nameButton)) {
       if (buttonSubMenu.button_big_5[nameButton].status) {
         includedLeftCableTermination.push(buttonSubMenu.button_big_5[nameButton].header);
       }
-    }    
+    }
   }
-  
+
   const includedRightCableTermination = [];
   const buttonsForRightCableTermination = ["middle_button_533", "middle_button_534", "middle_button_535"];
   for (const nameButton in buttonSubMenu.button_big_5) {
@@ -287,10 +363,10 @@ export const getFilteredAssortedProduct_05 = () => {
                           case "штирь":
                             priceCurrentLeftCableTermination = pricePin;
                             break;
-                          case "нічого":
+                          case "автоклема":
                             priceCurrentLeftCableTermination = priceNothingTip;
-                            break;                          
-                        }                  
+                            break;
+                        }
                         switch (right_cable_termination) {
                           case "наконечник":
                             priceCurrentRightCableTermination = priceTip;
@@ -298,10 +374,10 @@ export const getFilteredAssortedProduct_05 = () => {
                           case "штирь":
                             priceCurrentRightCableTermination = pricePin;
                             break;
-                          case "нічого":
+                          case "автоклема":
                             priceCurrentRightCableTermination = priceNothingTip;
                             break;
-                        }                  
+                        }
                         priceCurrentProduct = 5 * Math.ceil(tradeMargin * (Number(length_cable) * priceCurrentCable / 100 + priceCurrentLeftCableTermination + priceCurrentRightCableTermination) / 5);
                         exportObjectProduct[indexCountProduct]["priceProduct"] = `${priceCurrentProduct} грн.`;
                       }

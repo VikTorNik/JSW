@@ -66,10 +66,20 @@ export const getCreationButtonProduct_08 = (objectButtonProduct) => {
 
   // формуємо фото продукту
   nodeTextHTML.push("<div class='div-image-product'>");
-  if (true) {
-    nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/083.jpg' alt='Image cable'>");
+  if (objectButtonProduct.lengthOutputVoltage) {
+    if (objectButtonProduct.numberSocket.slice(0, 1) <= 2) {
+      nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/08/output-2.jpg' alt=''>");
+    } else {
+      nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/08/output-1.jpg' alt=''>");
+    }
   }
-
+  if (objectButtonProduct.lengthInputVoltage) {
+    if (objectButtonProduct.lengthInputVoltage.slice(0,-6) <= 2 ) {
+      nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/08/input-2.jpg' alt=''>");
+    } else {
+      nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/08/input-1.jpg' alt=''>");
+    }
+  }
   nodeTextHTML.push("</div>");
   // формуємо опис продукту
 

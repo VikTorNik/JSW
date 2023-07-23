@@ -45,7 +45,7 @@ const objectProductParameters = {
     },
     set_25_1: {
       squareCable: ["25"],
-      lengthCable: ["2.0", "2.5", "3.0",],
+      lengthCable: ["1.5", "2.0", "2.5", "3.0",],
       typeAlligator: ["залізо", "пластик"],
       productionTime: ["готове"],
     },

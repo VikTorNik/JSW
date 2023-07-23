@@ -102,12 +102,57 @@ export const getCreationButtonProduct_03 = (objectButtonProduct) => {
   // формуємо заголовок товару
   nodeTextHTML.push(`<p class='header-name-product'>Подовжувач зварний - ${objectButtonProduct.lengthCable} - ${objectButtonProduct.squareCable}</p>`);
 
+
   // формуємо фото продукту
   nodeTextHTML.push("<div class='div-image-product'>");
-  if (true) {
-    nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/083.jpg' alt='Image cable'>");
+  if (objectButtonProduct.typeLeftBayonet.slice(-4) === objectButtonProduct.typeRightBayonet.slice(-4)) {
+    if (objectButtonProduct.typeLeftBayonet.slice(-4) === "мама") {
+      nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/03/plug-plug.jpg' alt='Cable welding 16 square'>");
+    } else {
+      nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/03/socet-socet.jpg' alt='Cable welding 16 square'>");
+    }
+  } else {
+    if (objectButtonProduct.typeLeftBayonet.slice(0, 4) !== objectButtonProduct.typeRightBayonet.slice(0, 4)) {
+      nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/03/16-50-short-1.jpg' alt='Cable welding 16 square'>");
+    } else {
+      switch (objectButtonProduct.lengthCable.slice(0, 3)) {
+        case "0.5":
+          nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/03/16-50-short-2.jpg' alt='Cable welding 16 square'>");
+          break;
+        case "1.0":
+          nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/03/16-50-short-3.jpg' alt='Cable welding 16 square'>");
+          break;
+        default:
+          switch (objectButtonProduct.squareCable.slice(0, 2)) {
+            case "10":
+              nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/03/10-1.jpg' alt='Cable welding 10 square'>");
+              break;
+            case "16":
+              if (objectButtonProduct.lengthCable.slice(0, 3) <= 1.5) {
+                nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/03/16-1.jpg' alt='Cable welding 16 square'>");
+              } else {
+                if (objectButtonProduct.lengthCable.slice(0, 3) <= 3) {
+                  nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/03/16-2.jpg' alt='Cable welding 16 square'>");
+                } else {
+                  nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/03/16-3.jpg' alt='Cable welding 16 square'>");
+                }
+              }
+              break;
+            case "25":
+              nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/03/25-1.jpg' alt='Cable welding 25 square'>");
+              break;
+            case "35":
+            case "50":
+              nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/03/25-2.jpg' alt='Cable welding 35 square'>");
+              break;
+          }
+      }
+    }
   }
   nodeTextHTML.push("</div>");
+
+
+
   // формуємо опис продукту
   nodeTextHTML.push("<div class='div-description-product'>");
   nodeTextHTML.push("<p class='paragraph-header'>Довжина</p>");

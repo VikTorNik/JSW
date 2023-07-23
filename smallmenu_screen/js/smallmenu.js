@@ -1,5 +1,6 @@
 import { ROOT, SMALLMENU_SCREEN } from "../../index.js";
 import { buttonSubMenu } from "../../smallmenu_screen/js/object_buttonSubMenu.js";
+import { currentRequiredOrdering } from "../../smallmenu_screen/js/object_current_price.js";
 import { creationMainMenu } from "../../smallmenu_screen/js/small_creation_first.js";
 import { creationSubMenu, clickButtonSubMenu, correctionCSSButtonSubMenu }
   from "../../smallmenu_screen/js/small_creation_second.js";
@@ -101,7 +102,6 @@ const showSubMenu = (mainSmall, menuBG, menuDiv, subScreen1, subScreen2, subScre
   const fragmentLeft = creationMainMenu(firstBG, firstDiv);
   bigMenuDiv.replaceWith(fragmentLeft);
 
-
   // тимчасовий div для сумісності при настуній заміні
   const fragmentDiv = document.createElement("div");
   fragmentDiv.className = "smallmenu-second-bg";
@@ -118,13 +118,7 @@ const showSubMenu = (mainSmall, menuBG, menuDiv, subScreen1, subScreen2, subScre
 
     // фіксуємо натискання на продукт
     [...document.querySelectorAll('.button-ordering')].forEach(indexButtonClick => {
-
-      // document.querySelector('#button-wait-moving').disabled = true;
-      // document.getElementById("button-goto-ordering").disabled = true;
-      // console.log(document.getElementById("button-goto-ordering").disabled);
-      // var btn = document.getElementById("button-goto-ordering");
-      // btn.disabled = false;
-      indexButtonClick.addEventListener('click', (buttonOrdering) => {
+      indexButtonClick.addEventListener('click', () => {
         switch (indexButtonClick.id) {
           case 'button-goto-ordering': // Оформлення замовлення
             document.querySelector("#middle_button_1102").click();
@@ -157,6 +151,7 @@ const showSubMenu = (mainSmall, menuBG, menuDiv, subScreen1, subScreen2, subScre
         };
       })
     });
+
     // реакція на кнопки під товаром Кошика - видалити і перенести у Вподобання
     [...document.querySelectorAll('.button-cart-delete'), ...document.querySelectorAll('.button-cart-move')].forEach(indexButtonClick => {
       indexButtonClick.addEventListener('click', (buttonOrdering) => {
@@ -173,6 +168,7 @@ const showSubMenu = (mainSmall, menuBG, menuDiv, subScreen1, subScreen2, subScre
         };
       })
     });
+
     // реакція на кнопки під товаром Вподобання - видалити і перенести у Кошик
     [...document.querySelectorAll('.button-wait-delete'), ...document.querySelectorAll('.button-wait-move')].forEach(indexButtonClick => {
       indexButtonClick.addEventListener('click', (buttonOrdering) => {
@@ -189,6 +185,86 @@ const showSubMenu = (mainSmall, menuBG, menuDiv, subScreen1, subScreen2, subScre
         };
       })
     });
+
+    // реакція на кнопку Оформлення
+    const deliveryOrder = document.getElementsByName("delivery");
+    if (deliveryOrder.length > 0) {
+      form_delivery.addEventListener('change', (event) => {
+        switch (event.target.id) {
+          case 'olx':
+            fieldset_after_payment.style.display = "none";
+            document.getElementById("name_client").required = false;
+            document.getElementById("surname_client").required = false;
+            document.getElementById("city").required = false;
+            document.getElementById("numberdepartment").required = false;
+            document.getElementById("index").required = false;
+            currentRequiredOrdering.olx_radio = true;
+            currentRequiredOrdering.after_payment_radio = false;
+            break;
+          case 'after_payment':
+            fieldset_after_payment.style.display = "block";
+            document.getElementById("name_client").required = true;
+            document.getElementById("surname_client").required = true;
+            document.getElementById("city").required = true;
+            document.getElementById("numberdepartment").required = true;
+            document.getElementById("index").required = true;
+            currentRequiredOrdering.olx_radio = false;
+            currentRequiredOrdering.after_payment_radio = true;
+            // ініціалізація первинного натискання
+            if (currentRequiredOrdering.novapost_radio) { novapost.dispatchEvent(new Event('change', { bubbles: true })) };
+            if (currentRequiredOrdering.ukrpost_radio) { ukrpost.dispatchEvent(new Event('change', { bubbles: true })) };
+            break;
+          case 'novapost':
+            numberdepartment.style.opacity = 1;
+            index.style.opacity = 0;
+            document.getElementById("index").required = false;
+            document.getElementById("numberdepartment").required = true;
+            currentRequiredOrdering.novapost_radio = true;
+            currentRequiredOrdering.ukrpost_radio = false;
+            break;
+          case 'ukrpost':
+            numberdepartment.style.opacity = 0;
+            index.style.opacity = 1;
+            document.getElementById("index").required = true;
+            document.getElementById("numberdepartment").required = false;
+            currentRequiredOrdering.novapost_radio = false;
+            currentRequiredOrdering.ukrpost_radio = true;
+            break;
+        };
+        // записуємо всі дані, які буле введені клієнтом - в об'єкт
+        currentRequiredOrdering.email_value = document.getElementById("email").value;
+        currentRequiredOrdering.viber_value = document.getElementById("viber").value;
+        currentRequiredOrdering.addinginfo_value = document.getElementById("addinginfo").value;
+        currentRequiredOrdering.name_client_value = document.getElementById("name_client").value;
+        currentRequiredOrdering.surname_client_value = document.getElementById("surname_client").value;
+        currentRequiredOrdering.city_value = document.getElementById("city").value;
+        currentRequiredOrdering.numberdepartment_value = document.getElementById("numberdepartment").value;
+        currentRequiredOrdering.index_value = document.getElementById("index").value;
+      });
+      // ініціалізація даних, які були введені
+      document.getElementById("email").value = currentRequiredOrdering.email_value;
+      document.getElementById("viber").value = currentRequiredOrdering.viber_value;
+      document.getElementById("addinginfo").value = currentRequiredOrdering.addinginfo_value;
+      document.getElementById("name_client").value = currentRequiredOrdering.name_client_value;
+      document.getElementById("surname_client").value = currentRequiredOrdering.surname_client_value;
+      document.getElementById("city").value = currentRequiredOrdering.city_value;
+      document.getElementById("numberdepartment").value = currentRequiredOrdering.numberdepartment_value;
+      document.getElementById("index").value = currentRequiredOrdering.index_value;
+      // ініціалізація первинного натискання      
+      if (currentRequiredOrdering.olx_radio) { olx.dispatchEvent(new Event('change', { bubbles: true })) };
+      if (currentRequiredOrdering.after_payment_radio) { after_payment.dispatchEvent(new Event('change', { bubbles: true })) };
+
+      // кнопки для Згоди з обробкою персональних даних та Умовами використання сайту
+      document.getElementById("buttonAgreement").addEventListener('click', () => {
+        document.getElementById("button_big_10").click();
+        document.getElementById("middle_button_1005").click();        
+      });
+      document.getElementById("buttonConditions").addEventListener('click', () => {
+        document.getElementById("button_big_10").click();
+        document.getElementById("middle_button_1006").click();
+      });
+    };
+
   };
 
   // обробка вибору товара для додавання у кошик

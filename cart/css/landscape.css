@@ -1,4 +1,5 @@
 @import url("land-smallmenu-to-card.css") screen and (orientation: landscape);
+@import url("land-form.css") screen and (orientation: landscape);
 
 :root {
   --cart-total-header-font-size: 32px;
@@ -41,7 +42,6 @@
   margin: calc(var(--margin-div-button-and-total) * var(--ratioSizeWin));
   padding: calc(var(--padding-1-button-and-total) * var(--ratioSizeWin)) calc(var(--padding-2-button-and-total) * var(--ratioSizeWin)) calc(var(--padding-3-button-and-total) * var(--ratioSizeWin)) calc(var(--padding-4-button-and-total) * var(--ratioSizeWin));
   background: var(--COLOR-SCHEME-02);
-
 }
 
 .div-total-amount {
@@ -110,10 +110,18 @@
   opacity: 0.75;
 }
 
+@media (hover: hover) and (pointer: fine) {
 
-.button-ordering:focus,
-.button-ordering:hover {
-  background: var(--COLOR-SCHEME-17);
+  .button-ordering:focus,
+  .button-ordering:hover {
+    background: var(--COLOR-SCHEME-17);
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .button-ordering:focus {
+    background: var(--COLOR-SCHEME-17);
+  }
 }
 
 .header-ordering {
@@ -165,19 +173,32 @@
   border-style: none;
 }
 
-.button-cart-delete:focus,
-.button-cart-move:focus,
-.button-wait-delete:focus,
-.button-wait-move:focus,
-.button-cart-delete:hover,
-.button-cart-move:hover,
-.button-wait-delete:hover,
-.button-wait-move:hover {
-  background: var(--COLOR-SCHEME-17);
+@media (hover: hover) and (pointer: fine) {
+
+  .button-cart-delete:focus,
+  .button-cart-move:focus,
+  .button-wait-delete:focus,
+  .button-wait-move:focus,
+  .button-cart-delete:hover,
+  .button-cart-move:hover,
+  .button-wait-delete:hover,
+  .button-wait-move:hover {
+    background: var(--COLOR-SCHEME-17);
+  }
+
+  .div-product-and-button:hover .div-button-product-cart {
+    background: var(--COLOR-SCHEME-16);
+  }
 }
 
-.div-product-and-button:hover .div-button-product-cart {
-  background: var(--COLOR-SCHEME-16);
+@media (hover: none) and (pointer: coarse) {
+
+  .button-cart-delete:focus,
+  .button-cart-move:focus,
+  .button-wait-delete:focus,
+  .button-wait-move:focus {
+    background: var(--COLOR-SCHEME-17);
+  }
 }
 
 .header-edit-cart {

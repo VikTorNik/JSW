@@ -68,11 +68,25 @@ export const getCreationButtonProduct_04 = (objectButtonProduct) => {
 
   // формуємо фото продукту
   nodeTextHTML.push("<div class='div-image-product'>");
-  if (true) {
-    nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/083.jpg' alt='Image cable'>");
+  switch (objectButtonProduct.alligatorMass) {
+    case "1 штука":
+      nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/04/all-1.jpg' alt='Alligator metall'>");
+      break;
+    case "2 штуки":
+      nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/04/all-2.jpg' alt='Alligator metall'>");
+      break;
+    case "4 штуки":
+      nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/04/all-4.jpg' alt='Alligator metall'>");
+      break;
+    case "латунь 200А":
+      nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/04/mass-200.jpg' alt='Mass 200A'>");
+      break;
+    case "латунь 250А":
+      nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/04/mass-250.jpg' alt='Mass 250A'>");
+      break;
   }
-
   nodeTextHTML.push("</div>");
+
   // формуємо опис продукту
   nodeTextHTML.push("<div class='div-description-product'>");
   nodeTextHTML.push("<p class='paragraph-header'> Матеріал</p>");

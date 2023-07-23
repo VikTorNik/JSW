@@ -12,10 +12,10 @@
 }
 
 .smallmenu-first-land-bg {
-  display: inline-flex;      
+  display: inline-flex;
 }
 
-.smallmenu-first-land-div {  
+.smallmenu-first-land-div {
   background: var(--COLOR-SCHEME-07);
   width: 100%;
   display: flex;
@@ -44,7 +44,7 @@
   letter-spacing: normal;
   font-weight: 600;
   font-size: calc(var(--smallmenu-header-font-size) * var(--ratioSizeWin));
-  text-align: left;  
+  text-align: left;
 }
 
 .selected-button {
@@ -58,7 +58,7 @@
 }
 
 .selected-button .smallmenu-header {
-  color: var(--COLOR-SCHEME-11);  
+  color: var(--COLOR-SCHEME-11);
   margin: 0 calc(var(--smallmenu-header-margin) * var(--ratioSizeWin));
   padding: calc(var(--smallmenu-header-padding) * var(--ratioSizeWin));
   font-family: 'Yanone Kaffeesatz';
@@ -69,12 +69,27 @@
   text-align: left;
 }
 
-.smallmenu-button:focus,
-.smallmenu-button:hover {
-  background: var(--COLOR-SCHEME-10);  
+
+@media (hover: hover) and (pointer: fine) {
+
+  .smallmenu-button:focus,
+  .smallmenu-button:hover {
+    background: var(--COLOR-SCHEME-10);
+  }
+
+  .smallmenu-button:focus .smallmenu-header,
+  .smallmenu-button:hover .smallmenu-header {
+    color: var(--COLOR-SCHEME-11);
+  }
+
 }
 
-.smallmenu-button:focus .smallmenu-header,
-.smallmenu-button:hover .smallmenu-header {
-  color: var(--COLOR-SCHEME-11);
+@media (hover: none) and (pointer: coarse) {
+  .smallmenu-button:focus {
+    background: var(--COLOR-SCHEME-10);
+  }
+
+  .smallmenu-button:focus .smallmenu-header {
+    color: var(--COLOR-SCHEME-11);
+  }
 }

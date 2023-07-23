@@ -116,41 +116,59 @@ const correctionButtonSubMenu = (objectButton /* "button_big_0" */, pressButton 
           currentArrayStatusButton[numberString][numberButtonInString] = false;
         }
 
-        // Якщо серед простих кнопок всі 1, то всі кнопки робимо 0 і робимо 1 для "включено все"
-        let sum = true;
-        for (let i = 1; i <= currentArrayStatusButton[numberString].length - 2; i++) {
-          sum = sum && currentArrayStatusButton[numberString][i];
-        }
-        if (sum) {
-          for (let i = 1; i <= currentArrayStatusButton[numberString].length - 2; i++) {
-            currentArrayStatusButton[numberString][i] = false;
-          }
-          currentArrayStatusButton[numberString][currentArrayStatusButton[numberString].length - 1] = true;
-        }
-
-        // Якщо серед простих кнопок всі 0, то робимо 1 - для "включено все"
-        sum = true;
-        for (let i = 1; i <= currentArrayStatusButton[numberString].length - 2; i++) {
-          sum = sum && !currentArrayStatusButton[numberString][i];
-        }
-        if (sum) {
-          currentArrayStatusButton[numberString][currentArrayStatusButton[numberString].length - 1] = true;
-        } else // Якщо є різні включені/виключені, то робимо 0 - для "включено все"       
-        {
-          currentArrayStatusButton[numberString][currentArrayStatusButton[numberString].length - 1] = false;
-        }
-
         // Натискання на сумарну кнопку
         if (stringStructure[2] === pressButton) {
           if (currentArrayStatusButton[numberString][currentArrayStatusButton[numberString].length - 1]) {
-            // 	Якщо включена - 1 , то виключаємо її - 0 і включаємо першу звичайну кнопку у цій групі - 1
+            // 	Якщо включена - 1 , то виключаємо її - 0 і включаємо тільки першу звичайну кнопку у цій групі - 1
             currentArrayStatusButton[numberString][currentArrayStatusButton[numberString].length - 1] = false;
-            currentArrayStatusButton[numberString][1] = true;
-          } else {// 	Якщо виключена - 0 , то включаємо її - 1 і відключаємо всі прості кнопки - 0
-            currentArrayStatusButton[numberString][currentArrayStatusButton[numberString].length - 1] = true;
             for (let i = 1; i <= currentArrayStatusButton[numberString].length - 2; i++) {
               currentArrayStatusButton[numberString][i] = false;
             }
+            currentArrayStatusButton[numberString][1] = true;
+
+          } else {// 	Якщо виключена - 0 , то включаємо її - 1 і відключаємо всі прості кнопки - 0
+            //! Якщо виключена - 0 , то включаємо її - 1 і включаємо всі прості кнопки - 1
+            currentArrayStatusButton[numberString][currentArrayStatusButton[numberString].length - 1] = true;
+            for (let i = 1; i <= currentArrayStatusButton[numberString].length - 2; i++) {
+              currentArrayStatusButton[numberString][i] = true;
+            }
+          }
+        } else { //! якщо нажали звичайну кнопку
+
+          // Якщо серед простих кнопок всі 1, то всі кнопки робимо 0 і робимо 1 для "включено все"
+          //! Якщо серед простих кнопок всі 1, то робимо 1 для "включено все"
+          let sum = true;
+          for (let i = 1; i <= currentArrayStatusButton[numberString].length - 2; i++) {
+            sum = sum && currentArrayStatusButton[numberString][i];
+          }
+          if (sum) {
+            // for (let i = 1; i <= currentArrayStatusButton[numberString].length - 2; i++) {
+            //   currentArrayStatusButton[numberString][i] = false;
+            // }
+            currentArrayStatusButton[numberString][currentArrayStatusButton[numberString].length - 1] = true;
+          }
+
+          // Якщо серед простих кнопок всі 0, то робимо 1 - для "включено все"
+          //!  Якщо серед простих кнопок всі 0, то робимо включаємо всі кнопки і кнопку "включено все"
+          sum = true;
+          for (let i = 1; i <= currentArrayStatusButton[numberString].length - 2; i++) {
+            sum = sum && !currentArrayStatusButton[numberString][i];
+          }
+          if (sum) {
+            currentArrayStatusButton[numberString][currentArrayStatusButton[numberString].length - 1] = true;
+            //! включили всі кнопки
+            for (let i = 1; i <= currentArrayStatusButton[numberString].length - 2; i++) {
+              currentArrayStatusButton[numberString][i] = true;
+            }
+          }
+
+          //!  Якщо серед простих кнопок є 1 і 0, то робимо включаємо всі кнопки і кнопку "включено все"
+          sum = true;
+          for (let i = 1; i <= currentArrayStatusButton[numberString].length - 2; i++) {
+            sum = sum && currentArrayStatusButton[numberString][i];
+          }
+          if (!sum) {
+            currentArrayStatusButton[numberString][currentArrayStatusButton[numberString].length - 1] = false;
           }
         }
       }

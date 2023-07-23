@@ -121,13 +121,57 @@ export const getCreationButtonProduct_02 = (objectButtonProduct) => {
 
   // формуємо фото продукту
   nodeTextHTML.push("<div class='div-image-product'>");
-  if (objectButtonProduct.typePlug === "10-25") {
-    nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/083.jpg' alt='Image cable'>");
-  }
-  if (objectButtonProduct.typePlug === "35-50") {
-    nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/082.jpg' alt='Image cable'>");
+  switch (objectButtonProduct.typeHolderMass) {
+    case "трим. 200А":
+    case "трим. 300А":
+      if (objectButtonProduct.squareCable.slice(0, 2) <= 16) {
+        nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/02/d200-16.jpg' alt='Cable welding 16 square, holder'>");
+      }
+      else {
+        nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/02/d200-25.jpg' alt='Cable welding 25 square, holder'>");
+      }
+      break;
+    case "маса 200А":
+      if (objectButtonProduct.squareCable.slice(0, 2) <= 10) {
+        nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/02/m200-10.jpg' alt='Cable welding 10 square, mass'>");
+      }
+      else {
+        nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/02/m200-16.jpg' alt='Cable welding 16 square, mass'>");
+      }
+      break;
+    case "маса 300А":
+      if (objectButtonProduct.squareCable.slice(0, 2) <= 10) {
+        nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/02/m300-10.jpg' alt='Cable welding 10 square, mass'>");
+      }
+      else {
+        if (objectButtonProduct.squareCable.slice(0, 2) <= 16) {
+          nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/02/m300-16.jpg' alt='Cable welding 16 square, mass'>");
+        }
+        else {
+          nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/02/m300-25.jpg' alt='Cable welding 25 square, mass'>");
+        }
+      }
+      break;
+    case "наконечник":
+      switch (objectButtonProduct.squareCable.slice(0, 2)) {
+        case "10":
+          nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/02/n-10.jpg' alt='Cable welding 10 square'>");
+          break;
+        case "16":
+          nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/02/n-16.jpg' alt='Cable welding 16 square'>");
+          break;
+        case "25":
+          nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/02/n-25.jpg' alt='Cable welding 25 square'>");
+          break;
+        case "35":
+        case "50":
+          nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/02/n-35.jpg' alt='Cable welding 35 square'>");
+          break;
+      }
+      break;
   }
   nodeTextHTML.push("</div>");
+
   // формуємо опис продукту
   nodeTextHTML.push("<div class='div-description-product'>");
   nodeTextHTML.push("<p class='paragraph-header'>Довжина</p>");

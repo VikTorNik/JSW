@@ -1,4 +1,5 @@
 @import url("port-smallmenu-to-card.css") (orientation: portrait);
+@import url("port-form.css") (orientation: portrait);
 
 :root {
   --cart-total-header-font-size: 36px;
@@ -116,9 +117,18 @@
   opacity: 0.75;
 }
 
-.button-ordering:focus,
-.button-ordering:hover {
-  background: var(--COLOR-SCHEME-17);
+@media (hover: hover) and (pointer: fine) {
+
+  .button-ordering:focus,
+  .button-ordering:hover {
+    background: var(--COLOR-SCHEME-17);
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .button-ordering:focus {
+    background: var(--COLOR-SCHEME-17);
+  }
 }
 
 .header-ordering {
@@ -137,23 +147,14 @@
 .div-cart-product {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  /* height: 1500px; */
-  /* width: 100%; */
 }
 
 .div-button-product-cart {
   cursor: default;
-  /* width: calc(var(--width-button-product) * var(--ratioSizeWin)); */
-
-  /* height: calc(var(--height-button-product) * var(--ratioSizeWin)); */
-
   padding: calc(var(--padding-button-product) * var(--ratioSizeWin));
-
   margin: calc(var(--margin-1-div-button-product-cart) * var(--ratioSizeWin)) 0 calc(var(--margin-3-div-button-product-cart) * var(--ratioSizeWin)) calc(var(--margin-button-product) * var(--ratioSizeWin));
   margin: calc(var(--margin-1-div-button-product-cart) * var(--ratioSizeWin)) 0 calc(var(--margin-3-div-button-product-cart) * var(--ratioSizeWin)) calc(var(--margin-button-product) * var(--ratioSizeWin));
-
   height: calc(var(--height-div-button-product-cart) * var(--ratioSizeWin));
-
   background: var(--COLOR-SCHEME-15);
   box-shadow: calc(var(--box-shadow-param-first) * var(--ratioSizeWin)) calc(var(--box-shadow-param-second) * var(--ratioSizeWin)) calc(var(--box-shadow-param-third) * var(--ratioSizeWin)) rgba(0, 0, 0, 0.4);
   border-radius: calc(var(--radius-button-product) * var(--ratioSizeWin));
@@ -175,20 +176,35 @@
   border-style: none;
 }
 
-.button-cart-delete:focus,
-.button-cart-move:focus,
-.button-wait-delete:focus,
-.button-wait-move:focus,
-.button-cart-delete:hover,
-.button-cart-move:hover,
-.button-wait-delete:hover,
-.button-wait-move:hover {
-  background: var(--COLOR-SCHEME-17);
+@media (hover: hover) and (pointer: fine) {
+
+  .button-cart-delete:focus,
+  .button-cart-move:focus,
+  .button-wait-delete:focus,
+  .button-wait-move:focus,
+  .button-cart-delete:hover,
+  .button-cart-move:hover,
+  .button-wait-delete:hover,
+  .button-wait-move:hover {
+    background: var(--COLOR-SCHEME-17);
+  }
+
+  .div-product-and-button:hover .div-button-product-cart {
+    background: var(--COLOR-SCHEME-16);
+  }
 }
 
-.div-product-and-button:hover .div-button-product-cart {
-  background: var(--COLOR-SCHEME-16);
+@media (hover: none) and (pointer: coarse) {
+
+  .button-cart-delete:focus,
+  .button-cart-move:focus,
+  .button-wait-delete:focus,
+  .button-wait-move:focus {
+    background: var(--COLOR-SCHEME-17);
+  }
 }
+
+
 
 .header-edit-cart {
   color: var(--COLOR-SCHEME-03);

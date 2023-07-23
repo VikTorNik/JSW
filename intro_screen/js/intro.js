@@ -9,18 +9,18 @@ const introText = [
 
 export const showIntroScreen = (orientationScreenLandscape) => {
   ROOT.style.setProperty("--currentScreen", INTRO_SCREEN); // поточний екран
-  if (orientationScreenLandscape) { createDOMIntro("main-intro-landscape", "<div class='intro-left-landscape'><div class='intro-text-landscape'>", "</div></div><div class='intro-right-landscape'></div>"); }
-  else { createDOMIntro("main-intro-portrait", "<div class='intro-portrait'><div class='intro-text-portrait'>", "</div></div>"); }
+  if (orientationScreenLandscape) { createDOMIntro('main-intro-landscape', '<div class="intro-left-landscape"><div class="intro-text-landscape">', '</div></div><div class="intro-right-landscape"></div>'); }
+  else { createDOMIntro('main-intro-portrait', '<div class="intro-portrait"><div class="intro-text-portrait">', '</div></div>'); }
 }
 
 const createDOMIntro = (mainOrientation, openDiv, closeDiv) => {
-  const parentDiv = document.createElement("main");
+  const parentDiv = document.createElement('main');
   parentDiv.className = mainOrientation;
-  document.querySelector("main").replaceWith(parentDiv);
+  document.querySelector('main').replaceWith(parentDiv);
   const introTextHTML = [openDiv];
   introText.forEach((paragraphIntro) => introTextHTML.push(`<p>${paragraphIntro}</p>`));
   introTextHTML.push(closeDiv);
-  parentDiv.innerHTML = introTextHTML.join("");
+  parentDiv.innerHTML = introTextHTML.join('');
   document.body.appendChild(parentDiv);
 
   document.querySelector(`.${mainOrientation}`).addEventListener('click', () => {

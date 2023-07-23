@@ -14,7 +14,7 @@
   --fontsize-header-name: 26px;
 }
 
-.smallmenu-third-land-div {  
+.smallmenu-third-land-div {
   background: var(--COLOR-SCHEME-18);
   width: 100%;
   height: calc(var(--height-smallmenu-land-div) * var(--ratioSizeWin));
@@ -44,10 +44,20 @@
   border-radius: calc(var(--radius-button-product) * var(--ratioSizeWin));
 }
 
-.div-button-product:hover,
-.div-button-product:focus {
-  background: var(--COLOR-SCHEME-10);
+@media (hover: hover) and (pointer: fine) {
+
+  .div-button-product:hover,
+  .div-button-product:focus {
+    background: var(--COLOR-SCHEME-10);
+  }
 }
+
+@media (hover: none) and (pointer: coarse) {
+  .div-button-product:focus {
+    background: var(--COLOR-SCHEME-10);
+  }
+}
+
 
 .div-image-product {
   align-self: center;

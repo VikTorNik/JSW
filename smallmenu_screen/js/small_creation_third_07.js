@@ -132,10 +132,57 @@ export const getCreationButtonProduct_07 = (objectButtonProduct) => {
 
   // формуємо фото продукту
   nodeTextHTML.push("<div class='div-image-product'>");
-  if (true) {
-    nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/083.jpg' alt='Image cable'>");
+  if (objectButtonProduct.typeMaterial === "алюміній") {
+    if (Number(objectButtonProduct.widthTire.slice(0, 2)) >= 25) {
+      nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/07/a-1.jpg' alt='Alluminium'>");
+    } else {
+      nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/07/a-2.jpg' alt='Alluminium'>");
+    }
+  } else {
+    if (Number(objectButtonProduct.lengthTire.slice(0, -7)) <= 15) {
+      switch (objectButtonProduct.widthThickness.slice(0, 1)) {
+        case "2":
+          nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/07/m-1-short.jpg' alt='Cuprum'>");
+          break;
+        case "3":
+          nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/07/m-2-short.jpg' alt='Cuprum'>");
+          break;
+        case "4":
+        case "5":
+          nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/07/m-3-short.jpg' alt='Cuprum'>");
+          break;
+      }
+    } else {
+      switch (objectButtonProduct.lengthTire.slice(0, -7)) {
+        case "20":
+          nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/07/m-4.jpg' alt='Cuprum'>");
+          break;
+        case "20":
+          nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/07/m-4.jpg' alt='Cuprum'>");
+          break;
+        case "25":
+          nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/07/m-5.jpg' alt='Cuprum'>");
+          break;
+        case "30":
+          nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/07/m-6.jpg' alt='Cuprum'>");
+          break;
+        case "35":
+          nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/07/m-7.jpg' alt='Cuprum'>");
+          break;
+        case "40":
+          nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/07/m-8.jpg' alt='Cuprum'>");
+          break;
+        case "45":
+          nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/07/m-9.jpg' alt='Cuprum'>");
+          break;
+        case "50":
+          nodeTextHTML.push("<img class='image-product' src='smallmenu_screen/img/07/m-10.jpg' alt='Cuprum'>");
+          break;
+      }
+    }
   }
   nodeTextHTML.push("</div>");
+
   // формуємо опис продукту
   nodeTextHTML.push("<div class='div-description-product'>");
   nodeTextHTML.push("<p class='paragraph-header'>Довжина</p>");

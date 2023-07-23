@@ -71,3 +71,24 @@ export const currentPrice = {
   tradeMargin_07: 1.26,
   tradeMargin_08: 1.3,
 };
+
+
+export const currentRequiredOrdering = {
+  olx_radio: true,
+  after_payment_radio: false,
+  email_value: "",
+  viber_value: "",
+  addinginfo_value: "",
+  name_client_required: false,
+  name_client_value: "",
+  surname_client_required: false,
+  surname_client_value: "",
+  city_required: false,
+  city_value: "",
+  novapost_radio: true,
+  numberdepartment_required: false,
+  numberdepartment_value: "",
+  ukrpost_radio: false,
+  index_required: false,
+  index_value: "",
+}

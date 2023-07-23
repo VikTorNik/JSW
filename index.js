@@ -10,10 +10,10 @@ const WIDTH_WINDOW = 1440;
 const HEIGHT_WINDOW = 800;
 const NORMAL_RATIO = 1;
 
-ROOT.style.setProperty("--currentScreen", INTRO_SCREEN);
-ROOT.style.setProperty("--currentMenu", "");
+ROOT.style.setProperty('--currentScreen', INTRO_SCREEN);
+ROOT.style.setProperty('--currentMenu', '');
 let historyJSW = [];
-let windowOrientation;
+export let windowOrientation;
 
 export const screenDispatcher = (selectScreen, orientationСhange, numberMenu) => {
 
@@ -31,12 +31,12 @@ export const screenDispatcher = (selectScreen, orientationСhange, numberMenu) =
     }
   }
 
-  if (ROOT.style.getPropertyValue("--currentScreen") !== selectScreen) {
+  if (ROOT.style.getPropertyValue('--currentScreen') !== selectScreen) {
     // записуємо хісторі, щоб повернутися на попередній екран
-    window.history.pushState(ROOT.style.getPropertyValue("--currentScreen"), "", "");
+    window.history.pushState(ROOT.style.getPropertyValue('--currentScreen'), '', '');
     historyJSW.push(history.state);
     // зміна поточного екрану - оновлення
-    ROOT.style.setProperty("--currentScreen", (Number(selectScreen) < Number(INTRO_SCREEN)) ? INTRO_SCREEN : selectScreen);
+    ROOT.style.setProperty('--currentScreen', (Number(selectScreen) < Number(INTRO_SCREEN)) ? INTRO_SCREEN : selectScreen);
     redrawingScreen(selectScreen, windowOrientation, numberMenu);
   }
   if (orientationСhange) {
@@ -64,9 +64,9 @@ const isResizeWindowApplication = () => {
     ratioHeight = clientHeight / WIDTH_WINDOW;
   }
   if ((ratioWidth < 1) || (ratioHeight < 1)) {
-    ROOT.style.setProperty("--ratioSizeWin", Math.min(ratioWidth, ratioHeight));
+    ROOT.style.setProperty('--ratioSizeWin', Math.min(ratioWidth, ratioHeight));
   } else {
-    ROOT.style.setProperty("--ratioSizeWin", NORMAL_RATIO);
+    ROOT.style.setProperty('--ratioSizeWin', NORMAL_RATIO);
   }
   return (oldCurrentOrientation !== windowOrientation);
 };
@@ -78,13 +78,13 @@ showIntroScreen(windowOrientation);
 
 // перемальовуємо екран в залежності від зміни розміру 
 window.addEventListener('resize', () =>
-  screenDispatcher(ROOT.style.getPropertyValue("--currentScreen"), isResizeWindowApplication()));
+  screenDispatcher(ROOT.style.getPropertyValue('--currentScreen'), isResizeWindowApplication()));
 
 // реагуємо на Escape (повернення на попередній екран)
-document.querySelector('body').addEventListener("keyup", (event) => {
+document.querySelector('body').addEventListener('keyup', (event) => {
   // реагуємо якщо не на першій сторінці і якщо нажата Escape
-  if ((event.key === "Escape") && (ROOT.style.getPropertyValue("--currentScreen") !== INTRO_SCREEN)) {
-    screenDispatcher(String(Number(ROOT.style.getPropertyValue("--currentScreen")) - 1), windowOrientation);
+  if ((event.key === 'Escape') && (ROOT.style.getPropertyValue('--currentScreen') !== INTRO_SCREEN)) {
+    screenDispatcher(String(Number(ROOT.style.getPropertyValue('--currentScreen')) - 1), windowOrientation);
   }
 });
 

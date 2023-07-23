@@ -107,9 +107,20 @@
   color: var(--COLOR-SCHEME-11);
 }
 
-.second-button:focus,
-.second-button-selected:focus,
-.second-button:hover,
-.second-button-selected:hover {
-  background: var(--COLOR-SCHEME-10);
+@media (hover: hover) and (pointer: fine) {
+
+  .second-button:focus,
+  .second-button-selected:focus,
+  .second-button:hover,
+  .second-button-selected:hover {
+    background: var(--COLOR-SCHEME-10);
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+
+  .second-button:focus,
+  .second-button-selected:focus {
+    background: var(--COLOR-SCHEME-10);
+  }
 }
