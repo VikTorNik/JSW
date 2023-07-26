@@ -161,7 +161,7 @@ export const getReferenceInformationProduct_11 = (headerSubMenu) => {
         nodeTextHTML.push('<fieldset class="fieldset-order">');
         nodeTextHTML.push('<legend>&nbspКонтактна і додаткова інформація по замовленню&nbsp</legend>')
         nodeTextHTML.push('<div>');
-        nodeTextHTML.push('<input type="email" id="email" name="email" inputmode="none" autocomplete="on" minlength="6" pattern="[a-zA-Z0-9.%-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,4}$" required>');
+        nodeTextHTML.push('<input type="text" id="email" name="email" inputmode="none" autocomplete="on" minlength="6" pattern="[a-zA-Z0-9.%-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,4}$" required>');
         nodeTextHTML.push('<label for="email">Електронна пошта</label>');
 
         // якщо портретна орієнтація, то робимо з нового рядка
