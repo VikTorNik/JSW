@@ -3,6 +3,7 @@ import { cartWait } from "../../cart/js/cart_wait.js";
 import { currentRequiredOrdering } from "../../smallmenu_screen/js/object_current_price.js";
 import { windowOrientation } from "../../index.js";
 
+
 export const getReferenceInformationProduct_11 = (headerSubMenu) => {
   const nodeTextHTML = [];
   nodeTextHTML.push("<div class='div-menu-cart'>");
@@ -139,15 +140,15 @@ export const getReferenceInformationProduct_11 = (headerSubMenu) => {
         nodeTextHTML.push('<div class="radio-div radio-div-delivery">');
 
         if (currentRequiredOrdering.olx_radio) {
-          nodeTextHTML.push('<input type="radio" class="input-radio" id="olx" name="delivery" checked>')
-        } else { nodeTextHTML.push('<input type="radio" class="input-radio" id="olx" name="delivery">') };
+          nodeTextHTML.push('<input type="radio" id="olx" class="input-radio" name="delivery" checked>')
+        } else { nodeTextHTML.push('<input type="radio" id="olx" class="input-radio" name="delivery">') };
         nodeTextHTML.push('<label class="label-radio" for="olx"><span>Оформлення через ОЛХ-доставку</span></label>');
 
         // якщо портретна орієнтація, то робимо з нового рядка
         if (!windowOrientation) { nodeTextHTML.push('</div><div class="radio-div radio-div-delivery">') };
 
         if (currentRequiredOrdering.after_payment_radio) {
-          nodeTextHTML.push('<input type="radio" class="input-radio" id="after_payment" name="delivery" checked>');
+          nodeTextHTML.push('<input type="radio" id="after_payment" class="input-radio" name="delivery" checked>');
         } else { nodeTextHTML.push('<input type="radio" class="input-radio" id="after_payment" name="delivery">'); }
         nodeTextHTML.push('<label class="label-radio" for="after_payment"><span>Накладний платіж з частковою передплатою</span></label>');
 
@@ -160,17 +161,17 @@ export const getReferenceInformationProduct_11 = (headerSubMenu) => {
         nodeTextHTML.push('<fieldset class="fieldset-order">');
         nodeTextHTML.push('<legend>&nbspКонтактна і додаткова інформація по замовленню&nbsp</legend>')
         nodeTextHTML.push('<div>');
-        nodeTextHTML.push('<input type="email" id="email" inputmode="email" autocomplete="on" pattern="[a-zA-Z0-9.%-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,4}$" required>');
+        nodeTextHTML.push('<input type="email" id="email" name="email" inputmode="none" autocomplete="on" minlength="6" pattern="[a-zA-Z0-9.%-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,4}$" required>');
         nodeTextHTML.push('<label for="email">Електронна пошта</label>');
 
         // якщо портретна орієнтація, то робимо з нового рядка
         if (!windowOrientation) { nodeTextHTML.push('</div><div>') };
 
-        nodeTextHTML.push('<input type="tel" id="viber" autocomplete="on" inputmode="tel" required>');
+        nodeTextHTML.push('<input type="tel" id="viber" name="viber" inputmode="none" autocomplete="on" minlength="7" pattern="[0-9]{7}" required>');
         nodeTextHTML.push('<label for="viber">Вайбер/телефон</label>');
         nodeTextHTML.push('</div>');
         nodeTextHTML.push('<div>');
-        nodeTextHTML.push('<textarea id="addinginfo" inputmode="text" name="addinginfo" autocomplete="off" placeholder="За потреби, напишіть в цьому полі додаткову пояснювальну інформацію по замовленню"></textarea>');
+        nodeTextHTML.push('<textarea id="addinginfo" name="addinginfo" inputmode="none" autocomplete="off" placeholder="За потреби, напишіть в цьому полі додаткову пояснювальну інформацію по замовленню"></textarea>');
         nodeTextHTML.push('</div>');
         nodeTextHTML.push('</fieldset>');
 
@@ -182,37 +183,37 @@ export const getReferenceInformationProduct_11 = (headerSubMenu) => {
         nodeTextHTML.push('<fieldset id="fieldset_after_payment" class="fieldset-order">');
         nodeTextHTML.push('<legend>&nbspНакладний платіж з частковою передплатою&nbsp</legend>')
         nodeTextHTML.push('<div>');
-        nodeTextHTML.push('<input type="text" inputmode="text" id="name_client" autocomplete="on" minlength="2" required>');
+        nodeTextHTML.push('<input type="text" id="name_client" name="name_client" inputmode="none" autocomplete="on" minlength="2" required>');
         nodeTextHTML.push('<label for="name_client">Ім`я</label>');
-        nodeTextHTML.push('<input type="text" inputmode="text" id="surname_client" autocomplete="on" minlength="2" required>');
+        nodeTextHTML.push('<input type="text" id="surname_client" name="surname_client" inputmode="none" autocomplete="on" minlength="2" required>');
         nodeTextHTML.push('<label for="surname_client">Прізвище</label>');
 
         nodeTextHTML.push('</div><div>')
         nodeTextHTML.push('<label for="city">Місто (селище), район, область</label>');
         // якщо портретна орієнтація, то робимо з нового рядка
         if (!windowOrientation) { nodeTextHTML.push('</div><div>') };
-        nodeTextHTML.push('<input type="text" inputmode="text" id="city" autocomplete="on" minlength="3" required>');
+        nodeTextHTML.push('<input type="text" id="city" inputmode="none"  autocomplete="on" minlength="3" required>');
 
         nodeTextHTML.push('<fieldset class="fieldset-order">');
         nodeTextHTML.push('<legend>&nbspСлужба доставки&nbsp</legend>')
         nodeTextHTML.push('<div class="radio-div">');
 
         if (currentRequiredOrdering.novapost_radio) {
-          nodeTextHTML.push('<input type="radio" class="input-radio" id="novapost" name="post" checked>');
-        } else { nodeTextHTML.push('<input type="radio" class="input-radio" id="novapost" name="post">') };
+          nodeTextHTML.push('<input type="radio" id="novapost" class="input-radio" name="post" checked>');
+        } else { nodeTextHTML.push('<input type="radio" id="novapost" class="input-radio" name="post">') };
 
         nodeTextHTML.push('<label class="label-radio" for="novapost"><span>«Нова пошта», відділення</span></label>');
-        nodeTextHTML.push('<input type="text" inputmode="numeric" id="numberdepartment" autocomplete="on" required>');
+        nodeTextHTML.push('<input type="text" id="numberdepartment" name="numberdepartment" inputmode="none" autocomplete="on" required>');
 
         // якщо портретна орієнтація, то робимо з нового рядка
         if (!windowOrientation) { nodeTextHTML.push('</div><div class="radio-div">') };
 
         if (currentRequiredOrdering.ukrpost_radio) {
-          nodeTextHTML.push('<input type="radio" class="input-radio" id="ukrpost" name="post" checked>');
-        } else { nodeTextHTML.push('<input type="radio" class="input-radio" id="ukrpost" name="post">') };
+          nodeTextHTML.push('<input type="radio" id="ukrpost" class="input-radio" name="post" checked>');
+        } else { nodeTextHTML.push('<input type="radio" id="ukrpost" class="input-radio" name="post">') };
 
         nodeTextHTML.push('<label class="label-radio" for="ukrpost"><span>«Укрпошта», індекс</span></label>');
-        nodeTextHTML.push('<input type="text" inputmode="numeric" id="index" autocomplete="on" minlength="5" maxlength="5" required>');
+        nodeTextHTML.push('<input type="text" id="index" inputmode="none" autocomplete="on" minlength="5" maxlength="5" required>');
 
 
         nodeTextHTML.push('</div>');

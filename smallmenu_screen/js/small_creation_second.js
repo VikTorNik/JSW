@@ -21,6 +21,13 @@ export const creationSubMenu = (objectButtonMiddleMenu) => {
     if (currentElement.selector === 'p') {
       nodeTextHTML.push(`<${currentElement.selector} class='second-header' id=${indexSubMenu}>${currentElement.header}</${currentElement.selector}>`);
     }
+    if (currentElement.selector === 'alphabet') {
+      if (currentElement.status) {
+        nodeTextHTML.push(`<button class='alphabet-selected' id=${indexSubMenu}><p class='alphabet-header-selected'>${currentElement.header}</p></button>`);
+      } else {
+        nodeTextHTML.push(`<button class='alphabet' id=${indexSubMenu}><p class='alphabet-header'>${currentElement.header}</p></button>`);
+      }
+    }
   }
   nodeTextHTML.push("</div>");
   fragmentDiv.innerHTML = nodeTextHTML.join("");
@@ -244,7 +251,27 @@ export const correctionCSSButtonSubMenu = (objectButton /* "button_big_0" */) =>
         document.querySelector(`#${indexSubMenu}`).blur();
         if (currentElement.status) { document.querySelector(`#${indexSubMenu}`).className = 'second-button-selected'; }
         else { document.querySelector(`#${indexSubMenu}`).className = 'second-button'; }
+      };
+
+      //! ВРЕМЕННО  
+      if (currentElement.selector === 'alphabet') {        
+        document.querySelector(`#${indexSubMenu}`).blur();
+        if (currentElement.status) { document.querySelector(`#${indexSubMenu}`).className = 'alphabet-selected'; }
+        else { document.querySelector(`#${indexSubMenu}`).className = 'alphabet'; }
       }
+
+
+
+      // if (currentElement.selector === 'alphabet') {
+      //   if (currentElement.status) {
+      //     nodeTextHTML.push(`<button class='alphabet-selected' id=${indexSubMenu}><p class='alphabet-header-selected'>${currentElement.header}</p></button>`);
+      //   } else {
+      //     nodeTextHTML.push(`<button class='alphabet' id=${indexSubMenu}><p class='alphabet-header'>${currentElement.header}</p></button>`);
+      //   }
+      // }
+
+
+
     }
   }
 }

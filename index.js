@@ -77,8 +77,7 @@ isResizeWindowApplication();
 showIntroScreen(windowOrientation);
 
 // перемальовуємо екран в залежності від зміни розміру 
-window.addEventListener('resize', () =>
-  screenDispatcher(ROOT.style.getPropertyValue('--currentScreen'), isResizeWindowApplication()));
+window.addEventListener('resize', () => screenDispatcher(ROOT.style.getPropertyValue('--currentScreen'), isResizeWindowApplication()));
 
 // реагуємо на Escape (повернення на попередній екран)
 document.querySelector('body').addEventListener('keyup', (event) => {

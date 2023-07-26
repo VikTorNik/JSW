@@ -470,10 +470,10 @@ export const buttonSubMenu = {
   ],
 
   button_big_9: {
-    status_submenu: "information",    
-    middle_button_900: { selector: "button", header: "Пускові дроти", status: true },    
-    middle_button_901: { selector: "button", header: "Зварювальні дроти", status: false },    
-    middle_button_902: { selector: "button", header: "Перемички АКБ", status: false },    
+    status_submenu: "information",
+    middle_button_900: { selector: "button", header: "Пускові дроти", status: true },
+    middle_button_901: { selector: "button", header: "Зварювальні дроти", status: false },
+    middle_button_902: { selector: "button", header: "Перемички АКБ", status: false },
     middle_button_903: { selector: "button", header: "Тверда шина", status: false },
   },
 
@@ -483,13 +483,13 @@ export const buttonSubMenu = {
 
   button_big_10: {
     status_submenu: "information",
-    middle_button_1000: { selector: "button", header: "Телефон, пошта", status: true },    
+    middle_button_1000: { selector: "button", header: "Телефон, пошта", status: true },
     middle_button_1001: { selector: "button", header: "Навігація по сайту", status: false },
-    middle_button_1002: { selector: "button", header: "Терміни виготовлення", status: false },    
+    middle_button_1002: { selector: "button", header: "Терміни виготовлення", status: false },
     middle_button_1003: { selector: "button", header: "Гарантійні зобов'язання", status: false },
-    middle_button_1004: { selector: "button", header: "Оформлення покупки", status: false },    
-    middle_button_1005: { selector: "button", header: "Згода на обробку персональних даних", status: false },    
-    middle_button_1006: { selector: "button", header: "Політика конфіденційності<br>та умови<br>використання сайту", status: false },        
+    middle_button_1004: { selector: "button", header: "Оформлення покупки", status: false },
+    middle_button_1005: { selector: "button", header: "Згода на обробку персональних даних", status: false },
+    middle_button_1006: { selector: "button", header: "Політика конфіденційності<br>та умови<br>використання сайту", status: false },
   },
 
   "button_big_10_structure": [
@@ -501,9 +501,72 @@ export const buttonSubMenu = {
     middle_button_1100: { selector: "button", header: "Товар у кошику", status: true },
     middle_button_1101: { selector: "button", header: "Список вподобань", status: false },
     middle_button_1102: { selector: "button", header: "Оформлення замовлення", status: false },
+
+    middle_button_0001: { selector: "alphabet", header: "1", status: false },
+    middle_button_0002: { selector: "alphabet", header: "2", status: false },
+    middle_button_0003: { selector: "alphabet", header: "3", status: false },
+    middle_button_0004: { selector: "alphabet", header: "4", status: false },
+    middle_button_0005: { selector: "alphabet", header: "5", status: false },
+    middle_button_0006: { selector: "alphabet", header: "6", status: false },
+    middle_button_0007: { selector: "alphabet", header: "7", status: false },
+    middle_button_0008: { selector: "alphabet", header: "8", status: false },
+    middle_button_0009: { selector: "alphabet", header: "9", status: false },
+    middle_button_0010: { selector: "alphabet", header: "0", status: false },
+    middle_button_0011: { selector: "alphabet", header: ".", status: false },
+    middle_button_0012: { selector: "alphabet", header: "@", status: false },
+
+    middle_button_0013: { selector: "alphabet", header: "Ukrainian", status: true },
+    middle_button_0014: { selector: "alphabet", header: "English", status: false },
+    middle_button_0015: { selector: "alphabet", header: "Shift", status: false },
+
+    middle_button_0016: { selector: "alphabet", header: "й", status: false },
+    middle_button_0017: { selector: "alphabet", header: "ц", status: false },
+    middle_button_0018: { selector: "alphabet", header: "у", status: false },
+    middle_button_0019: { selector: "alphabet", header: "к", status: false },
+    middle_button_0020: { selector: "alphabet", header: "е", status: false },
+    middle_button_0021: { selector: "alphabet", header: "н", status: false },
+    middle_button_0022: { selector: "alphabet", header: "г", status: false },
+    middle_button_0023: { selector: "alphabet", header: "ш", status: false },
+
+    middle_button_0024: { selector: "alphabet", header: "ф", status: false },
+    middle_button_0025: { selector: "alphabet", header: "і", status: false },
+    middle_button_0026: { selector: "alphabet", header: "в", status: false },
+    middle_button_0027: { selector: "alphabet", header: "а", status: false },
+    middle_button_0028: { selector: "alphabet", header: "п", status: false },
+    middle_button_0029: { selector: "alphabet", header: "р", status: false },
+    middle_button_0030: { selector: "alphabet", header: "о", status: false },
+    middle_button_0031: { selector: "alphabet", header: "л", status: false },
+
+    middle_button_0032: { selector: "alphabet", header: "д", status: false },
+    middle_button_0033: { selector: "alphabet", header: "я", status: false },
+    middle_button_0034: { selector: "alphabet", header: "ч", status: false },
+    middle_button_0035: { selector: "alphabet", header: "с", status: false },
+    middle_button_0036: { selector: "alphabet", header: "м", status: false },
+    middle_button_0037: { selector: "alphabet", header: "и", status: false },
+    middle_button_0038: { selector: "alphabet", header: "т", status: false },
+    middle_button_0039: { selector: "alphabet", header: "ь", status: false },
+
+    middle_button_0040: { selector: "alphabet", header: "б", status: false },
+    middle_button_0041: { selector: "alphabet", header: "щ", status: false },
+    middle_button_0042: { selector: "alphabet", header: "з", status: false },
+    middle_button_0043: { selector: "alphabet", header: "х", status: false },
+    middle_button_0044: { selector: "alphabet", header: "ї", status: false },
+    middle_button_0045: { selector: "alphabet", header: "ж", status: false },
+    middle_button_0046: { selector: "alphabet", header: "є", status: false },
+    middle_button_0047: { selector: "alphabet", header: "ю", status: false },
+
+    middle_button_0048: { selector: "alphabet", header: "ґ", status: false },
+    middle_button_0049: { selector: "alphabet", header: "'", status: false },
+    middle_button_0050: { selector: "alphabet", header: "BackSpace", status: false },
+    middle_button_0051: { selector: "alphabet", header: "Space", status: false },
+    p_header_0051: { selector: "p", header: "" },
   },
 
   "button_big_11_structure": [
     ["button_boolean", ["middle_button_1100", "middle_button_1101", "middle_button_1102"]],
+    ["button_boolean", ["middle_button_0001", "middle_button_0002", "middle_button_0003", "middle_button_0004", "middle_button_0005", "middle_button_0006", "middle_button_0007",]],
   ],
+
+
+
 };

@@ -189,7 +189,67 @@ const showSubMenu = (mainSmall, menuBG, menuDiv, subScreen1, subScreen2, subScre
     // реакція на кнопку Оформлення
     const deliveryOrder = document.getElementsByName("delivery");
     if (deliveryOrder.length > 0) {
+
+      // забезпечення вводу символів за допомогою користувацької клавіатури
+      let currentEventInput;
+      // фокус на одму з елементів вводу
+      [document.getElementById("email"), document.getElementById("viber"), document.getElementById("addinginfo"), document.getElementById("name_client"), document.getElementById("surname_client"), document.getElementById("city"), document.getElementById("numberdepartment"), document.getElementById("index")].forEach(inputElement => {
+        inputElement.addEventListener('focus', (event) => {
+          currentEventInput = event;
+          // console.log("--- event--- 1 - ", currentEventInput.target);
+          // console.log("--- value--- - ", currentEventInput.target.value);
+        });
+      });
+      // console.log("--- currentEventInput--- - ", currentEventInput);
+      
+      // якщо ніякий input не вибраний, то примусово даємо фокус на email
+      if (currentEventInput === undefined) { document.getElementById("email").focus();}
+
+      //! робочий варіант вводу текста в рядок
+      [...document.querySelectorAll('.alphabet')].forEach(codeAlphabet => {
+        codeAlphabet.addEventListener('click', () => {
+          // поточне значення кнопки клавіатури
+          const currentCodeAlphabet = buttonSubMenu[currentMenu][codeAlphabet.id].header;
+          switch (currentCodeAlphabet) {
+            case 'Ukrainian':
+
+              break;
+            case 'English':
+
+              break;
+            case 'Shift':
+              // currentMenu = "button_big_12";
+              // createSubMenu();
+              break;
+            case 'BackSpace':
+              if (currentEventInput.target.value.length > 0) {
+                currentEventInput.target.value = currentEventInput.target.value.substring(0, currentEventInput.target.value.length - 1);
+              }
+              break;
+            case 'Space':
+              currentEventInput.target.value += " ";
+              break;
+            default:
+              currentEventInput.target.value = currentEventInput.target.value + buttonSubMenu[currentMenu][codeAlphabet.id].header;
+          }
+
+          // currentEventInput.focus();
+          // document.activeElement.value += buttonSubMenu[currentMenu][codeAlphabet.id].header;
+          // currentEventInput.target.value += buttonSubMenu[currentMenu][codeAlphabet.id].header;
+          form_delivery.dispatchEvent(new Event('change', { bubbles: true }))
+        });
+      });
+
+
+      // document.getElementById("email").addEventListener('blur', (event) => {
+      //   console.log("--- втратили 'focus' --- в email");
+      // });
+
+
+
       form_delivery.addEventListener('change', (event) => {
+        // console.log("form_delivery -  'change'");
+        // console.log("document.activeElement - ", document.activeElement);
         switch (event.target.id) {
           case 'olx':
             fieldset_after_payment.style.display = "none";
@@ -241,6 +301,7 @@ const showSubMenu = (mainSmall, menuBG, menuDiv, subScreen1, subScreen2, subScre
         currentRequiredOrdering.numberdepartment_value = document.getElementById("numberdepartment").value;
         currentRequiredOrdering.index_value = document.getElementById("index").value;
       });
+
       // ініціалізація даних, які були введені
       document.getElementById("email").value = currentRequiredOrdering.email_value;
       document.getElementById("viber").value = currentRequiredOrdering.viber_value;
@@ -257,13 +318,14 @@ const showSubMenu = (mainSmall, menuBG, menuDiv, subScreen1, subScreen2, subScre
       // кнопки для Згоди з обробкою персональних даних та Умовами використання сайту
       document.getElementById("buttonAgreement").addEventListener('click', () => {
         document.getElementById("button_big_10").click();
-        document.getElementById("middle_button_1005").click();        
+        document.getElementById("middle_button_1005").click();
       });
       document.getElementById("buttonConditions").addEventListener('click', () => {
         document.getElementById("button_big_10").click();
         document.getElementById("middle_button_1006").click();
       });
     };
+
 
   };
 
@@ -351,6 +413,8 @@ const showSubMenu = (mainSmall, menuBG, menuDiv, subScreen1, subScreen2, subScre
     document.querySelector(`#${currentMenu}`).className = 'selected-button';
     // формуємо колонку з субменю   
     const fragmentMiddle = creationSubMenu(buttonSubMenu[currentMenu]);
+    console.log("buttonSubMenu[currentMenu] - ", buttonSubMenu[currentMenu]);
+    console.log("currentMenu - ", currentMenu);
     document.querySelector(".smallmenu-second-bg").replaceWith(fragmentMiddle);
     // обробка натискання кнопок у субменю та відображення колонки з товаром
     clickButtonSubMenu();

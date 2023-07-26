@@ -109,6 +109,53 @@
   color: var(--COLOR-SCHEME-11);
 }
 
+.alphabet {
+  cursor: pointer;
+  padding: 0;
+  margin: 4px;
+  background: var(--COLOR-SCHEME-02);
+  box-shadow: calc(var(--smallmenu-shadow-right) * var(--ratioSizeWin)) calc(var(--smallmenu-shadow-bottom) * var(--ratioSizeWin)) calc(var(--smallmenu-shadow-blur) * var(--ratioSizeWin)) rgba(0, 0, 0, 0.4);
+  border-radius: calc(var(--smallmenu-button-border-radius) * var(--ratioSizeWin));
+  border-color: transparent;
+  border-style: none;
+}
+
+.alphabet-header {
+  margin: 0;
+  padding: calc(var(--padding-font) * var(--ratioSizeWin)) 0 0 0;
+  font-family: 'Yanone Kaffeesatz';
+  font-style: normal;
+  letter-spacing: calc(var(--letter-spacing-font) * var(--ratioSizeWin));
+  font-weight: 600;
+  font-size: calc(var(--second-button-header-font-size) * var(--ratioSizeWin));
+  color: var(--COLOR-SCHEME-13);
+}
+
+.alphabet-selected {
+  cursor: pointer;
+  padding: 0;
+  margin: 4px;
+  background: var(--COLOR-SCHEME-10);
+  box-shadow: calc(var(--smallmenu-shadow-right) * var(--ratioSizeWin)) calc(var(--smallmenu-shadow-bottom) * var(--ratioSizeWin)) calc(var(--smallmenu-shadow-blur) * var(--ratioSizeWin)) rgba(10, 10, 10, 0.25);
+  border-radius: calc(var(--smallmenu-button-border-radius) * var(--ratioSizeWin));
+  border-color: transparent;
+  border-style: none;
+}
+
+.alphabet-header-selected {
+  margin: 0;
+    padding: calc(var(--padding-font) * var(--ratioSizeWin)) 0 0 0;
+    font-family: 'Yanone Kaffeesatz';
+    font-style: normal;
+    letter-spacing: calc(var(--letter-spacing-font) * var(--ratioSizeWin));
+    font-weight: 600;
+    font-size: calc(var(--second-button-header-font-size) * var(--ratioSizeWin));
+    color: var(--COLOR-SCHEME-13);
+}
+
+
+
+
 /* для десктопа з мишкою */
 @media (hover: hover) and (pointer: fine) {
 

@@ -9,13 +9,11 @@
   --font-size-table-ordering: 24px;
   --padding-td-total-product: 10px;
   --font-td-total-product: 26px;
-  --margin-form: 10px;
-  /* --width-input-radio: 14px; */
+  --margin-form: 10px;  
   --margin-radio-div-delivery: 12px;
   --size-label-radio: 20px;
   --shift-label-radio: 4px;
   --size-after-label-radio: 12px;
-
   --border-fieldset-order: 2px;
   --padding-fieldset-order: 10px;
   --margin-fieldset-order: 12px;
@@ -82,7 +80,7 @@
 }
 
 .th-number {
-  width: 2%;
+  width: 3%;
 }
 
 .th-name {
@@ -90,7 +88,7 @@
 }
 
 .th-characteristic {
-  width: 38%;
+  width: 37%;
 }
 
 .th-readiness {
