@@ -167,7 +167,7 @@ export const getReferenceInformationProduct_11 = (headerSubMenu) => {
         // якщо портретна орієнтація, то робимо з нового рядка
         if (!windowOrientation) { nodeTextHTML.push('</div><div>') };
 
-        nodeTextHTML.push('<input type="tel" id="viber" name="viber" inputmode="none" autocomplete="on" minlength="7" pattern="[0-9]{7}" required>');
+        nodeTextHTML.push('<input type="text" id="viber" name="viber" inputmode="none" autocomplete="on" minlength="7" pattern="[0-9]{7}" required>');
         nodeTextHTML.push('<label for="viber">Вайбер/телефон</label>');
         nodeTextHTML.push('</div>');
         nodeTextHTML.push('<div>');

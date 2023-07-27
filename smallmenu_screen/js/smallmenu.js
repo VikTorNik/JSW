@@ -201,9 +201,9 @@ const showSubMenu = (mainSmall, menuBG, menuDiv, subScreen1, subScreen2, subScre
         });
       });
       // console.log("--- currentEventInput--- - ", currentEventInput);
-      
+
       // якщо ніякий input не вибраний, то примусово даємо фокус на email
-      if (currentEventInput === undefined) { document.getElementById("email").focus();}
+      if (currentEventInput === undefined) { document.getElementById("email").focus(); }
 
       //! робочий варіант вводу текста в рядок
       [...document.querySelectorAll('.alphabet')].forEach(codeAlphabet => {

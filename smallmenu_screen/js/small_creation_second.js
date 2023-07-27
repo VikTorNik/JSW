@@ -256,6 +256,7 @@ export const correctionCSSButtonSubMenu = (objectButton /* "button_big_0" */) =>
       //! ВРЕМЕННО  
       if (currentElement.selector === 'alphabet') {        
         document.querySelector(`#${indexSubMenu}`).blur();
+        // console.log(indexSubMenu);
         if (currentElement.status) { document.querySelector(`#${indexSubMenu}`).className = 'alphabet-selected'; }
         else { document.querySelector(`#${indexSubMenu}`).className = 'alphabet'; }
       }
@@ -269,8 +270,6 @@ export const correctionCSSButtonSubMenu = (objectButton /* "button_big_0" */) =>
       //     nodeTextHTML.push(`<button class='alphabet' id=${indexSubMenu}><p class='alphabet-header'>${currentElement.header}</p></button>`);
       //   }
       // }
-
-
 
     }
   }

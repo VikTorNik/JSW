@@ -496,6 +496,72 @@ export const buttonSubMenu = {
     ["button_boolean", ["middle_button_1000", "middle_button_1001", "middle_button_1002", "middle_button_1003", "middle_button_1004", "middle_button_1005", "middle_button_1006"]],
   ],
 
+  // button_big_11: {
+  //   status_submenu: "information",
+  //   middle_button_1100: { selector: "button", header: "Товар у кошику", status: true },
+  //   middle_button_1101: { selector: "button", header: "Список вподобань", status: false },
+  //   middle_button_1102: { selector: "button", header: "Оформлення замовлення", status: false },
+
+  //   middle_button_0001: { selector: "button", header: "1", status: false },
+  //   middle_button_0002: { selector: "button", header: "2", status: false },
+  //   middle_button_0003: { selector: "button", header: "3", status: false },
+  //   middle_button_0004: { selector: "button", header: "4", status: false },
+  //   middle_button_0005: { selector: "button", header: "5", status: false },
+  //   middle_button_0006: { selector: "button", header: "6", status: false },
+  //   middle_button_0007: { selector: "button", header: "7", status: false },
+  //   middle_button_0008: { selector: "button", header: "8", status: false },
+  //   middle_button_0009: { selector: "button", header: "9", status: false },
+  //   middle_button_0010: { selector: "button", header: "0", status: false },
+  //   middle_button_0011: { selector: "button", header: ".", status: false },
+  //   middle_button_0012: { selector: "button", header: "@", status: false },
+
+  //   middle_button_0013: { selector: "button", header: "Ukrainian", status: true },
+  //   middle_button_0014: { selector: "button", header: "English", status: false },
+  //   middle_button_0015: { selector: "button", header: "Shift", status: false },
+
+  //   middle_button_0016: { selector: "button", header: "й", status: false },
+  //   middle_button_0017: { selector: "button", header: "ц", status: false },
+  //   middle_button_0018: { selector: "button", header: "у", status: false },
+  //   middle_button_0019: { selector: "button", header: "к", status: false },
+  //   middle_button_0020: { selector: "button", header: "е", status: false },
+  //   middle_button_0021: { selector: "button", header: "н", status: false },
+  //   middle_button_0022: { selector: "button", header: "г", status: false },
+  //   middle_button_0023: { selector: "button", header: "ш", status: false },
+
+  //   middle_button_0024: { selector: "button", header: "ф", status: false },
+  //   middle_button_0025: { selector: "button", header: "і", status: false },
+  //   middle_button_0026: { selector: "button", header: "в", status: false },
+  //   middle_button_0027: { selector: "button", header: "а", status: false },
+  //   middle_button_0028: { selector: "button", header: "п", status: false },
+  //   middle_button_0029: { selector: "button", header: "р", status: false },
+  //   middle_button_0030: { selector: "button", header: "о", status: false },
+  //   middle_button_0031: { selector: "button", header: "л", status: false },
+
+  //   middle_button_0032: { selector: "button", header: "д", status: false },
+  //   middle_button_0033: { selector: "button", header: "я", status: false },
+  //   middle_button_0034: { selector: "button", header: "ч", status: false },
+  //   middle_button_0035: { selector: "button", header: "с", status: false },
+  //   middle_button_0036: { selector: "button", header: "м", status: false },
+  //   middle_button_0037: { selector: "button", header: "и", status: false },
+  //   middle_button_0038: { selector: "button", header: "т", status: false },
+  //   middle_button_0039: { selector: "button", header: "ь", status: false },
+
+  //   middle_button_0040: { selector: "button", header: "б", status: false },
+  //   middle_button_0041: { selector: "button", header: "щ", status: false },
+  //   middle_button_0042: { selector: "button", header: "з", status: false },
+  //   middle_button_0043: { selector: "button", header: "х", status: false },
+  //   middle_button_0044: { selector: "button", header: "ї", status: false },
+  //   middle_button_0045: { selector: "button", header: "ж", status: false },
+  //   middle_button_0046: { selector: "button", header: "є", status: false },
+  //   middle_button_0047: { selector: "button", header: "ю", status: false },
+
+  //   middle_button_0048: { selector: "button", header: "ґ", status: false },
+  //   middle_button_0049: { selector: "button", header: "'", status: false },
+  //   middle_button_0050: { selector: "button", header: "BackSpace", status: false },
+  //   middle_button_0051: { selector: "button", header: "Space", status: false },
+  //   p_header_0051: { selector: "p", header: "" },
+  // },
+
   button_big_11: {
     status_submenu: "information",
     middle_button_1100: { selector: "button", header: "Товар у кошику", status: true },
@@ -561,12 +627,10 @@ export const buttonSubMenu = {
     middle_button_0051: { selector: "alphabet", header: "Space", status: false },
     p_header_0051: { selector: "p", header: "" },
   },
-
+  
   "button_big_11_structure": [
     ["button_boolean", ["middle_button_1100", "middle_button_1101", "middle_button_1102"]],
     ["button_boolean", ["middle_button_0001", "middle_button_0002", "middle_button_0003", "middle_button_0004", "middle_button_0005", "middle_button_0006", "middle_button_0007",]],
   ],
-
-
 
 };
